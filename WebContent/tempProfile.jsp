@@ -34,14 +34,9 @@
 			</form>
 
 			<form class="navbar-form navbar-right" role="logout">
-				<span class="input-group-btn"> <input type="button"
-					class="btn btn-default" onclick="relocate_home()" value="Log Out">
-					<script>
-						function relocate_home()
-						{
-						     location.href = "Home.jsp";
-						} 
-					</script>
+				<span class="input-group-btn"> 
+				<a href = "Home.jsp"><button type="button" class="btn btn-default">Log Out</button></a>
+					
 				</span>
 			</form>
 		</div>

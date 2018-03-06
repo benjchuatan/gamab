@@ -29,17 +29,9 @@
 				<input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password" /> 
 				<input type ="text" name = "billing_address" value="" class="form-control input-lg" placeholder="Billing Address" />
 				<input type ="text" name = "shipping_address" value="" class="form-control input-lg" placeholder="Shipping Address" /> <br>
-				<span class="help-block">By clicking Create my account, you
-					agree to our Terms and that you have read our Data Use Policy,
-					including our Cookie Use.</span> <input type="button"
-					class="btn btn-lg btn-primary btn-block signup-btn"
-					value="Create My Account" onclick="relocate_home()">
-				<script>
-						function relocate_home()
-						{
-						     location.href = "Home.jsp";
-						} 
-					</script>
+				<span class="help-block">By clicking Create my account, you agree to our Terms and that you have read our Data Use Policy, including our Cookie Use.</span> 
+				<a href = "Home.jsp"><button type="button" class="btn btn-lg btn-primary signup-btn">Create My Account</button></a>
+				<a href = "Home.jsp"><button type="button" class="btn btn-lg btn-danger signup-btn">Cancel</button></a>
 			</form>
 		</div>
 	</div>

@@ -31,13 +31,9 @@ href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="styl
 				<input type ="text" name = "old_shipping_address" value="" class="form-control input-lg" placeholder="Old Shipping Address" />
 				<input type ="text" name = "new_shipping_address" value="" class="form-control input-lg" placeholder="New Shipping Address" /> <br>
 				 
-				<input type="button" class="btn btn-lg btn-primary btn-block signup-btn" value="Edit My Profile" onclick="relocate_home()">
-					<script>
-						function relocate_home()
-						{
-						     location.href = "userprof.jsp";
-						} 
-					</script>
+				<a href = "userprof.jsp"><button type="button" class="btn btn-lg btn-primary signup-btn">Edit My Profile</button></a>
+				<a href = "userprof.jsp"><button type="button" class="btn btn-lg btn-danger signup-btn">Cancel</button></a>
+				
 			</form>
 		</div>
 	</div>
