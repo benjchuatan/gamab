@@ -9,6 +9,7 @@ public class ProfileBean implements Serializable {
 	public static final String LASTNAME ="lastname";
 	public static final String ADDRESS ="address";
 	public static final String BDAY ="birthday";
+	public static final String TABLE_NAME = "profile";
 	
 	private int iduser;
 	private String firstname;
