@@ -8,24 +8,12 @@
 <title>AION Product Management</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="Style/styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
-
-    if (scroll >= 50) {
-        $(".nav2").addClass("navbar-fixed-top");
-    } else {
-        $(".nav2").removeClass("navbar-fixed-top");
-    }
-});
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="row">
-		<%@ include file="navbar.jsp" %>
-  	</div>
+
+<div class="row"><%@ include file="navbar.jsp" %></div>
  
 	
 	<!----- Watch Management Tables ----------------------------------------------------------------------------->

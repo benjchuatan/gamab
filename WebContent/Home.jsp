@@ -5,43 +5,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>AION Wrist Watch</title>
+<title>AION Wristwatch</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="Style/styles.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
-
-    if (scroll >= 50) {
-        $(".nav2").addClass("navbar-fixed-top");
-    } else {
-        $(".nav2").removeClass("navbar-fixed-top");
-    }
-});
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body class="container-fluid">
 
-	<div class="row">
-		<%@ include file="navbar.jsp" %>
-  	</div>
+<div class="row"><%@ include file="navbar.jsp" %></div>
   	
   	
-  
-  	
-
-  <div class="w3-content w3-display-container">
-	  <img class="mySlides" src="Watch1.jpeg" style="width:100%" style="height:200%">
-	  <img class="mySlides" src="Watch2.jpeg" style="width:100%">
-	  <img class="mySlides" src="Watch3.jpeg" style="width:100%">
-	  <img class="mySlides" src="Watch4.jpeg" style="width:100%">
-	
-	  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-	  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-  </div>
+<div class="w3-content w3-display-container">
+	<img class="mySlides" src="Watch1.jpeg" style="width:100%" style="height:200%">
+	<img class="mySlides" src="Watch2.jpeg" style="width:100%">
+	<img class="mySlides" src="Watch3.jpeg" style="width:100%">
+	<img class="mySlides" src="Watch4.jpeg" style="width:100%">
+	<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+	<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
 
 <script>
 var slideIndex = 1;

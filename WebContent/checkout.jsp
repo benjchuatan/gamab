@@ -5,31 +5,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>AION Wrist Watch</title>
+<title>AION Checkout</title>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="Style/styles.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-<script>
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
-
-    if (scroll >= 50) {
-        $(".nav2").addClass("navbar-fixed-top");
-    } else {
-        $(".nav2").removeClass("navbar-fixed-top");
-    }
-});
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="row">
-		<%@ include file="navbar.jsp" %>
-</div>
+
+<div class="row"><%@ include file="navbar.jsp" %></div>
 
 
 <div class="container">
@@ -37,19 +24,19 @@ $(window).scroll(function() {
     <fieldset>
       <legend>Payment</legend>
       <div class="form-group">
-        <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
+        <label class="col-sm-3 control-label" for="card-holder-name">Name on Card:</label>
         <div class="col-sm-9">
           <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label" for="card-number">Card Number</label>
+        <label class="col-sm-3 control-label" for="card-number">Card Number:</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
+        <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label" for="expiry-month">Expiration Date</label>
+        <label class="col-sm-3 control-label" for="expiry-month">Expiration Date:</label>
         <div class="col-sm-9">
           <div class="row">
             <div class="col-xs-3">
@@ -60,8 +47,8 @@ $(window).scroll(function() {
                 <option value="03">Mar (03)</option>
                 <option value="04">Apr (04)</option>
                 <option value="05">May (05)</option>
-                <option value="06">June (06)</option>
-                <option value="07">July (07)</option>
+                <option value="06">Jun (06)</option>
+                <option value="07">Jul (07)</option>
                 <option value="08">Aug (08)</option>
                 <option value="09">Sep (09)</option>
                 <option value="10">Oct (10)</option>
@@ -89,23 +76,21 @@ $(window).scroll(function() {
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label" for="cvv">Card CVV</label>
+        <label class="col-sm-3 control-label" for="cvv">Card CVV:</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
+        <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
         </div>
       </div>
-      
-       <div class="form-group">
+      <div class="form-group">
         <label class="col-sm-3 control-label" for="cvv">Total: </label>
         <div class="col-sm-3">
         </div>
       </div>
-      
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
-          <button type="button" class="btn btn-primary">Pay Now</button>
-          <a href = "tempProducts.jsp"><button type="button" class="btn btn-danger">Cancel</button></a>
-        </div>
+        <button type="button" class="btn btn-primary">Pay Now</button>
+        <a href = "tempProducts.jsp"><button type="button" class="btn btn-danger">Cancel</button></a>
+       	</div>
       </div>
     </fieldset>
   </form>

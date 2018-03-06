@@ -5,113 +5,88 @@
 <html>
 <head>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>My Profile</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="Style/styles.css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
-	$(window).scroll(function() {    
-	    var scroll = $(window).scrollTop();
-	
-	    if (scroll >= 50) {
-	        $(".nav2").addClass("navbar-fixed-top");
-	    } else {
-	        $(".nav2").removeClass("navbar-fixed-top");
-	    }
-	});
-	</script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>My Profile</title>
 </head>
 
 <body class="container-fluid">
-  <%
-  	if(session.getAttribute("username")==null){
-  		response.sendRedirect("Home.jsp");
+
+<%
+  if(session.getAttribute("username")==null){
+  	response.sendRedirect("Home.jsp");
   	}
-  %>
+%>
 
-	<div class="row">
-		<%@ include file="navbar.jsp" %>
-  	</div>
-  		<div class="row">
-		<h3 class="site-title">My Profile</h3>
+<div class="row"><%@ include file="navbar.jsp" %></div>
+
+<div class="row">
+	<div class="col-md-9">
 		<div class="row">
-			<div class="col-md-9">
-				<div class="row">
-					<div class="panel">
-						<div class=" panel-body ">
-							<div class="col-md-5">
-								<img class="img-responsive" src="http://www.pvhc.net/img240/uyttxprhsqycyximpzjb.png" style="width: 30%;"> 
-								<input type="button" class="btn btn-lg btn-primary btn-sm signup-btn" value="Edit Profile" onclick="relocate_prof()">
-								<script>
-									function relocate_prof()
-									{
-									     location.href = "EditProf.jsp";
-									} 
-								</script>
-								<div class=" clearfix">
-									<h3>${username}</h3>
-								</div>
+			<div class="panel">
+				<div class=" panel-body ">
+					<div class="col-md-5">
+						<img class="img-responsive" src="http://www.pvhc.net/img240/uyttxprhsqycyximpzjb.png" style="width: 30%;"> 
+						<a href = "EditProf.jsp"><button type="button" class="btn btn-lg btn-primary btn-sm signup-btn">Edit My Profile</button></a>
+							<div class=" clearfix">
+								<h3>${username}</h3>
 							</div>
+					</div>
 							
-							
-							<div class="container">
-							<h3>Purchase History</h3>
-								<div class="row">
-									<div class="table-responsive">
-							      <table class="table table-bordered">
-							        <thead>
-							          <tr>
-							            <th>#</th>
-							            <th>Product Name</th>
-							            <th>Date</th>
-							            <th>Price</th>
-							          </tr>
-							        </thead>
-							        <tbody>
-							          <tr>
-							            <td>1</td>
-							            <td>Apple iphone 6</td>
-							            <td>11/6/2014</td>
-							            <td>$899.00</td>
-							          </tr>
-							          <tr>
-							            <td>2</td>
-							            <td>LG G3</td>
-							            <td>10/6/2014</td>
-							            <td>$621.00</td>
-							          </tr>
-							          <tr>
-							            <td>3</td>
-							            <td>Samsung Galaxy S5</td>
-							            <td>11/9/2013</td>
-							            <td>$640.00</td>
-							          </tr>
-							          <tr>
-							            <td>4</td>
-							            <td>Rook Landing Page</td>
-							            <td>11/6/2014</td>
-							            <td>$12.00</td>
-							          </tr>
-							        </tbody>
-							      </table>
+					<div class="container">
+						<h3>Purchase History</h3>
+							<div class="row">
+								<div class="table-responsive">
+									<table class="table table-bordered">
+							        	<thead>
+							          		<tr>
+									            <th>#</th>
+									            <th>Product Name</th>
+									            <th>Date</th>
+									            <th>Price</th>
+							          		</tr>
+							        	</thead>
+							        	
+							        	<tbody>
+								        	<tr>
+									            <td>1</td>
+									            <td>Apple iphone 6</td>
+									            <td>11/6/2014</td>
+									            <td>$899.00</td>
+								          	</tr>
+									        <tr>
+									            <td>2</td>
+									            <td>LG G3</td>
+									            <td>10/6/2014</td>
+									            <td>$621.00</td>
+									       </tr>
+								           <tr>
+									            <td>3</td>
+									            <td>Samsung Galaxy S5</td>
+									            <td>11/9/2013</td>
+									            <td>$640.00</td>
+								           </tr>
+								           <tr>
+									            <td>4</td>
+									            <td>Rook Landing Page</td>
+									            <td>11/6/2014</td>
+									            <td>$12.00</td>
+								           </tr>
+							        	</tbody>
+							      	</table>
 							    </div>
-								</div>
 							</div>
-
-
-						</div>
 					</div>
 				</div>
-
 			</div>
-
-
 		</div>
-
 	</div>
+</div>
+
 </body>
 </html>
