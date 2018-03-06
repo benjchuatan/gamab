@@ -17,34 +17,43 @@
 <div class="row"><%@ include file="navbar.jsp" %></div>
   	
   	
-<div class="w3-content w3-display-container">
-	<img class="mySlides" src="Watch1.jpeg" style="width:100%" style="height:200%">
-	<img class="mySlides" src="Watch2.jpeg" style="width:100%">
-	<img class="mySlides" src="Watch3.jpeg" style="width:100%">
-	<img class="mySlides" src="Watch4.jpeg" style="width:100%">
-	<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-	<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+<div class="display-container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+    
+	<div class="carousel-inner">
+      <div class="item active">
+        <img src="Watch1.jpeg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="Watch2.jpeg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="Watch3.jpeg" alt="New york" style="width:100%;">
+      </div>
+      
+      <div class="item">
+        <img src="Watch4.jpeg" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
-
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-</script>
 
 </body>
 </html>

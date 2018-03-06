@@ -31,8 +31,8 @@
 			<div class="panel">
 				<div class=" panel-body ">
 					<div class="col-md-5">
-						<img class="img-responsive" src="http://www.pvhc.net/img240/uyttxprhsqycyximpzjb.png" style="width: 30%;"> 
-						<a href = "EditProf.jsp"><button type="button" class="btn btn-lg btn-primary btn-sm signup-btn">Edit My Profile</button></a>
+						<img class="img-responsive" src="prof.png" style="width: 100%"></br> 
+						<a href = "EditProf.jsp"><button type="button" class="btn btn-lg btn-primary btn-block signup-btn">Edit My Profile</button></a>
 							<div class=" clearfix">
 								<h3>${bean.firstname}</h3>
 							</div>
