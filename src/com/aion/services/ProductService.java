@@ -35,12 +35,13 @@ public class ProductService {
 				Product p = new Product();
 				
 				p.setName(rs.getString(Product.NAME));
-					System.out.println("asdasdas" + p.getName());
 				p.setManufacturer(rs.getString(Product.MANUFACTURER));
 				p.setDescription(rs.getString(Product.DESCRIPTION));
 				p.setIdproducts(rs.getInt(Product.IDPRODUCTS));
 				p.setPrice(rs.getFloat(Product.PRICE));
 				p.setFilename(rs.getString(Product.FILENAME));
+				System.out.println("asdasdas " + p.getFilename());
+
 				productlists.add(p);
 			}		
 
