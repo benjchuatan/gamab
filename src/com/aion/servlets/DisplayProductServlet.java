@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.aion.services.ProductService;
 import com.aion.javabean.Product;
 /**
- * Servlet implementation class DisplayProductsServlet
+ * Servlet implementations class DisplayProductsServlet
  */
 @WebServlet("/DisplayProductsServlet")
 public class DisplayProductServlet extends HttpServlet {
