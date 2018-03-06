@@ -31,7 +31,8 @@ public class SearchProductServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		doPost(request, response);
 	}
 
 	/**
@@ -39,7 +40,6 @@ public class SearchProductServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 		
 		Product p = new Product();
 		p.setName(request.getParameter(Product.NAME));
@@ -47,6 +47,8 @@ public class SearchProductServlet extends HttpServlet {
 		ArrayList<Product> Product = productService.getSelectedProducts(p);
 
 		request.setAttribute("productlists", Product);
+		
+		request.getRequestDispatcher("Results.jsp").forward(request, response);
 
 	}
 
