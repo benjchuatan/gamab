@@ -1,11 +1,16 @@
 package com.aion.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.aion.services.ProfileService;
+import com.aion.javabean.ProfileBean;;
 
 /**
  * Servlet implementation class DisplayProfileServlet
@@ -25,17 +30,14 @@ public class DisplayProfileServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String uname = request.getParameter("username");
+		ProfileService profserv = new ProfileService();
+		ArrayList<ProfileBean> profiles = profserv.getSelectedUser(uname);
+		System.out.println("wtf");
+		request.setAttribute("profile", profiles);
+		request.getRequestDispatcher("userprof.jsp").forward(request, response);
 	}
 
 }

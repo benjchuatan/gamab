@@ -17,10 +17,10 @@ public class ProfileService {
 	String username ="root";
 	String password = "password";
 
-	public ArrayList getSelectedUser(String a){
+	public  ArrayList getSelectedUser(String a){
 		ArrayList<ProfileBean> profilebeanlist = new ArrayList<>();
 		String sql = "SELECT " + ProfileBean.FIRSTNAME + ","+ ProfileBean.LASTNAME +" FROM " + ProfileBean.TABLE_NAME + " "
-				+ "Inner Join user on " + ProfileBean.USERID + " = " + UserBean.USERID + " Where "+UserBean.USERNAME+" = " + a;
+				+ "Inner Join "+ UserBean.TABLE_NAME2 + " on profile.iduser  = user.iduser Where "+ UserBean.USERNAME+" = " + a;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -30,8 +30,10 @@ public class ProfileService {
 			
 			while(rs.next()) {
 				ProfileBean bean = new ProfileBean();
-				bean.setFirstname(rs.getString(ProfileBean.FIRSTNAME));
-				bean.setLastname(rs.getString(ProfileBean.LASTNAME));
+				bean.setFirst_name(rs.getString(ProfileBean.FIRSTNAME));
+				
+				bean.setLast_name(rs.getString(ProfileBean.LASTNAME));
+				profilebeanlist.add(bean);
 				
 			}
 			

@@ -5,34 +5,32 @@ import java.util.Date;
 
 public class ProfileBean implements Serializable {
 	public static final String  USERID = "iduser";
-	public static final String  FIRSTNAME = "firstname";
-	public static final String LASTNAME ="lastname";
+	public static final String  FIRSTNAME = "first_name";
+	public static final String LASTNAME ="last_name";
 	public static final String ADDRESS ="address";
 	public static final String BDAY ="birthday";
 	public static final String TABLE_NAME = "profile";
 	
 	private int iduser;
-	private String firstname;
-	private String lastname;
-    private String address;
-    private Date birthday;
-	public int getIduser() {
+	private String first_name;
+	private String last_name;
+    public int getIduser() {
 		return iduser;
 	}
 	public void setIduser(int iduser) {
 		this.iduser = iduser;
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getFirst_name() {
+		return first_name;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
 	}
-	public String getLastname() {
-		return lastname;
+	public String getLast_name() {
+		return last_name;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
 	}
 	public String getAddress() {
 		return address;
@@ -46,4 +44,7 @@ public class ProfileBean implements Serializable {
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
+	private String address;
+    private Date birthday;
+	
 }
