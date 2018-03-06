@@ -50,6 +50,9 @@
 		      <li><a href="tempProducts.jsp">Analog Watches</a></li>
 		      <li><a href="tempProducts.jsp">Digital Watches</a></li>
 		      <li><a href="tempProducts.jsp">Smart Watches</a></li>
+		      <c:if test="${sessionScope.username != null}">
+		      <li><a href="DisplayProfileServlet">Profile</a></li>
+		      </c:if>
 		 </ul>
 	</div>
 </nav>

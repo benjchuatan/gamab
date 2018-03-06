@@ -34,7 +34,7 @@
 						<img class="img-responsive" src="http://www.pvhc.net/img240/uyttxprhsqycyximpzjb.png" style="width: 30%;"> 
 						<a href = "EditProf.jsp"><button type="button" class="btn btn-lg btn-primary btn-sm signup-btn">Edit My Profile</button></a>
 							<div class=" clearfix">
-								<h3>${username}</h3>
+								<h3>${bean.firstname}</h3>
 							</div>
 					</div>
 							
