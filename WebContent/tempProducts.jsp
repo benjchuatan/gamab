@@ -37,7 +37,7 @@ $(window).scroll(function() {
 	      <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
 	        <div class="row img-part">
 	          <div class="col-md-12 col-sm-12 colxs-12 img-section">
-	            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
+		                    <img class="img-responsive" src="${p.filename}"alt="" style="min-height:50px;height:300px; min-width: 20px;width:700px;">
 	          </div>
 	          <div class="col-md-12 col-sm-12 col-xs-12 image-title">
 	            <h3>${p.name}</h3>
