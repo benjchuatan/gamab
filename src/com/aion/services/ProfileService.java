@@ -81,4 +81,9 @@ public class ProfileService {
 		
 		return profilebeantrans;
 	}
+	
+	public void addUsers() {
+		String sql = "insert into secprg.user(username,password,privilege) values('boknuy24','asd',4);\r\n" + 
+				"insert into secprg.profile(iduser,first_name,last_name,email,address) values (LAST_INSERT_ID(),'?','?','?','?')";
+	}
 }
