@@ -26,8 +26,7 @@ $(window).scroll(function() {
 	<div class="row">
 		<%@ include file="navbar.jsp" %>
   	</div>
- 
-	
+
 	<!----- Watch Management Tables ----------------------------------------------------------------------------->
   	<div class = "container">
   	<h2> Manage Products </h2>
@@ -67,13 +66,12 @@ $(window).scroll(function() {
 				  </tbody>
 			</table>
 			
+			<div class="form-group">
+				<div class ="col-sm-6 col-sm-push-2">
+					<a class = "btn btn-danger" href="userprof.jsp">Delete Watch</a>
+					<input type="submit" class="btn btn-primary" id="submit" value="Edit"/> <!----- no value for submit ---------->				
+				</div>
+			</div>
 		</div>
-		
-		<div class = "container">
-			<a class = "btn btn-primary" href="AddWatch.jsp">Add Watch</a>
-			<a class = "btn btn-success" href="ManageWatch.jsp">Edit Watch Products</a>
-			<a class = "btn btn-danger" href="ManageWatch.jsp">Delete Watch</a>
-		</div>
-	
 </body>
 </html>
