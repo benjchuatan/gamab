@@ -29,13 +29,8 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary">Login</button>
-                        <input  type="button" class="btn btn-primary" onclick = "relocate_home()" value = "Sign Up">
-                        <script>
-						function relocate_home()
-						{
-						     location.href = "SignUp.jsp";
-						} 
-					</script>
+                        <a href = "SignUp.jsp"><button type="button" class="btn btn-primary">Sign Up</button></a>
+                        
                    </form>
                    </c:otherwise>
     			</c:choose>
