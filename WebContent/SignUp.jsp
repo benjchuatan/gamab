@@ -24,7 +24,8 @@
 				<input type="text" name="lastname" value="" class="form-control input-lg" placeholder="Last Name" />
 			</div>
 			</div>
-				<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" /> 
+				<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" />
+				<input type="text" name="username" value="" class="form-control input-lg" placeholder="Username" /> 
 				<input type="password" name="password" value=""class="form-control input-lg" placeholder="Password" /> 
 				<input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password" /> 
 				<input type ="text" name = "billing_address" value="" class="form-control input-lg" placeholder="Billing Address" />
