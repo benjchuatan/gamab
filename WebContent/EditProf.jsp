@@ -32,7 +32,8 @@
 				<input type ="text" name = "old_billing_address" value="" class="form-control input-lg" placeholder="Old Billing Address" />
 				<input type ="text" name = "new_billing_address" value="" class="form-control input-lg" placeholder="New Billing Address" />
 				<input type ="text" name = "old_shipping_address" value="" class="form-control input-lg" placeholder="Old Shipping Address" />
-				<input type ="text" name = "new_shipping_address" value="" class="form-control input-lg" placeholder="New Shipping Address" /> <br> 
+				<input type ="text" name = "new_shipping_address" value="" class="form-control input-lg" placeholder="New Shipping Address" /> <br>
+				<button type="button" class="btn btn-lg btn-primary signup-btn">Upload New Profile Picture</button></br></br> 
 				<a href = "userprof.jsp"><button type="button" class="btn btn-lg btn-primary signup-btn">Edit My Profile</button></a>
 				<a href = "userprof.jsp"><button type="button" class="btn btn-lg btn-danger signup-btn">Cancel</button></a>
 				
