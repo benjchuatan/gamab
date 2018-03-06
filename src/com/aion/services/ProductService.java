@@ -2,6 +2,7 @@ package com.aion.services;
 
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,26 +15,22 @@ import com.aion.javabean.Product;
 
 
 public class ProductService {
+	String url ="jdbc:mysql://localhost:3306/secprg";
+	String username ="root";
+	String password = "password";
 	
 	public ArrayList getAllProducts(){
 		ArrayList<Product> productlists = new ArrayList<>();
 		
-		String sql = "SELECT * FROM" + Product.TABLE_NAME;
-		
-		BasicDataSource bds = new BasicDataSource();
-		bds.setDriverClassName("com.mysql.jdbc.Driver");
-		bds.setUrl("jdbc:mysql://localhost:3306/aion");
-		bds.setUsername("root");
-		bds.setPassword("password");
+		String sql = "SELECT * FROM secprg." + Product.TABLE_NAME;
 		
 		
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+	
 		try {
-			conn = DBManager.getConnection();
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				Product p = new Product();
 				
@@ -46,19 +43,12 @@ public class ProductService {
 				p.setFilename(rs.getString(Product.FILENAME));
 				productlists.add(p);
 			}		
-		} catch (Exception e) {
+
+		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally{
-			try {
-				rs.close();
-				pstmt.close();
-				conn.close();				
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
+		
 		
 		return productlists;
 	}
