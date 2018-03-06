@@ -2,6 +2,7 @@ package com.aion.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,10 +33,12 @@ public class DisplayProfileServlet extends HttpServlet {
 	 */
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String uname = request.getParameter("username");
+		String uname = (String) request.getSession().getAttribute("username");
+		System.out.println(uname);
 		ProfileService profserv = new ProfileService();
 		ArrayList<ProfileBean> profiles = profserv.getSelectedUser(uname);
 		System.out.println("wtf");
+		//System.out.println(profiles);
 		request.setAttribute("profile", profiles);
 		request.getRequestDispatcher("userprof.jsp").forward(request, response);
 	}

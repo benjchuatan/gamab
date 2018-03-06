@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <div>
+${username }
 	<nav class="navbar navbar-inverse navbar-static-top nav-upper nav1">
   		<div class="container-fluid">
   			<c:choose>
@@ -57,9 +58,9 @@
 	<div class="container-fluid">
 		  <ul class="nav navbar-nav">
 		      <li><a href="Home.jsp">Home</a></li>
-		      <li><a href="tempProducts.jsp">Analog Watches</a></li>
-		      <li><a href="tempProducts.jsp">Digital Watches</a></li>
-		      <li><a href="tempProducts.jsp">Smart Watches</a></li>
+		      <li><a href="DisplayProductServlet">Analog Watches</a></li>
+		      <li><a href="DisplayProductServlet">Digital Watches</a></li>
+		      <li><a href="DisplayProductServlet">Smart Watches</a></li>
 		      <c:if test="${sessionScope.username != null}">
 		      <li><a href="DisplayProfileServlet">Profile</a></li>
 		      </c:if>

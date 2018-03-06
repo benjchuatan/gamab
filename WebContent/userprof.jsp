@@ -34,8 +34,13 @@
 						<img class="img-responsive" src="prof.png" style="width: 100%"></br> 
 						<a href = "EditProf.jsp"><button type="button" class="btn btn-lg btn-primary btn-block signup-btn">Edit My Profile</button></a>
 							<div class=" clearfix">
-								<h3>${bean.firstname}</h3>
+							<h3>Hello</h3>
+							<c:forEach items = "${profile}" var = "a" >
+							
+								<h3>${a.first_name}</h3>
+							</c:forEach>
 							</div>
+							
 					</div>
 							
 					<div class="container">

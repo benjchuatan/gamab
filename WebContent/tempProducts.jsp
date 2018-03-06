@@ -55,7 +55,6 @@ $(window).scroll(function() {
 </div>
 </br></br>
 <a href="checkout.jsp" class="btn btn-success add-cart-btn" style ="float: right">Proceed To Checkout</a>
-<h3><a href = "Home.jsp">Back to Home</a></h3>
 
 </body>
 </html>
