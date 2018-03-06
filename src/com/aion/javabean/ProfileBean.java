@@ -7,14 +7,18 @@ public class ProfileBean implements Serializable {
 	public static final String  USERID = "iduser";
 	public static final String  FIRSTNAME = "first_name";
 	public static final String LASTNAME ="last_name";
-	public static final String ADDRESS ="address";
-	public static final String BDAY ="birthday";
+	public static final String EMAIL ="email";
+	public static final String BIL_AD ="billing_add";
+	public static final String SHI_AD ="shipping_add";
 	public static final String TABLE_NAME = "profile";
 	
 	private int iduser;
 	private String first_name;
 	private String last_name;
-    public int getIduser() {
+	private String billing_add;
+	private String shipping_add;
+	private String email;
+	public int getIduser() {
 		return iduser;
 	}
 	public void setIduser(int iduser) {
@@ -32,19 +36,25 @@ public class ProfileBean implements Serializable {
 	public void setLast_name(String last_name) {
 		this.last_name = last_name;
 	}
-	public String getAddress() {
-		return address;
+	public String getBilling_add() {
+		return billing_add;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setBilling_add(String billing_add) {
+		this.billing_add = billing_add;
 	}
-	public Date getBirthday() {
-		return birthday;
+	public String getShipping_add() {
+		return shipping_add;
 	}
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
+	public void setShipping_add(String shipping_add) {
+		this.shipping_add = shipping_add;
 	}
-	private String address;
-    private Date birthday;
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+    
 	
 }

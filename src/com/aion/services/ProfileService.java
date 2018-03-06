@@ -60,7 +60,6 @@ public class ProfileService {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url,username,password);
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, a);
@@ -82,8 +81,30 @@ public class ProfileService {
 		return profilebeantrans;
 	}
 	
-	public void addUsers() {
-		String sql = "insert into secprg.user(username,password,privilege) values('boknuy24','asd',4);\r\n" + 
-				"insert into secprg.profile(iduser,first_name,last_name,email,address) values (LAST_INSERT_ID(),'?','?','?','?')";
+	public void addUsers(ProfileBean p, UserBean u) {
+		String sql = "insert into secprg.user(username,password,privilege) values(?,?,4)";
+		String sql1 = "insert into secprg.profile(iduser,first_name,last_name,email,shipping_add,billing_add) values(LAST_INSERT_ID(),?,?,?,?,?)";
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			PreparedStatement st1 = con.prepareStatement(sql1);
+			st.setString(1, u.getUsername());
+			st.setString(2, u.getPassword());
+			st1.setString(1,p.getFirst_name());
+			st1.setString(2, p.getLast_name());
+			st1.setString(3, p.getEmail());
+			st1.setString(4,p.getShipping_add());
+			st1.setString(5,p.getBilling_add());
+			st.executeUpdate();
+			st1.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 	}
 }
