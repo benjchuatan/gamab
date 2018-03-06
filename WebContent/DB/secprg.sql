@@ -53,8 +53,8 @@ DROP TABLE IF EXISTS `profile`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `profile` (
   `iduser` int(11) NOT NULL,
-  `first name` varchar(45) DEFAULT NULL,
-  `last name` varchar(45) DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
@@ -85,7 +85,8 @@ CREATE TABLE `user` (
   `username` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `privilege` int(11) DEFAULT '0',
-  PRIMARY KEY (`iduser`)
+  PRIMARY KEY (`iduser`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -108,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-07  1:58:05
+-- Dump completed on 2018-03-07  2:04:41
