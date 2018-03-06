@@ -32,7 +32,9 @@
 	          <div class="col-md-12 col-sm-12 col-xs-12 image-description">
 	            <p>${p.description}</p>
 	          </div>
-	          
+	          <div>
+	            <button type="button" class="btn btn-lg btn-primary signup-btn">Add to Cart</button>
+	          </div>
 	        </div>
 	      </div>
       </c:forEach>
