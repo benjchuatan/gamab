@@ -53,8 +53,8 @@ DROP TABLE IF EXISTS `profile`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `profile` (
   `iduser` int(11) NOT NULL,
-  `first name` varchar(45) DEFAULT NULL,
-  `last name` varchar(45) DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE `profile` (
 
 LOCK TABLES `profile` WRITE;
 /*!40000 ALTER TABLE `profile` DISABLE KEYS */;
-INSERT INTO `profile` VALUES (2,'Paulo','Corpuz','#2810 Manila Residences Tower 1','1995-07-28',22);
+INSERT INTO `profile` VALUES (2,'Paulo','Corpuz','#2810 Manila Residences Tower 1','1995-07-28',22),(3,'Edward','Curugan','#35 Maroon St.','1997-03-02',21),(4,'Benjamin','Tan','#641 Manga St.','1995-11-14',22),(5,'Paolo','Gamab','#8399 Maharlika Ave.','1996-02-08',22),(6,'Kaye','Solomon','#1 Anabu','1994-01-02',24),(7,'Fritz','Flores','#2 Manila','1993-02-03',25),(8,'Gregory','Cu','#3 Binondo','1984-03-04',34),(9,'Labing','Anyag','#4 Cebu','1991-04-05',27),(1,'AION','Admin','#2401 Malate','2017-05-06',1);
 /*!40000 ALTER TABLE `profile` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,8 +84,9 @@ CREATE TABLE `user` (
   `iduser` int(11) NOT NULL,
   `username` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
-  `previlege` int(11) DEFAULT '0',
-  PRIMARY KEY (`iduser`)
+  `privilege` int(11) DEFAULT '0',
+  PRIMARY KEY (`iduser`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -95,7 +96,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin','admin',1),(2,'pncorpuz','asd',2);
+INSERT INTO `user` VALUES (1,'admin','admin',1),(2,'pncorpuz','asd',2),(3,'ercurugan','asd',3),(4,'bgtan','asd',4),(5,'pggamab','asd',4),(6,'kysolomon','asd',4),(7,'fkflores','asd',4),(8,'gcu','asd',4),(9,'lanyag','asd',4);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -108,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-07  0:33:05
+-- Dump completed on 2018-03-07  2:04:41

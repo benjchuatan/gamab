@@ -7,6 +7,7 @@ public class UserBean implements Serializable {
 	public static final String USERID = "iduser";
 	public static final String USERNAME = "username";
 	public static final String PASSWORD ="password";
+	public static final String TABLE_NAME = "user";
 	public static final String PRIVILEGE = "previlege";
 	
 	private int iduser;
