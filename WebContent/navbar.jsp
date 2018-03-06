@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <div>
-${username }
+
 	<nav class="navbar navbar-inverse navbar-static-top nav-upper nav1">
   		<div class="container-fluid">
   			<c:choose>
@@ -30,11 +30,7 @@ ${username }
                         <input id="password" type="password" class="form-control" name="password">                                        
                     </div>
 					<button type="submit" class="btn btn-primary" onclick ="myFunction()">Login</button>
-					<script>
-						function myFunction() {
-    					alert("Successfully Logged In.");
-						}
-					</script>
+					
                     <a href = "SignUp.jsp"><button type="button" class="btn btn-primary">Sign Up</button></a>    
                	</form>
                 </c:otherwise>

@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.aion.services.ProfileService;
-import com.aion.javabean.ProfileBean;;
+import com.aion.javabean.ProfileBean;
+import com.aion.javabean.TransBean;;
 
 /**
  * Servlet implementation class DisplayProfileServlet
@@ -37,9 +38,11 @@ public class DisplayProfileServlet extends HttpServlet {
 		System.out.println(uname);
 		ProfileService profserv = new ProfileService();
 		ArrayList<ProfileBean> profiles = profserv.getSelectedUser(uname);
-		System.out.println("wtf");
+		ArrayList<TransBean> trans = profserv.getUserTrans(uname);
+		
 		//System.out.println(profiles);
 		request.setAttribute("profile", profiles);
+		request.setAttribute("transaction",trans);
 		request.getRequestDispatcher("userprof.jsp").forward(request, response);
 	}
 

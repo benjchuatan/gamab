@@ -39,6 +39,8 @@
 							
 								<h3>${a.first_name}</h3>
 							</c:forEach>
+							
+							
 							</div>
 							
 					</div>
@@ -58,30 +60,19 @@
 							        	</thead>
 							        	
 							        	<tbody>
-								        	<tr>
-									            <td>1</td>
-									            <td>Apple iphone 6</td>
-									            <td>11/6/2014</td>
-									            <td>$899.00</td>
-								          	</tr>
-									        <tr>
-									            <td>2</td>
-									            <td>LG G3</td>
-									            <td>10/6/2014</td>
-									            <td>$621.00</td>
-									       </tr>
-								           <tr>
-									            <td>3</td>
-									            <td>Samsung Galaxy S5</td>
-									            <td>11/9/2013</td>
-									            <td>$640.00</td>
-								           </tr>
-								           <tr>
-									            <td>4</td>
-									            <td>Rook Landing Page</td>
-									            <td>11/6/2014</td>
-									            <td>$12.00</td>
-								           </tr>
+							        	<tr>
+							        	 <c:forEach items = "${transaction}" var = "b">
+							        	 	<td>${b.transID}</td>
+							        	 	<td>${b.name}</td>
+							        	 	<td>${b.date}</td>
+											<td>${b.price}</td>
+											</tr>
+											 </c:forEach>
+											
+							        	 
+							        	 
+							        	
+								        	
 							        	</tbody>
 							      	</table>
 							    </div>

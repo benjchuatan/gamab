@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.aion.javabean.ProfileBean;
+import com.aion.javabean.TransBean;
 import com.aion.javabean.UserBean;
 
 public class ProfileService {
@@ -48,5 +49,36 @@ public class ProfileService {
 		//System.out.println(profilebeanlist);
 		
 		return profilebeanlist;
+	}
+	
+	
+	public  ArrayList<TransBean> getUserTrans(String a){
+		ArrayList<TransBean> profilebeantrans = new ArrayList<>();
+		
+		String sql = "select transhistory.transID,transhistory.date,product.price,product.name from transhistory\r\n" + 
+				     "inner join product on transhistory.productID = product.ProductID where transhistory.username=?";
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, a);
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				TransBean bean = new TransBean();
+				bean.setName(rs.getString(TransBean.NAME));
+				bean.setTransID(rs.getInt(TransBean.TRANS_ID));
+				bean.setDate(rs.getString(TransBean.DATE));
+				bean.setPrice(rs.getInt(TransBean.PRICE));
+				profilebeantrans.add(bean);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return profilebeantrans;
 	}
 }
