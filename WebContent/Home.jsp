@@ -8,6 +8,7 @@
 <title>AION Wrist Watch</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="Style/styles.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
@@ -27,48 +28,40 @@ $(window).scroll(function() {
 	<div class="row">
 		<%@ include file="navbar.jsp" %>
   	</div>
-	<div class="row">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<ol class="carousel-indicators">
-			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			    <li data-target="#myCarousel" data-slide-to="1"></li>
-			    <li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-			<div class="carousel-inner">
-		    <div class="item active">
-		      <img src="Style/watch.jpeg" alt="Los Angeles">
-		    </div>
-		    <div class="item">
-		      <img src="Style/watch.jpeg" alt="Chicago">
-		    </div>
-		
-		    <div class="item">
-		      <img src="Style/watch.jpeg" alt="New York">
-		    </div>
-		  	</div>
-		</div>
-	</div>
-	<div>
-		<ul>
-		  <h1>What's Hot</h1>
-		  <li style="float:right"><a class="active" href="tempProducts.jsp">See More+</a></li>
-		</ul>
-	</div>
-	<div class="row" >
-		<div class= container style="display:flex; width:826px; margin:0 auto;">
-			<div class= "prod" style="background-color:yellow;">
-			</div>
-			<div class="prod" style="background-color:blue;">
-			</div>
-			<div class="prod" style="background-color:black;">
-			</div>
-			<div class="prod" style="background-color:green;">
-			</div>
-		</div>
-	</div>
-	
-	
+  	
+  	
+  
+  	
 
+  <div class="w3-content w3-display-container">
+	  <img class="mySlides" src="Watch1.jpeg" style="width:100%" style="height:200%">
+	  <img class="mySlides" src="Watch2.jpeg" style="width:100%">
+	  <img class="mySlides" src="Watch3.jpeg" style="width:100%">
+	  <img class="mySlides" src="Watch4.jpeg" style="width:100%">
+	
+	  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+	  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
 
 </body>
 </html>
