@@ -33,7 +33,7 @@ $(window).scroll(function() {
 				<table class="table">
 				  <thead>
 				    <tr>
-				      <th scope="col">idproduct</th>
+				      <th scope="col">#</th>
 				      <th scope="col">Name</th>
 				      <th scope="col">Manufacturer</th>
 				      <th scope="col">Description</th>
@@ -68,8 +68,8 @@ $(window).scroll(function() {
 			
 			<div class="form-group">
 				<div class ="col-sm-6 col-sm-push-2">
-					<a class = "btn btn-danger" href="userprof.jsp">Delete Watch</a>
-					<input type="submit" class="btn btn-primary" id="submit" value="Edit"/> <!----- no value for submit ---------->				
+					<input type="submit" class="btn btn-primary" id="submit" value="Edit Watch"/> <!----- no value for submit ---------->
+					<a class = "btn btn-danger">Delete Watch</a>			
 				</div>
 			</div>
 		</div>

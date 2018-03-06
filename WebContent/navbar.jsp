@@ -53,4 +53,15 @@
  			</div>
 		</nav>
 		
+		<nav class="navbar navbar-default">
+		  	<div class="container-fluid">
+		    <ul class="nav navbar-nav">
+		      <li><a href="Home.jsp">Home</a></li>
+		      <li><a href="tempProducts.jsp">Analog Watches</a></li>
+		      <li><a href="tempProducts.jsp">Digital Watches</a></li>
+		      <li><a href="tempProducts.jsp">Smart Watches</a></li>
+		    </ul>
+		  	</div>
+		</nav>
+		
 </div>
