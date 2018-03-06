@@ -24,12 +24,11 @@
 							class="form-control input-lg" placeholder="Last Name" />
 					</div>
 				</div>
-				<input type="text" name="email" value=""
-					class="form-control input-lg" placeholder="Email Address" /> <input
-					type="password" name="password" value=""
-					class="form-control input-lg" placeholder="Password" /> <input
-					type="password" name="confirm_password" value=""
-					class="form-control input-lg" placeholder="Confirm Password" /> <br>
+				<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" /> 
+				<input type="password" name="password" value=""class="form-control input-lg" placeholder="Password" /> 
+				<input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password" /> 
+				<input type ="text" name = "billing_address" value="" class="form-control input-lg" placeholder="Billing Address" />
+				<input type ="text" name = "shipping_address" value="" class="form-control input-lg" placeholder="Shipping Address" /> <br>
 				<span class="help-block">By clicking Create my account, you
 					agree to our Terms and that you have read our Data Use Policy,
 					including our Cookie Use.</span> <input type="button"

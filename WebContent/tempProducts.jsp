@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>AION Product List</title>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type="text/css" href="Style/styles.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -30,82 +31,18 @@ $(window).scroll(function() {
 </div>
   	
 
-<div class="container">
-  <div class="row">
-    <div class="row">
-      <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-        <div class="row img-part">
-          <div class="col-md-12 col-sm-12 colxs-12 img-section">
-            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-            <h3>Image Title</h3>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-            <p>Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et ...</p>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12">
-          <a href="#" class="btn btn-success add-cart-btn">ADD TO CART</a>
-          </div>
-        </div>
-      </div>
-      
-      
-      <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-        <div class="row img-part">
-          <div class="col-md-12 col-sm-12 colxs-12 img-section">
-            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-            <h3>Image Title</h3>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-            <p>Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et ...</p>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <a href="#" class="btn btn-success add-cart-btn">ADD TO CART</a>
-          </div>
-        </div>
-      </div>
-      
-      
-      <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-        <div class="row img-part">
-          <div class="col-md-12 col-sm-12 colxs-12 img-section">
-            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-            <h3>Image Title</h3>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-            <p>Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et ...</p>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <a href="#" class="btn btn-success add-cart-btn">ADD TO CART</a>
-          </div>
-        </div>
-      </div>
-      
-      
-      <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-        <div class="row img-part">
-          <div class="col-md-12 col-sm-12 colxs-12 img-section">
-            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-            <h3>Image Title</h3>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-            <p>Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et ...</p>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <a href="#" class="btn btn-success add-cart-btn">ADD TO CART</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="row" >
+		<div class= container style="display:flex; width:826px; margin:0 auto;">
+			<div class= "prod" style="background-color:yellow;">
+			</div>
+			<div class="prod" style="background-color:blue;">
+			</div>
+			<div class="prod" style="background-color:black;">
+			</div>
+			<div class="prod" style="background-color:green;">
+			</div>
+		</div>
+	</div>
 </br></br>
 <a href="checkout.jsp" class="btn btn-success add-cart-btn" style ="float: right">Proceed To Checkout</a>
 <h3><a href = "Home.jsp">Back to Home</a></h3>

@@ -4,24 +4,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>My Profile</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="Style/styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
-
-    if (scroll >= 50) {
-        $(".nav2").addClass("navbar-fixed-top");
-    } else {
-        $(".nav2").removeClass("navbar-fixed-top");
-    }
-});
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+	$(window).scroll(function() {    
+	    var scroll = $(window).scrollTop();
+	
+	    if (scroll >= 50) {
+	        $(".nav2").addClass("navbar-fixed-top");
+	    } else {
+	        $(".nav2").removeClass("navbar-fixed-top");
+	    }
+	});
+	</script>
 </head>
+
 <body class="container-fluid">
   <%
   	if(session.getAttribute("username")==null){
@@ -40,30 +44,61 @@ $(window).scroll(function() {
 					<div class="panel">
 						<div class=" panel-body ">
 							<div class="col-md-5">
-								<img class="img-responsive"
-									src="http://www.pvhc.net/img240/uyttxprhsqycyximpzjb.png"
-									style="width: 30%;"> <i class="fa fa-wrench"> Edit</i>
+								<img class="img-responsive" src="http://www.pvhc.net/img240/uyttxprhsqycyximpzjb.png" style="width: 30%;"> 
+								<input type="button" class="btn btn-lg btn-primary btn-sm signup-btn" value="Edit Profile" onclick="relocate_prof()">
+								<script>
+									function relocate_prof()
+									{
+									     location.href = "EditProf.jsp";
+									} 
+								</script>
 								<div class=" clearfix">
-									<h3>Paulo Corpuz</h3>
+									<h3>${username}</h3>
 								</div>
 							</div>
-							<div class="col-md-7">
-								<div class="profile-block">
-									<ul class="list-group">
-										<li class="list-group-item">Vehicles Lifted <span
-											class="badge">12</span></li>
-										<li class="list-group-item">WishList <span class="badge">5</span></li>
-										<li class="list-group-item">Notifications <span
-											class="badge">3</span></li>
-										<li class="list-group-item">Notifications <span
-											class="badge">3</span></li>
-
-										<li class="list-group-item">Notifications <span
-											class="badge">3</span></li>
-
-										<li class="list-group-item">Notifications <span
-											class="badge">3</span></li>
-									</ul>
+							
+							
+							<div class="container">
+							<h3>Purchase History</h3>
+								<div class="row">
+									<div class="table-responsive">
+							      <table class="table table-bordered">
+							        <thead>
+							          <tr>
+							            <th>#</th>
+							            <th>Product Name</th>
+							            <th>Date</th>
+							            <th>Price</th>
+							          </tr>
+							        </thead>
+							        <tbody>
+							          <tr>
+							            <td>1</td>
+							            <td>Apple iphone 6</td>
+							            <td>11/6/2014</td>
+							            <td>$899.00</td>
+							          </tr>
+							          <tr>
+							            <td>2</td>
+							            <td>LG G3</td>
+							            <td>10/6/2014</td>
+							            <td>$621.00</td>
+							          </tr>
+							          <tr>
+							            <td>3</td>
+							            <td>Samsung Galaxy S5</td>
+							            <td>11/9/2013</td>
+							            <td>$640.00</td>
+							          </tr>
+							          <tr>
+							            <td>4</td>
+							            <td>Rook Landing Page</td>
+							            <td>11/6/2014</td>
+							            <td>$12.00</td>
+							          </tr>
+							        </tbody>
+							      </table>
+							    </div>
 								</div>
 							</div>
 
