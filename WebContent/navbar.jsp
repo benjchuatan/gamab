@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <div>
+${username }
 	<nav class="navbar navbar-inverse navbar-static-top nav-upper nav1">
   		<div class="container-fluid">
   			<c:choose>

@@ -12,20 +12,23 @@ import com.aion.javabean.UserBean;
 
 public class ProfileService {
 	
-	String sql = "select * from user where username=? and password=?";
+	
 	String url ="jdbc:mysql://localhost:3306/secprg";
 	String username ="root";
 	String password = "password";
 
-	public  ArrayList getSelectedUser(String a){
+	public  ArrayList<ProfileBean> getSelectedUser(String a){
 		ArrayList<ProfileBean> profilebeanlist = new ArrayList<>();
-		String sql = "SELECT " + ProfileBean.FIRSTNAME + ","+ ProfileBean.LASTNAME +" FROM " + ProfileBean.TABLE_NAME + " "
-				+ "Inner Join "+ UserBean.TABLE_NAME2 + " on profile.iduser  = user.iduser Where "+ UserBean.USERNAME+" = " + a;
+		//String sql = "SELECT " + ProfileBean.FIRSTNAME + ","+ ProfileBean.LASTNAME +" FROM " + ProfileBean.TABLE_NAME + " "
+		//	+ "Inner Join "+ UserBean.TABLE_NAME2 + " on profile.iduser  = user.iduser Where "+ UserBean.USERNAME+" = " + a;
 		
+		String sql = "select profile.first_name, profile.last_name,profile.address,profile.age,profile.birthday,user.username from profile inner join user on profile.iduser = user.iduser where user.username =?";  
+				
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url,username,password);
 			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, a);
 			ResultSet rs = st.executeQuery();
 			
 			while(rs.next()) {
@@ -42,7 +45,7 @@ public class ProfileService {
 			e.printStackTrace();
 		}
 		
-		
+		//System.out.println(profilebeanlist);
 		
 		return profilebeanlist;
 	}
