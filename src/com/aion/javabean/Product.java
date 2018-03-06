@@ -8,7 +8,7 @@ public class Product {
 	public static final String PRICE = "price";
 	public static final String FILENAME = "filename";
 	public static final String FILE_LOCATION = "file_location";
-	public static final String IDPRODUCTS="idproduct";
+	public static final String IDPRODUCTS="ProductID";
 	
 	private String filename;
 	
