@@ -36,15 +36,13 @@
                 </c:otherwise>
     		</c:choose>	
     			
-    			<form action="SearchProductServlet" class="navbar-form navbar-right" role="search">
+    			<form action="SearchProductServlet" class="navbar-form navbar-left" role="search">
+    				<div class="form-group">
 						<div class="input-group" id = "searchid">
 						<input type="text" class="form-control" placeholder = "Search" name = "name"/>
-							<span class="input-group-addon">
-							  <!--  <i class="fa fa-search"></i> -->
-								<input type = "submit" href="SearchProductServlet"></span></a>
-							</span>
 						</div>
-					</form>
+					</div>
+				</form>
   		</div>		
 </nav>
   	
