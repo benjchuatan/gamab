@@ -23,7 +23,12 @@
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                         <input id="password" type="password" class="form-control" name="password">                                        
                     </div>
-					<button type="submit" class="btn btn-primary">Login</button>
+					<button type="submit" class="btn btn-primary" onclick ="myFunction()">Login</button>
+					<script>
+						function myFunction() {
+    					alert("Successfully Logged In.");
+						}
+					</script>
                     <a href = "SignUp.jsp"><button type="button" class="btn btn-primary">Sign Up</button></a>    
                	</form>
                 </c:otherwise>
