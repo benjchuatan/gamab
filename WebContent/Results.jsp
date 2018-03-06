@@ -30,9 +30,17 @@
 	            <h3>${p.name}</h3>
 	          </div>
 	          <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-	            <p>${p.description}</p>
+	            <p>Description: ${p.description}</p>
 	          </div>
-	          
+	          <div class="col-md-12 col-sm-12 col-xs-12 image-manufaturer">
+	            <p>Manufacturer: ${p.manufacturer}</p>
+	          </div>
+	          <div class="col-md-12 col-sm-12 col-xs-12 image-price">
+	            <p>Price: ${p.price}</p>
+	          </div>
+	          <div>
+	            <button type="button" class="btn btn-lg btn-primary signup-btn">Add to Cart</button>
+	          </div>
 	        </div>
 	      </div>
       </c:forEach>
