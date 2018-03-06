@@ -9,7 +9,12 @@
   			<c:choose>
   				<c:when test="${sessionScope.username != null}">
   				<form action="Logout" class="navbar-form navbar-right">
-      				<input type="submit" class="btn btn-primary" value="Logout">
+      				<input type="submit" class="btn btn-primary" value="Logout" onclick = "myFunction2()">
+      				<script>
+						function myFunction2() {
+    					alert("Successfully Logged Out.");
+						}
+					</script>
       			</form>
                 </c:when>
                 <c:otherwise>
