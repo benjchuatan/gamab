@@ -15,6 +15,7 @@ import com.aion.javabean.Product;
 
 
 
+
 public class ProductService {
 	String url ="jdbc:mysql://localhost:3306/secprg";
 	String username ="root";
@@ -76,7 +77,7 @@ public class ProductService {
 				p.setManufacturer(rs.getString(Product.MANUFACTURER));
 				p.setDescription(rs.getString(Product.DESCRIPTION));
 				p.setIdproducts(rs.getInt(Product.IDPRODUCTS));
-				p.setPrice(rs.getFloat(Product.PRICE));
+//				p.setPrice(rs.getFloat(Product.PRICE));
 				p.setFilename(rs.getString(Product.FILENAME));
 				System.out.println("asdasdas " + p.getFilename());
 
@@ -90,5 +91,33 @@ public class ProductService {
 		
 		
 		return productlists;
+	}
+	
+	public void addProducts(Product p) {
+		String sql = "INSERT INTO secprg." + Product.TABLE_NAME + "("
+				+ Product.NAME + ","
+				+ Product.MANUFACTURER + ","
+				+ Product.DESCRIPTION + ","
+				+ Product.PRICE + ","
+				+ Product.FILENAME + ")"
+				+ "VALUES (?,?,?,?,?)";
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, p.getName());
+			st.setString(2, p.getManufacturer());
+			st.setString(3, p.getDescription());
+			st.setFloat(4, p.getPrice());
+			st.setString(5, p.getFilename());
+			st.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 	}
 }
