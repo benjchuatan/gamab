@@ -77,7 +77,7 @@ public class ProductService {
 				p.setManufacturer(rs.getString(Product.MANUFACTURER));
 				p.setDescription(rs.getString(Product.DESCRIPTION));
 				p.setIdproducts(rs.getInt(Product.IDPRODUCTS));
-//				p.setPrice(rs.getFloat(Product.PRICE));
+				p.setPrice(rs.getFloat(Product.PRICE));
 				p.setFilename(rs.getString(Product.FILENAME));
 				System.out.println("asdasdas " + p.getFilename());
 

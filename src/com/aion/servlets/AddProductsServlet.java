@@ -66,7 +66,7 @@ public class AddProductsServlet extends HttpServlet {
 		p.setName(request.getParameter(Product.NAME));
 		p.setManufacturer(request.getParameter(Product.MANUFACTURER));
 		p.setDescription(request.getParameter(Product.DESCRIPTION));
-	//	p.setPrice(request.getParameterValues(Product.PRICE));
+		p.setPrice(Float.parseFloat(request.getParameter(Product.PRICE)));
 		p.setFilename(fileName);
 		ProductService productsService = new ProductService();
 		productsService.addProducts(p);
