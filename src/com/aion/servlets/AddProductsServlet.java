@@ -50,7 +50,7 @@ public class AddProductsServlet extends HttpServlet {
 		
         Part part = request.getPart("filename");
 		
-		String fileName = System.currentTimeMillis() + "-image.jpg";
+		String fileName = System.currentTimeMillis() + "-image.png";
 		System.out.println(fileName);
 		String title = request.getParameter("title");
 		System.out.println("title : " + title);
@@ -70,7 +70,7 @@ public class AddProductsServlet extends HttpServlet {
 		p.setFilename(fileName);
 		ProductService productsService = new ProductService();
 		productsService.addProducts(p);
-		request.getRequestDispatcher("home.jsp").forward(request, response);
+		request.getRequestDispatcher("DisplayProductsServlet").forward(request, response);
 		
 	}
 
