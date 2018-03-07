@@ -8,12 +8,12 @@ public class UserBean implements Serializable {
 	public static final String USERNAME = "username";
 	public static final String PASSWORD ="password";
 	public static final String TABLE_NAME2 = "user";
-	public static final String PRIVILEGE = "previlege";
+	public static final String PRIVILEGE = "privilege";
 	
 	private int iduser;
 	private  String username;
 	private String password;
-	private int previlege;
+	private int privilege;
 	public int getIduser() {
 		return iduser;
 	}
@@ -33,10 +33,10 @@ public class UserBean implements Serializable {
 		this.password = password;
 	}
 	public int getPrevilege() {
-		return previlege;
+		return privilege;
 	}
-	public void setPrevilege(int previlege) {
-		this.previlege = previlege;
+	public void setPrevilege(int privilege) {
+		this.privilege = privilege;
 	} 
 
 }

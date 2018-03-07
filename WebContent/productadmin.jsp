@@ -12,7 +12,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<%
+  if(session.getAttribute("isadmin")==null){
+  	response.sendRedirect("Home.jsp");
+  	}
+%>
 <div class="row"><%@ include file="navbar.jsp" %></div>
  
 	

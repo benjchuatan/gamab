@@ -6,14 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.aion.javabean.UserBean;
+
 public class LoginDao {
-	
-	String sql = "select * from user where username=? and password=?";
 	String url ="jdbc:mysql://localhost:3306/secprg";
 	String username ="root";
 	String password = "password";
 	
+	
 	public boolean check(String uname, String pass) throws SQLException {
+		
+		String sql = "select * from user where username=? and password=?";
+		
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -30,6 +34,33 @@ public class LoginDao {
 			
 		} catch (ClassNotFoundException e) {
 			
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+	
+	public boolean checkadmin(String uname) {
+		String sql = "select privilege from user where username =?";
+		UserBean u = new UserBean();
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, uname);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				u.setPrevilege(rs.getInt(UserBean.PRIVILEGE));
+			}
+			
+			System.out.println("hello");
+			System.out.println(u.getPrevilege());
+			if(u.getPrevilege() != 4) {
+				return true;
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
