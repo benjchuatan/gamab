@@ -15,13 +15,13 @@ import com.aion.services.ProfileService;
  * Servlet implementation class addUsers
  */
 @WebServlet("/addUsers")
-public class addUsers extends HttpServlet {
+public class SignUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public addUsers() {
+    public SignUpServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

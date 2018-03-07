@@ -47,10 +47,19 @@ public class Login extends HttpServlet {
 			if(dao.check(uname, pass)) {
 				HttpSession session = request.getSession();
 				
-				if(dao.checkadmin(uname)) {
+				if(dao.checkadmin(uname)==1) {
 					session.setAttribute("isadmin", uname);
 					session.setAttribute("username", uname);
+					response.sendRedirect("userManager.jsp");
+				}else if(dao.checkadmin(uname)==2) {
+					session.setAttribute("isproductmanager", uname);
+					session.setAttribute("username", uname);
 					response.sendRedirect("productadmin.jsp");
+				}else if(dao.checkadmin(uname)==3) {
+					session.setAttribute("isaccountingmanager", uname);
+					session.setAttribute("username", uname);
+					response.sendRedirect("home.jsp");
+					
 				}else {
 					session.setAttribute("username", uname);
 					response.sendRedirect("Home.jsp");

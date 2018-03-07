@@ -40,7 +40,7 @@ public class LoginDao {
 		return false;
 	}
 	
-	public boolean checkadmin(String uname) {
+	public  int checkadmin(String uname) {
 		String sql = "select privilege from user where username =?";
 		UserBean u = new UserBean();
 		try {
@@ -56,7 +56,7 @@ public class LoginDao {
 			System.out.println("hello");
 			System.out.println(u.getPrevilege());
 			if(u.getPrevilege() != 4) {
-				return true;
+				return u.getPrevilege();
 			}
 			
 		} catch (ClassNotFoundException | SQLException e) {
@@ -64,7 +64,7 @@ public class LoginDao {
 			e.printStackTrace();
 		}
 		
-		return false;
+		return 4;
 	}
 
 

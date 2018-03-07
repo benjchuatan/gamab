@@ -13,7 +13,7 @@
 </head>
 <body>
 <%
-  if(session.getAttribute("isadmin")==null){
+  if(session.getAttribute("isproductmanager")==null){
   	response.sendRedirect("Home.jsp");
   	}
 %>
