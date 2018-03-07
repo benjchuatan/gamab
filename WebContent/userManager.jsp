@@ -9,8 +9,10 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>AION User Management</title>
 </head>
 
 <body class="container-fluid">
@@ -19,14 +21,32 @@
   	response.sendRedirect("Home.jsp");
   	}
 %>
+
 <div class="row"><%@ include file="navbar.jsp" %></div>
-	<form action="UserAdminServlet" method ="post">
-		Username here<input type="text" name="username"><br>
-		Password Here<input type="text" name="password">
-		Set privilege<input type="text" name="privilege">
-		<button type="submit">SUBMIT!</button>
-	
-	
-	</form>
+
+<div class = "row">
+	<div class="col-md-6 col-md-offset-3">
+		<form action="UserAdminServlet" method ="post">
+		<legend>Create User</legend>
+		<div>
+			<div class="col-xs-6 col-md-4">
+			<input type="text" name="username" class="form-control input-lg" placeholder="Username" />
+			</div>
+			
+			<div class="col-xs-6 col-md-4">
+			<input type="password" name="password" value=""class="form-control input-lg" placeholder="Password" />
+			</div>
+			
+			<div class="col-xs-6 col-md-6">
+			<input type="text" name="privilege" value="" class="form-control input-lg" placeholder="Privilege Level" />
+			</div>
+		</div>
+		
+		<button type="submit" class="btn btn-lg btn-primary signup-btn">Create Your Account</button>
+		<a href ="Home.jsp"><button type="button" class="btn btn-lg btn-danger signup-btn">Cancel</button></a>
+		
+		</form>
+	</div>
+</div>
 </body>
 </html>

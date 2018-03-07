@@ -6,56 +6,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>AION Product Management</title>
-<!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="Style/styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
-
-    if (scroll >= 50) {
-        $(".nav2").addClass("navbar-fixed-top");
-    } else {
-        $(".nav2").removeClass("navbar-fixed-top");
-    }
-});
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="row">
-		<%@ include file="navbar.jsp" %>
-  	</div>
-  	<!----- Add Watch Form ----------------------------------------------------------------------------->
+
+<div class="row"><%@ include file="navbar.jsp" %></div>
+  	
   	<div class="container">
-        <div class = "col-lg-6">
+        <div class = "col-md-6 col-md-offset-3">
         <form action = "AddProductsServlet" method = "POST" enctype="multipart/form-data">
               <fieldset class="form-group">
-                <label for="formGroupExampleInput">Artwork Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name" name = "name">
+                <input type="text" class="form-control input-lg" id="formGroupExampleInput" placeholder="Watch Name" name = "name">
               </fieldset>
               <fieldset class="form-group">
-                <label for="formGroupExampleInput2">Artist Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="manufacturer" name = "manufacturer">
+                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Manufacturer" name = "manufacturer">
               </fieldset>
               <fieldset class="form-group">
-                <label for="formGroupExampleInput2">Artwork Description</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="description" name = "description">
+                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Description" name = "description">
               </fieldset>
               <fieldset class="form-group">
-                <label for="formGroupExampleInput2">Location of Art</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="price" name = "price">
+                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "price">
               </fieldset>
               <fieldset class="form-group">
                 <label for="exampleInputFile">Upload Art</label>
                 <input type="file" class="form-control-file" id="exampleInputFile" name= "filename">
               </fieldset>
-              <input type = "submit" a href = "DisplayProductsServlet" button type="submit" class="btn btn-primary">Submit</a>
+              <input type = "submit" a href = "DisplayProductsServlet" button type="submit" class="btn btn-primary"></a>
+              <a href ="Home.jsp"><button type="button" class="btn btn-md btn-danger signup-btn">Cancel</button></a>
         </form>
-            </div>
+        </div>
     </div>
 </body>
 </html>
