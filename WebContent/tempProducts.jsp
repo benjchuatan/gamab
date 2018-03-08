@@ -11,35 +11,35 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
-<body>
+<body class="container-fluid">
 
 <div class="row"><%@ include file="navbar.jsp" %></div>
   	
 
-<div class="container-fluid">
+
   <div class="row">
     
 	   <c:forEach items = "${productlists}" var = "p">    
-	      <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
+	      <div class="col-md-3 col-sm-3 col-xs-12 image-main-section" align="center">
 	        <div class="row img-part">
-	          <div class="col-md-12 col-sm-12 colxs-12 img-section">
-		                    <img class="img-responsive" src="${p.filename}"alt="" style="min-height:50px;height:300px; min-width: 20px;width:700px;">
-	          </div>
-	          <div class="col-md-12 col-sm-12 col-xs-12 image-title">
+	          
+		                    <img class="img-responsive" src="${p.filename}" alt="alternative" >
+	          
+	          
 	            <h3>${p.name}</h3>
-	          </div>
-	          <div class="col-md-12 col-sm-12 col-xs-12 image-description">
+	          
+	          
 	            <p>Description: ${p.description}</p>
-	          </div>
-	          <div class="col-md-12 col-sm-12 col-xs-12 image-manufaturer">
-	            <p>Manufacturer: ${p.manufacturer}</p>
-	          </div>
-	          <div class="col-md-12 col-sm-12 col-xs-12 image-price">
+	         
+	          
+	            <p>Manufacturer: ${p.manufacturer}</p>	
+	          
+	          
 	            <p>Price: ${p.price}</p>
-	          </div>
-	          <div>
+	          
+	          
 	            <button type="button" class="btn btn-md btn-primary signup-btn">Add to Cart</button>
-	          </div>
+	          
 	          
 	        </div>
 	      </div>
