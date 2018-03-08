@@ -43,7 +43,7 @@
 		</div>
 		
 		<button type="submit" class="btn btn-lg btn-primary signup-btn">Create Your Account</button>
-		<a href ="Home.jsp"><button type="button" class="btn btn-lg btn-danger signup-btn">Cancel</button></a>
+		
 		
 		</form>
 	</div>

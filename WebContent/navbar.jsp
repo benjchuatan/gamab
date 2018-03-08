@@ -51,9 +51,9 @@
 	<div class="container-fluid">
 		  <ul class="nav navbar-nav">
 		      <li><a href="Home.jsp">Home</a></li>
-		      <li><a href="DisplayProductsServlet">Analog Watches</a></li>
-		      <li><a href="DisplayProductsServlet">Digital Watches</a></li>
-		      <li><a href="DisplayProductsServlet">Smart Watches</a></li>
+		      <li><a href="DisplayProductsServlet?page=Analog">Analog Watches</a></li>
+		      <li><a href="DisplayProductsServlet?page=Digital">Digital Watches</a></li>
+		      <li><a href="DisplayProductsServlet?page=SmartWatch">Smart Watches</a></li>
 		      <c:if test="${sessionScope.username != null}">
 		      <li><a href="DisplayProfileServlet">Profile</a></li>
 		      </c:if>
