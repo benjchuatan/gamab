@@ -63,7 +63,7 @@ public class ProductService {
 	public ArrayList getProduct(int id) {
 		ArrayList<Product> product = new ArrayList<>();
 
-		String sql = "SELECT * FROM secprg." + Product.TABLE_NAME + "WHERE" + Product.IDPRODUCTS + "=" + id;
+		String sql = "SELECT * FROM secprg." + Product.TABLE_NAME + " WHERE " + Product.IDPRODUCTS + "=" + id;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");

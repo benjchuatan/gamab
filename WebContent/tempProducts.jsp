@@ -23,7 +23,7 @@
 		<div class="col-md-3 col-sm-3 col-xs-12 image-main-section" align="center">
 	        <div class="row img-part">
 	          <img class="img-responsive" src="${p.filename}" alt="alternative" >
-	          <h3>${p.name}</h3>
+	          <h><a href="GetProductServlet?id=${p.idproducts}">${p.name}</a></h3>
 	    	</div>
 	   </div>
      </c:forEach>
