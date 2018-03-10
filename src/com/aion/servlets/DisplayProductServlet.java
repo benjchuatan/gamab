@@ -31,9 +31,9 @@ public class DisplayProductServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, 
 	IOException {
 		// TODO Auto-generated method stub
-	
+	    String a = request.getParameter("page");
 		ProductService ProductsService = new ProductService();
-		ArrayList<Product> Product = ProductsService.getAllProducts();
+		ArrayList<Product> Product = ProductsService.getAllProducts(a);
 		request.setAttribute("productlists", Product);
 		request.getRequestDispatcher("tempProducts.jsp").forward(request, response);
 	}

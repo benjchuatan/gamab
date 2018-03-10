@@ -10,6 +10,11 @@
 	margin-bottom: 0px !important;
 }
 
+
+.btn-primary{
+	background-color:#D2D7D3 !important;
+	
+}
 .prod {
 	height: 200px;
 	margin: 5px;
