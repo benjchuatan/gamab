@@ -15,35 +15,25 @@
 <title>Watch Profile</title>
 </head>
 
-<body class="container-fluid">
+<body class="container-fluid" style="background-color:lightgray;">
 
 <div class="row"><%@ include file="navbar.jsp" %></div>
 
 <div class="row">
-	<div class="col-md-9">
-		<div class="row">
-			<div class="panel">
-				<div class=" panel-body ">
-					<div class="col-md-5">
-						<img class="img-responsive" src="prof.png" style="width: 100%">
-					</div>
-							
+			
+				
 					<div class="container">
-						
-							<div class="col-xs-12 col-sm-8"><c:out value="${product[0].name}" />
-							<Legend><img src="${product[0].filename}"></Legend>
-			                    <h2>${product[0].name}</h2>
-			                    <p><strong>Manufacturer: </strong> ${product[0].manufacturer}</p>
-			                    <p><strong>Description: </strong> ${product[0].description} </p>
-			                    <p><strong>Price: </strong> ${product[0].price} </p>
-			                    <p><strong>Comments: </strong></p>
-                			</div>  
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+					<img src="${product[0].filename}">
+			        	<h2>${product[0].name}</h2>
+			            <p><strong>Manufacturer: </strong> ${product[0].manufacturer}</p>
+			            <p><strong>Description: </strong> ${product[0].description} </p>
+			            <p><strong>Price: </strong> ${product[0].price} </p>
+			            <p><strong>Comments: </strong></p>
+                	</div>  
+				
+			
 </div>
+
 
 </body>
 </html>

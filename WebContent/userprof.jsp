@@ -15,7 +15,7 @@
 <title>My Profile</title>
 </head>
 
-<body class="container-fluid">
+<body class="container-fluid" style="background-color:lightgray;">
 
 <%
   if(session.getAttribute("username")==null){
@@ -25,60 +25,43 @@
 
 <div class="row"><%@ include file="navbar.jsp" %></div>
 
-<div class="row">
-	<div class="col-md-9">
-		<div class="row">
-			<div class="panel">
-				<div class=" panel-body ">
-					<div class="col-md-5">
-						<img class="img-responsive" src="prof.png" style="width: 100%"></br> 
-						<a href = "EditProf.jsp"><button type="button" class="btn btn-lg btn-primary btn-block signup-btn">Edit My Profile</button></a>
-							<div class=" clearfix">
-							<h3>Hello</h3>
-							<c:forEach items = "${profile}" var = "a" >
+<div class=" panel-body ">
+	<div class="col-md-5">
+		<img class="img-responsive" src="prof.png" style="width: 100%"></br> 
+		<a href = "EditProf.jsp"><button type="button" class="btn btn-lg btn-primary btn-block signup-btn">Edit My Profile</button></a>
+		<div class=" clearfix">
+			<h3>Welcome back </h3>
+			<c:forEach items = "${profile}" var = "a" >
+			<h3>${a.first_name}</h3>
+			</c:forEach>
+		</div>
+	</div>
 							
-								<h3>${a.first_name}</h3>
-							</c:forEach>
-							
-							
-							</div>
-							
-					</div>
-							
-					<div class="container">
-						<h3>Purchase History</h3>
-							<div class="row">
-								<div class="table-responsive">
-									<table class="table table-bordered">
-							        	<thead>
-							          		<tr>
-									            <th>#</th>
-									            <th>Product Name</th>
-									            <th>Date</th>
-									            <th>Price</th>
-							          		</tr>
-							        	</thead>
+	<div class="container">
+		<h3>Purchase History</h3>
+			<div class="row">
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Product Name</th>
+							<th>Date</th>
+							<th>Price</th>
+						</tr>
+					</thead>
 							        	
-							        	<tbody>
-							        	<tr>
-							        	 <c:forEach items = "${transaction}" var = "b">
-							        	 	<td>${b.transID}</td>
-							        	 	<td>${b.name}</td>
-							        	 	<td>${b.date}</td>
-											<td>${b.price}</td>
-											</tr>
-											 </c:forEach>
-											
-							        	 
-							        	 
-							        	
-								        	
-							        	</tbody>
-							      	</table>
-							    </div>
-							</div>
-					</div>
-				</div>
+					<tbody>
+						<tr>
+							<c:forEach items = "${transaction}" var = "b">
+							<td>${b.transID}</td>
+							<td>${b.name}</td>
+							<td>${b.date}</td>
+							<td>${b.price}</td>
+						</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
