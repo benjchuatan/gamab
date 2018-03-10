@@ -58,6 +58,8 @@ public class ProductService {
 		return productlists;
 	}
 	
+	
+	
 	public ArrayList getProduct(int id) {
 		ArrayList<Product> product = new ArrayList<>();
 
@@ -91,17 +93,17 @@ public class ProductService {
 		return product;
 	}
 	
-	public ArrayList getAllProducts(){
+	public ArrayList getAllProducts(String a){
 		ArrayList<Product> productlists = new ArrayList<>();
 		
-		String sql = "SELECT * FROM secprg." + Product.TABLE_NAME;
-		
+		String sql1 = "select * from product where type =?";		
 		
 	
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url,username,password);
-			PreparedStatement st = con.prepareStatement(sql);
+			PreparedStatement st = con.prepareStatement(sql1);
+			st.setString(1,a);
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				Product p = new Product();
