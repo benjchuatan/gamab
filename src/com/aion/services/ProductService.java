@@ -58,6 +58,23 @@ public class ProductService {
 		return productlists;
 	}
 	
+	public void deleteProduct(int id) {
+		ArrayList<Product> product = new ArrayList<>();
+		
+		String sql = "DELETE * FROM secprg." + Product.TABLE_NAME + " WHERE " + Product.IDPRODUCTS + "=" + id;
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			ResultSet rs = st.executeQuery();
+			st.executeUpdate();	
+
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	
 	public ArrayList getProduct(int id) {
@@ -91,6 +108,40 @@ public class ProductService {
 
 		
 		return product;
+	}
+	
+	public ArrayList getAdminProducts() {
+		ArrayList<Product> productlists = new ArrayList<>();
+		
+		String sql1 = "select * from secprg.product";		
+		
+	
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql1);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				Product p = new Product();
+				
+				p.setName(rs.getString(Product.NAME));
+				p.setManufacturer(rs.getString(Product.MANUFACTURER));
+				p.setDescription(rs.getString(Product.DESCRIPTION));
+				p.setIdproducts(rs.getInt(Product.IDPRODUCTS));
+				p.setPrice(rs.getFloat(Product.PRICE));
+				p.setFilename(rs.getString(Product.FILENAME));
+				System.out.println("asdasdas " + p.getFilename());
+
+				productlists.add(p);
+			}		
+
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return productlists;
 	}
 	
 	public ArrayList getAllProducts(String a){
