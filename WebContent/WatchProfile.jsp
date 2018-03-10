@@ -19,19 +19,51 @@
 
 <div class="row"><%@ include file="navbar.jsp" %></div>
 
-<div class="row">
-			
-				
-					<div class="container">
-					<img src="${product[0].filename}">
-			        	<h2>${product[0].name}</h2>
-			            <p><strong>Manufacturer: </strong> ${product[0].manufacturer}</p>
-			            <p><strong>Description: </strong> ${product[0].description} </p>
-			            <p><strong>Price: </strong> ${product[0].price} </p>
-			            <p><strong>Comments: </strong></p>
-                	</div>  
-				
-			
+<div class="container">    
+   <div class="row">
+      <div class="panel panel-default">
+      	<div class="panel-heading">  
+      		<h4 >Watch Details</h4></div>
+       			<div class="panel-body">
+       				<div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+        				<img src="${product[0].filename}">
+                	</div>
+                      
+                   	<div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+                    	<div class="container" >
+                            <h3>${product[0].name}</h3>
+                        </div><hr>
+	                        <p><strong>Manufacturer: </strong> ${product[0].manufacturer}</p>
+							<p><strong>Description: </strong> ${product[0].description} </p>
+							<p><strong>Price: </strong> ${product[0].price} </p>
+                      </div>
+                </div>
+       </div>
+    </div>
+</div>
+
+<div class="container">    
+   <div class="row">
+      <div class="panel panel-default">
+      	<div class="panel-heading">  
+      		<h4 >Comments/Remarks</h4></div>
+       			<div class="panel-body">                     
+                   	<div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+                            <h5>This watch is so very cool.</h5>
+                      </div>
+                </div>
+       </div>
+       
+       <form>
+	    <div class="form-group">
+	      <label for="comment">Leave your comments below:</label>
+	      <textarea class="form-control" rows="5" id="comment"></textarea>
+	    </div>
+	  </form>
+    </div>
+    
+ 
+    <button type="button" class="btn btn-lg btn-primary">Add To Cart</button>
 </div>
 
 
