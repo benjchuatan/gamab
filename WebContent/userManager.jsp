@@ -15,7 +15,7 @@
 <title>AION User Management</title>
 </head>
 
-<body class="container-fluid">
+<body class="container-fluid" style="background-color:lightgray;">
 <%
   if(session.getAttribute("isadmin")==null){
   	response.sendRedirect("Home.jsp");

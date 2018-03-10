@@ -19,19 +19,17 @@
 %>
 <div class="row"><%@ include file="navbar.jsp" %></div>
  
-	
-	<!----- Watch Management Tables ----------------------------------------------------------------------------->
   	<div class = "container">
   	<h2> Manage Products </h2>
 				<table class="table">
 				  <thead>
 				    <tr>
-				      <th scope="col">idproduct</th>
+				      <th scope="col">#</th>
 				      <th scope="col">Name</th>
 				      <th scope="col">Manufacturer</th>
 				      <th scope="col">Description</th>
 				      <th scope="col">Price</th>
-				      
+				      <th></th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -41,20 +39,7 @@
 				      <td>TW Steel</td>
 				      <td>45mm Watch Face</td>
 				      <td>$400</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">2</th>
-				      <td>Pilot</td>
-				      <td>IWC Schaffhausen</td>
-				      <td>42mm Watch Face</td>
-				      <td>$5000</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">3</th>
-				      <td>Datejust</td>
-				      <td>Rolex</td>
-				      <td>42mm Watch Face</td>
-				      <td>$4000</td>
+				      <th scope="row"><input id="select-1" type="checkbox" /><label for="select-1" /></th>
 				    </tr>
 				  </tbody>
 			</table>
@@ -63,8 +48,8 @@
 		
 		<div class = "container">
 			<a class = "btn btn-primary" href="AddWatch.jsp">Add Watch</a>
-			<a class = "btn btn-success" href="ManageWatch.jsp">Edit Watch Products</a>
-			<a class = "btn btn-danger" href="ManageWatch.jsp">Delete Watch</a>
+			<a class = "btn btn-success" href="ManageWatch.jsp">Edit Watch</a>
+			<input type ="button" class = "btn btn-danger" value ="Delete Watch" id ="delbutton"/>		
 		</div>
 	
 </body>
