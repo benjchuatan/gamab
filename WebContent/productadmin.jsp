@@ -11,7 +11,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background-color:lightgray;">
 <%
   if(session.getAttribute("isproductmanager")==null){
   	response.sendRedirect("Home.jsp");
@@ -48,7 +48,7 @@
 		
 		<div class = "container">
 			<a class = "btn btn-primary" href="AddWatch.jsp">Add Watch</a>
-			<a class = "btn btn-success" href="ManageWatch.jsp">Edit Watch</a>
+			<a class = "btn btn-success" >Edit Watch</a>
 			<input type ="button" class = "btn btn-danger" value ="Delete Watch" id ="delbutton"/>		
 		</div>
 	

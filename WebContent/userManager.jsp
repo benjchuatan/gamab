@@ -24,29 +24,20 @@
 
 <div class="row"><%@ include file="navbar.jsp" %></div>
 
-<div class = "row">
-	<div class="col-md-6 col-md-offset-3">
-		<form action="UserAdminServlet" method ="post">
-		<legend>Create User</legend>
-		<div>
-			<div class="col-xs-6 col-md-4">
-			<input type="text" name="username" class="form-control input-lg" placeholder="Username" />
-			</div>
-			
-			<div class="col-xs-6 col-md-4">
-			<input type="password" name="password" value=""class="form-control input-lg" placeholder="Password" />
-			</div>
-			
-			<div class="col-xs-6 col-md-6">
-			<input type="text" name="privilege" value="" class="form-control input-lg" placeholder="Privilege Level" />
-			</div>
-		</div>
-		
-		<button type="submit" class="btn btn-lg btn-primary signup-btn">Create Your Account</button>
-		
-		
-		</form>
-	</div>
+<div class="container" id="wrap">
+	  <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form action="UserAdminServlet" method="post" accept-charset="utf-8" class="form" role="form">   
+            <legend>Create User</legend>
+ 
+                <input type="text" name="username" value="" class="form-control input-lg" placeholder="Username"  />
+                <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  />   
+                <input type="text" name="privilege" value="" class="form-control input-lg" placeholder="Privilege Level"  />                        
+                <br />
+                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Create Account</button>
+            </form>          
+          </div>
+</div>            
 </div>
 </body>
 </html>

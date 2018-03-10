@@ -12,7 +12,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+
+<body style="background-color:lightgray;">
 
 <div class="row"><%@ include file="navbar.jsp" %></div>
   	
@@ -35,8 +36,8 @@
                 <label for="exampleInputFile">Upload Art</label>
                 <input type="file" class="form-control-file" id="exampleInputFile" name= "filename">
               </fieldset>
-              <input type = "submit" a href = "DisplayProductsServlet" button type="submit" class="btn btn-primary"></a>
-              <a href ="Home.jsp"><button type="button" class="btn btn-md btn-danger signup-btn">Cancel</button></a>
+              <input type = "submit" a href = "DisplayProductsServlet" button type="submit" class="btn btn-primary btn-lg"></a>
+
         </form>
         </div>
     </div>

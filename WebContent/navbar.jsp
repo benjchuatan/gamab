@@ -22,12 +22,12 @@
                 <form id="signin" class="navbar-form navbar-right" role="form" action="Login" method="post">
                 	<div class="input-group">
                     	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="uname" type="text" class="form-control" name="username">                                        
+                        <input id="uname" type="text" class="form-control" name="username" required>                                        
                     </div>
 
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="password">                                        
+                        <input id="password" type="password" class="form-control" name="password" required>                                        
                     </div>
 					<button type="submit" class="btn btn-primary" onclick ="myFunction()">Login</button>
 					
