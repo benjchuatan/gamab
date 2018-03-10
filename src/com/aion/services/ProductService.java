@@ -58,6 +58,39 @@ public class ProductService {
 		return productlists;
 	}
 	
+	public ArrayList getProduct(int id) {
+		ArrayList<Product> product = new ArrayList<>();
+
+		String sql = "SELECT * FROM secprg." + Product.TABLE_NAME + "WHERE" + Product.IDPRODUCTS + "=" + id;
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				Product p = new Product();
+				
+				p.setName(rs.getString(Product.NAME));
+				p.setManufacturer(rs.getString(Product.MANUFACTURER));
+				p.setDescription(rs.getString(Product.DESCRIPTION));
+				p.setIdproducts(rs.getInt(Product.IDPRODUCTS));
+				p.setPrice(rs.getFloat(Product.PRICE));
+				p.setFilename(rs.getString(Product.FILENAME));
+				System.out.println("asdasdas " + p.getFilename());
+
+				product.add(p);
+			}		
+
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+		return product;
+	}
+	
 	public ArrayList getAllProducts(){
 		ArrayList<Product> productlists = new ArrayList<>();
 		
