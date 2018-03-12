@@ -61,13 +61,13 @@ public class ProductService {
 	public void deleteProduct(int id) {
 		ArrayList<Product> product = new ArrayList<>();
 		
-		String sql = "DELETE * FROM secprg." + Product.TABLE_NAME + " WHERE " + Product.IDPRODUCTS + "=" + id;
+		String sql = "DELETE FROM secprg." + Product.TABLE_NAME + " WHERE " + Product.IDPRODUCTS + "=" + id;
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url,username,password);
 			PreparedStatement st = con.prepareStatement(sql);
-			ResultSet rs = st.executeQuery();
+			System.out.print("walaa    " +  st);
 			st.executeUpdate();	
 
 		} catch (ClassNotFoundException | SQLException e) {
@@ -130,7 +130,6 @@ public class ProductService {
 				p.setIdproducts(rs.getInt(Product.IDPRODUCTS));
 				p.setPrice(rs.getFloat(Product.PRICE));
 				p.setFilename(rs.getString(Product.FILENAME));
-				System.out.println("asdasdas " + p.getFilename());
 
 				productlists.add(p);
 			}		
