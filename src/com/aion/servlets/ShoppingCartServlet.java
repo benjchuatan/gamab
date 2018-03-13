@@ -33,10 +33,11 @@ public class ShoppingCartServlet extends HttpServlet {
 		CartBean u = new CartBean();
 		CartService carserv = new CartService();
 		
-		u.setIdproducts(Integer.parseInt((String) request.getAttribute("idproduct")));
-		u.setIduser((Integer.parseInt((String) request.getSession().getAttribute("iduser"))));
+		u.setIdproducts(Integer.parseInt(request.getParameter("idproduct")));
 		
+		u.setIduser((Integer)request.getSession().getAttribute("iduser"));
 		carserv.addcart(u);
+		response.sendRedirect("Home.jsp");
 	}
 
 }
