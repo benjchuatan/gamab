@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.aion.javabean.CartBean;
 import com.aion.services.CartService;
@@ -32,11 +33,14 @@ public class ShoppingCartServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		CartBean u = new CartBean();
 		CartService carserv = new CartService();
-		
+		HttpSession session = request.getSession();
+		//session.setAttribute("iduser", dao.getiduser(uname));
 		u.setIdproducts(Integer.parseInt(request.getParameter("idproduct")));
 		
 		u.setIduser((Integer)request.getSession().getAttribute("iduser"));
 		carserv.addcart(u);
+		//session.setAttribute("cartnum",carserv.getNum((Integer)request.getSession().getAttribute("iduser")));
+		//request.getRequestDispatcher("Home.jsp").forward(request, response);
 		response.sendRedirect("Home.jsp");
 	}
 
