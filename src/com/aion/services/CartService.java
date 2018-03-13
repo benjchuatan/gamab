@@ -5,14 +5,49 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.aion.javabean.CartBean;
+import com.aion.javabean.Product;
 
 public class CartService {
  
 	String url ="jdbc:mysql://localhost:3306/secprg";
 	String username ="root";
 	String password = "password";
+	
+	public ArrayList getAllProductCart(int id) {
+		
+		String sql1 = "SELECT * FROM secprg.cart inner join secprg.product on secprg.cart.idproduct =secprg.product.ProductID where  iduser = " + id ;
+		
+		ArrayList<Product> productlists = new ArrayList<>();
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql1);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				Product p = new Product();
+				
+				p.setName(rs.getString(Product.NAME));
+				p.setManufacturer(rs.getString(Product.MANUFACTURER));
+				p.setDescription(rs.getString(Product.DESCRIPTION));
+				p.setIdproducts(rs.getInt(Product.IDPRODUCTS));
+				p.setPrice(rs.getFloat(Product.PRICE));
+				p.setFilename(rs.getString(Product.FILENAME));
+				System.out.println("asdasdas " + p.getFilename());
+
+				productlists.add(p);
+			}
+
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return productlists;
+	}
 	
 	public void addcart(CartBean a) {
 		String sql = "Insert into cart(iduser,idproduct) values(?,?)";
