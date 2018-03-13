@@ -14,7 +14,7 @@
 </head>
 
 
-<body class="container-fluid" style="background-color:lightgray;">
+<body class="container-fluid">
 
 <div class="row"><%@ include file="navbar.jsp" %></div>
   	
@@ -23,11 +23,13 @@
 		<div class="col-md-3 col-sm-3 col-xs-12 image-main-section" align="center">
 	        <div class="row img-part">
 	          <img class="img-responsive" src="${p.filename}" alt="alternative" >
-	          <h3><a href="GetProductServlet?id=${p.idproducts}">${p.name}</a></h3>
+	          <h4><a href="GetProductServlet?id=${p.idproducts}">${p.name}</a></h4>
 	    	</div>
 	   </div>
      </c:forEach>
    
 </div>
+
+<div class="row"><%@ include file="footer.jsp" %></div>
 </body>
 </html>
