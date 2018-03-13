@@ -133,3 +133,7 @@ h1:before {
     font-size: 25px;
     padding: 10px 10px;
 }
+
+textarea {
+	resize: none;
+}

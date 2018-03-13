@@ -37,6 +37,7 @@
 	                    <p><strong>Manufacturer: </strong> ${product[0].manufacturer}</p>
 						<p><strong>Description: </strong> ${product[0].description} </p>
 						<p><strong>Price: </strong> ${product[0].price} </p>
+						<button type="button" class="btn btn-lg btn-success">Add To Cart</button>
                  </div>
             </div>
       </div>
@@ -60,11 +61,12 @@
 	      <label for="comment">Leave your comments below:</label>
 	      <textarea class="form-control" rows="5" id="comment"></textarea>
 	    </div>
+	    <button type="button" class="btn btn-lg btn-primary">Submit Comment</button>
 	  </form>
-    </div>
+    </div></br></br>
     
  
-    <button type="button" class="btn btn-lg btn-primary">Add To Cart</button>
+
 </div></br>
 
 <div class="row"><%@ include file="footer.jsp" %></div>

@@ -21,18 +21,18 @@
 			<form action="EditProfileServlet" method="get" accept-charset="utf-8" class="form" role="form">
 				<div class="row">
 					<div class="col-xs-6 col-md-6">
-						<input type="text" name="firstname" value="" class="form-control input-lg" placeholder="First Name" />
+						<input type="text" name="firstname" value="" class="form-control input-lg" placeholder="First Name" required />
 					</div>
 					<div class="col-xs-6 col-md-6">
-						<input type="text" name="lastname" value=""class="form-control input-lg" placeholder="Last Name" />
+						<input type="text" name="lastname" value=""class="form-control input-lg" placeholder="Last Name" required />
 					</div>
 				</div></br>
-				<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" /></br> 
-				<input type="password" name="oldpassword" value=""class="form-control input-lg" placeholder="Old Password" /></br>  
-				<input type="password" name="new_password" value="" class="form-control input-lg" placeholder="New Password" /></br>  
-				<input type="password" name="confirm_new_password" value="" class="form-control input-lg" placeholder="Confirm New Password" /></br>  
-				<input type ="text" name = "billing_address" value="" class="form-control input-lg" placeholder="New Billing Address" /></br> 
-				<input type ="text" name = "shipping_address" value="" class="form-control input-lg" placeholder="New Shipping Address" /> <br>
+				<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" required /></br> 
+				<input type="password" name="oldpassword" value=""class="form-control input-lg" placeholder="Old Password" required /></br>  
+				<input type="password" name="new_password" value="" class="form-control input-lg" placeholder="New Password" required /></br>  
+				<input type="password" name="confirm_new_password" value="" class="form-control input-lg" placeholder="Confirm New Password" required /></br>  
+				<input type ="text" name = "billing_address" value="" class="form-control input-lg" placeholder="New Billing Address" required /></br> 
+				<input type ="text" name = "shipping_address" value="" class="form-control input-lg" placeholder="New Shipping Address" required /> <br>
 				<button type="submit" class="btn btn-lg btn-primary signup-btn">Edit Profile</button></a>
 				
 				
