@@ -28,7 +28,7 @@
 <div class=" panel-body ">
 	<div class="col-md-5">
 		<img class="img-responsive" src="prof.png" style="width: 100%"></br> 
-		<a href = "EditProf.jsp"><button type="button" class="btn btn-lg btn-primary btn-block signup-btn">Edit My Profile</button></a>
+		<a href = "EditProf.jsp"><button type="button" class="btn btn-lg btn-info btn-block signup-btn">Edit My Profile</button></a>
 		<div class=" clearfix">
 			<h3>Welcome back </h3>
 			<c:forEach items = "${profile}" var = "a" >

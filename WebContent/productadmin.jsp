@@ -42,7 +42,7 @@
 				      <td>TW Steel</td>
 				      <td>45mm Watch Face</td>
 				      <td>$400</td>
-				      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-s" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+				      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-info btn-s" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
     				  <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-s" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
 				    </tr>
 				  </tbody>
@@ -51,7 +51,7 @@
 		</div>
 		
 		<div class = "container">
-			<a class = "btn btn-primary" href="AddWatch.jsp">Add Watch</a>
+			<a class = "btn btn-info" href="AddWatch.jsp">Add Watch</a>
 			<input type ="button" class = "btn btn-danger" value ="Delete All Selected Watches" id ="delbutton"/>		
 		</div>
 	
