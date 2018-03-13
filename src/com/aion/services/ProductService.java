@@ -63,7 +63,6 @@ public class ProductService {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url,username,password);
 			PreparedStatement st = con.prepareStatement(sql);
-			ResultSet rs = st.executeQuery();
 			st.executeUpdate();	
 
 		} catch (ClassNotFoundException | SQLException e) {
