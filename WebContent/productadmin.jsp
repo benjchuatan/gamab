@@ -26,11 +26,11 @@
 					  <thead>
 					    <tr>
 					      <th input type="checkbox"></th>
-					      <th scope="col">${p.idproducts}</th>
-					      <th scope="col">${p.name}</th>
-					      <th scope="col">${p.manufacturer}</th>
-					      <th scope="col">${p.description}</th>
-					      <th scope="col">${p.price}</th>
+					      <th scope="col">ID</th>
+					      <th scope="col">Name</th>
+					      <th scope="col">Manufacturer</th>
+					      <th scope="col">Description</th>
+					      <th scope="col">Price</th>
 					      <th scope="col">Edit</th>
 					      <th scope="col">Delete</th>
 					    </tr>
@@ -38,11 +38,11 @@
 					  <tbody>
 					    <tr>
 					      <td><input type="checkbox" class="checkthis" /></td>
-					      <th scope="row">1</th>
-					      <td>CEO Canteen</td>
-					      <td>TW Steel</td>
-					      <td>45mm Watch Face</td>
-					      <td>$400</td>
+					      <th scope="row">${p.idproducts}</th>
+					      <td>${p.name}</td>
+					      <td>${p.manufacturer}</td>
+					      <td>${p.description}</td>
+					      <td>${p.price}</td>
 					      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-s" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
 	    				  <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-s" data-title="Delete" data-toggle="modal" data-target="#delete" ><a href="DeleteProductServlet?id=${p.idproducts}"><span class="glyphicon glyphicon-trash"></a></span></button></p></td>
 					    </tr>
