@@ -32,7 +32,8 @@ public class AdminServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	    String a = request.getParameter("page");
+	    
+		String a = request.getParameter("page");
 		ProductService ProductsService = new ProductService();
 		ArrayList<Product> Product = ProductsService.getAdminProducts();
 		request.setAttribute("productlists", Product);
