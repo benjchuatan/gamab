@@ -39,7 +39,7 @@
               </fieldset>
               <fieldset>
               <fieldset class="form-group">
-                <p>id:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "ProductID" value = "${product[0].idproducts}">
+                <p>id:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "ProductID" value = "${product[0].idproducts}" readonly>
               </fieldset>
               <fieldset class = "form-group">
               <p>Watch Type:</p>
