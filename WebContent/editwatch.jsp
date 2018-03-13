@@ -25,6 +25,9 @@
       	<div class="panel-body"> 
         <div class = "col-md-6 col-md-offset-3">
         <form action = "EditProductServlet" method = "POST" enctype="multipart/form-data">
+        	  <fieldset class="form-group">
+                <p>ID:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "ProductID" value = "${product[0].idproducts}" readonly>
+              </fieldset>
               <fieldset class="form-group">
                 <p>Watch Name:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput" placeholder="Watch Name" name = "name" value ="${product[0].name}">
               </fieldset>
@@ -37,10 +40,8 @@
               <fieldset class="form-group">
                 <p>Price:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "price" value = "${product[0].price}">
               </fieldset>
-              <fieldset>
-              <fieldset class="form-group">
-                <p>id:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "ProductID" value = "${product[0].idproducts}" readonly>
-              </fieldset>
+              
+              
               <fieldset class = "form-group">
               <p>Watch Type:</p>
 	              <select>

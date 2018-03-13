@@ -32,10 +32,18 @@
        			<div class="panel-body">
        				
        				<c:forEach items = "${profile}" var = "a" >
+<<<<<<< HEAD
 					<p>Name: ${a.first_name} ${a.last_name}</p>
 					<p>Billing Address: ${a.billing_add }</p>
 					<p>Shipping Address: ${a.shipping_add }</p>
 					<p>Email: ${a.email }</p>
+=======
+					<p>Name: ${a.first_name}</p>
+					</c:forEach>
+					<p>Email:</p>
+					<p>Billing Address:</p>
+					<p>Shipping Address:</p>
+>>>>>>> 4baa1a84e5f61866472cef3549a9e6df42af4fda
 					<a href="EditProf.jsp">Edit Profile</a>
 					</c:forEach>
                 </div>
