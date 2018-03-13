@@ -3,6 +3,7 @@ package com.aion.services;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.aion.javabean.CartBean;
@@ -27,6 +28,29 @@ public class CartService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	}
+	
+	public int getNum(int a) {
+		String sql = "SELECT COUNT(*) FROM cart where iduser=?";
+		int total = 0;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, a);
+			ResultSet rs = st.executeQuery();
+			rs.next();
+			return rs.getInt(1);
+
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			return total;
+		}
+		
 		
 	}
 	

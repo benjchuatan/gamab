@@ -56,6 +56,10 @@
 		      <li><a href="DisplayProductsServlet?page=SmartWatch">Smart Watches</a></li>
 		      <c:if test="${sessionScope.username != null}">
 		      <li><a href="DisplayProfileServlet">Profile</a></li>
+		      
+		      </c:if>
+		      <c:if test="${sessionScope.cartnum != null}">
+		      <li>Cart: ${sessionScope.cartnum}</li>
 		      </c:if>
 		 </ul>
 	</div>

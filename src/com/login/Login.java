@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.aion.javabean.UserBean;
+import com.aion.services.CartService;
 import com.login.dao.LoginDao;
 
 /**
@@ -39,7 +40,7 @@ public class Login extends HttpServlet {
 		String fulln = request.getParameter("fullname");
 		UserBean u = new UserBean();
 		LoginDao dao = new LoginDao();
-		
+		CartService carserv = new CartService();
 		
 		
 		PrintWriter out = response.getWriter();
@@ -72,7 +73,8 @@ public class Login extends HttpServlet {
 				}else {
 					session.setAttribute("username", uname);
 					session.setAttribute("iduser", dao.getiduser(uname));
-					System.out.println("futa: "+dao.getiduser(uname));
+					session.setAttribute("cartnum", carserv.getNum(dao.getiduser(uname)));
+					System.out.println("futa: "+carserv.getNum(dao.getiduser(uname)));
 					System.out.println("username: "+uname);
 					response.sendRedirect("Home.jsp");
 				}
@@ -87,6 +89,9 @@ public class Login extends HttpServlet {
 				//response.sendRedirect("Home.jsp");
 				
 			}
+			
+			
+			
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
