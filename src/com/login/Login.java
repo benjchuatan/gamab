@@ -58,13 +58,10 @@ public class Login extends HttpServlet {
 				}else if(dao.checkadmin(uname)==2) {
 					session.setAttribute("isproductmanager", uname);
 					session.setAttribute("username", uname);
-<<<<<<< HEAD
 					session.setAttribute("iduser", dao.getiduser(uname));
 					System.out.println("futa: "+dao.getiduser(uname));
-					response.sendRedirect("productadmin.jsp");
-=======
 					response.sendRedirect("AdminServlet");
->>>>>>> 3584b67ab3d66aaea8b0c82eda42f1d3792f05d3
+
 				}else if(dao.checkadmin(uname)==3) {
 					session.setAttribute("isaccountingmanager", uname);
 					session.setAttribute("username", uname);
