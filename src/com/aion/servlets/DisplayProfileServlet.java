@@ -35,7 +35,9 @@ public class DisplayProfileServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uname = (String) request.getSession().getAttribute("username");
-		System.out.println(uname);
+		System.out.println("benj" + uname);
+		int f = (int) request.getSession().getAttribute("iduser");
+		System.out.println("wakaka: "+ f);
 		ProfileService profserv = new ProfileService();
 		ArrayList<ProfileBean> profiles = profserv.getSelectedUser(uname);
 		ArrayList<TransBean> trans = profserv.getUserTrans(uname);

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.aion.javabean.UserBean;
 import com.login.dao.LoginDao;
 
 /**
@@ -36,8 +37,9 @@ public class Login extends HttpServlet {
 		String uname = request.getParameter("username");
 		String pass = request.getParameter("password");
 		String fulln = request.getParameter("fullname");
-		
+		UserBean u = new UserBean();
 		LoginDao dao = new LoginDao();
+		
 		
 		
 		PrintWriter out = response.getWriter();
@@ -50,18 +52,28 @@ public class Login extends HttpServlet {
 				if(dao.checkadmin(uname)==1) {
 					session.setAttribute("isadmin", uname);
 					session.setAttribute("username", uname);
+					session.setAttribute("iduser", dao.getiduser(uname));
+					System.out.println("futa: "+dao.getiduser(uname));
 					response.sendRedirect("userManager.jsp");
 				}else if(dao.checkadmin(uname)==2) {
 					session.setAttribute("isproductmanager", uname);
 					session.setAttribute("username", uname);
+					session.setAttribute("iduser", dao.getiduser(uname));
+					System.out.println("futa: "+dao.getiduser(uname));
 					response.sendRedirect("AdminServlet");
+
 				}else if(dao.checkadmin(uname)==3) {
 					session.setAttribute("isaccountingmanager", uname);
 					session.setAttribute("username", uname);
+					session.setAttribute("iduser", dao.getiduser(uname));
+					System.out.println("futa: "+dao.getiduser(uname));
 					response.sendRedirect("home.jsp");
 					
 				}else {
 					session.setAttribute("username", uname);
+					session.setAttribute("iduser", dao.getiduser(uname));
+					System.out.println("futa: "+dao.getiduser(uname));
+					System.out.println("username: "+uname);
 					response.sendRedirect("Home.jsp");
 				}
 				

@@ -13,7 +13,7 @@
 <div class="container" id="wrap">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<form action="r" method="post" accept-charset="utf-8" class="form"
+			<form action="EditProfileServlet" method="get" accept-charset="utf-8" class="form"
 				role="form">
 				<legend>Edit Profile</legend>
 				<h4>Supply Information</h4>
@@ -29,13 +29,12 @@
 				<input type="password" name="oldpassword" value=""class="form-control input-lg" placeholder="Old Password" /> 
 				<input type="password" name="new_password" value="" class="form-control input-lg" placeholder="New Password" /> 
 				<input type="password" name="confirm_new_password" value="" class="form-control input-lg" placeholder="Confirm New Password" /> 
-				<input type ="text" name = "old_billing_address" value="" class="form-control input-lg" placeholder="Old Billing Address" />
-				<input type ="text" name = "new_billing_address" value="" class="form-control input-lg" placeholder="New Billing Address" />
-				<input type ="text" name = "old_shipping_address" value="" class="form-control input-lg" placeholder="Old Shipping Address" />
-				<input type ="text" name = "new_shipping_address" value="" class="form-control input-lg" placeholder="New Shipping Address" /> <br>
-				<button type="button" class="btn btn-lg btn-primary signup-btn">Upload New Profile Picture</button></br></br> 
-				<a href = "userprof.jsp"><button type="button" class="btn btn-lg btn-primary signup-btn">Edit My Profile</button></a>
-				<a href = "userprof.jsp"><button type="button" class="btn btn-lg btn-danger signup-btn">Cancel</button></a>
+				
+				<input type ="text" name = "billing_address" value="" class="form-control input-lg" placeholder="New Billing Address" />
+				
+				<input type ="text" name = "shipping_address" value="" class="form-control input-lg" placeholder="New Shipping Address" /> <br>
+				<button type="submit" class="btn btn-lg btn-primary signup-btn">Edit My Profile</button></a>
+				
 				
 			</form>
 		</div>

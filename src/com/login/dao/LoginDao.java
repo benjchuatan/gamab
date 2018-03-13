@@ -13,7 +13,30 @@ public class LoginDao {
 	String username ="root";
 	String password = "password";
 	
-	
+	public int getiduser(String uname) {
+		UserBean u = new UserBean();
+		
+		String sql = "SELECT iduser FROM secprg.user where username = ?";
+		
+		try {
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, uname);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				u.setIduser(rs.getInt(UserBean.USERID2));
+			}
+			
+			return u.getIduser();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return 0;
+	}
 	public boolean check(String uname, String pass) throws SQLException {
 		
 		String sql = "select * from user where username=? and password=?";
@@ -53,8 +76,7 @@ public class LoginDao {
 				u.setPrevilege(rs.getInt(UserBean.PRIVILEGE));
 			}
 			
-			System.out.println("hello");
-			System.out.println(u.getPrevilege());
+
 			if(u.getPrevilege() != 4) {
 				return u.getPrevilege();
 			}

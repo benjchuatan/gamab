@@ -51,6 +51,29 @@ public class ProfileService {
 		return profilebeanlist;
 	}
 	
+	public void editprofile(String firstname,String lastname,String email,String billingadd,String shippingadd, int a) {
+		
+		String sql ="update profile set first_name = ?, last_name = ? , email = ?, billing_add = ?, shipping_add = ? where iduser = ?";
+
+		try {
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, firstname);
+			st.setString(2, lastname);
+			st.setString(3, email);
+			st.setString(4, billingadd);
+			st.setString(5, shippingadd);
+			st.setInt(6, a);
+			st.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+	
 	
 	public  ArrayList<TransBean> getUserTrans(String a){
 		ArrayList<TransBean> profilebeantrans = new ArrayList<>();
