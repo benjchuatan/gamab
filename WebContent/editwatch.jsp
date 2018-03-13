@@ -20,34 +20,31 @@
   	<div class="container">
   	<div class="panel panel-default">
       	<div class="panel-heading">  
-      		<h4 >Add Watch</h4>
+      		<h4 >Edit Watch</h4>
       	</div>
       	<div class="panel-body"> 
         <div class = "col-md-6 col-md-offset-3">
-        <form action = "AddProductsServlet" method = "POST" enctype="multipart/form-data">
+        <form action = "EditProductServlet" method = "POST" enctype="multipart/form-data">
               <fieldset class="form-group">
-                <input type="text" class="form-control input-lg" id="formGroupExampleInput" placeholder="Watch Name" name = "name">
+                <p>Watch Name:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput" placeholder="Watch Name" name = "name">
               </fieldset>
               <fieldset class="form-group">
-                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Manufacturer" name = "manufacturer">
+                <p>Manufacturer:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Manufacturer" name = "manufacturer">
               </fieldset>
               <fieldset class="form-group">
-                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Description" name = "description">
+                <p>Description:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Description" name = "description">
               </fieldset>
               <fieldset class="form-group">
-                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "price">
+                <p>Price:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "price">
               </fieldset>
               <fieldset>
               <fieldset class = "form-group">
+              <p>Watch Type:</p>
 	              <select>
 					  <option value="analog">Analog</option>
 					  <option value="digital">Digital</option>
 					  <option value="smart">Smart</option>
 				  </select>
-              </fieldset>
-              <fieldset class="form-group">
-                <label for="exampleInputFile">Upload Art</label>
-                <input type="file" class="form-control-file" id="exampleInputFile" name= "filename">
               </fieldset>
               <input type = "submit" a href = "DisplayProductsServlet" button type="submit" class="btn btn-info btn-lg"></a>
 

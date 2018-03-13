@@ -23,36 +23,41 @@
   	}
 %>
 
-<div class="row"><%@ include file="navbar.jsp" %></div>
+<div class="row"><%@ include file="navbar.jsp" %></div></br>
 
-<div class=" panel-body ">
-	<div class="col-md-5">
-		<img class="img-responsive" src="prof.png" style="width: 100%"></br> 
-		<a href = "EditProf.jsp"><button type="button" class="btn btn-lg btn-info btn-block signup-btn">Edit My Profile</button></a>
-		<div class=" clearfix">
-			<h3>Welcome back </h3>
-			<c:forEach items = "${profile}" var = "a" >
-			<h3>${a.first_name}</h3>
-			</c:forEach>
-		</div>
-	</div>
-							
-	<div class="container">
-		<h3>Purchase History</h3>
-			<div class="row">
-			<div class="table-responsive">
-				<table class="table table-bordered">
-					<thead>
-						<tr>
-							<th>#</th>
-							<th>Product Name</th>
-							<th>Date</th>
-							<th>Price</th>
-						</tr>
-					</thead>
-							        	
-					<tbody>
-						<tr>
+<div class="container">    
+   <div class="row">
+      <div class="panel panel-default">
+      	<div class="panel-heading"><h4 >My Profile</h4></div>
+       			<div class="panel-body">
+       				
+       				<c:forEach items = "${profile}" var = "a" >
+					<p>Name: ${a.first_name}</p>
+					</c:forEach>
+					<a href="EditProf.jsp">Edit Profile</a>
+                </div>
+       </div>
+    </div>
+</div>
+
+<div class="container">    
+   <div class="row">
+      <div class="panel panel-default">
+      	<div class="panel-heading">  
+      		<h4 >Purchase History</h4></div>
+       			<div class="panel-body">                     
+                   	<div class="container">        
+						  <table class="table table-bordered">
+						    <thead>
+						      <tr>
+						        <th>#</th>
+						        <th>Name</th>
+						        <th>Date</th>
+						        <th>Price</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr>
 							<c:forEach items = "${transaction}" var = "b">
 							<td>${b.transID}</td>
 							<td>${b.name}</td>
@@ -60,11 +65,12 @@
 							<td>${b.price}</td>
 						</tr>
 						</c:forEach>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+						    </tbody>
+						  </table>
+					</div>
+                </div>
+       </div>
+    </div>
 </div>
 
 </body>

@@ -22,7 +22,7 @@
   	<div class = "container">
   	<h2> Manage Products </h2>
 				<table class="table">
-				  +					<c:forEach items = "${productlists}" var = "p">
+				  				<c:forEach items = "${productlists}" var = "p">
 					  <thead>
 					    <tr>
 					      <th input type="checkbox"></th>
