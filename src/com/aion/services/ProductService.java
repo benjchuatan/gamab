@@ -21,6 +21,56 @@ public class ProductService {
 	String username ="root";
 	String password = "password";
 	
+	public ArrayList getAdminProducts() {
+		ArrayList<Product> productlists = new ArrayList<>();
+		
+		String sql1 = "select * from secprg.product";		
+		
+	
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql1);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				Product p = new Product();
+				
+				p.setName(rs.getString(Product.NAME));
+				p.setManufacturer(rs.getString(Product.MANUFACTURER));
+				p.setDescription(rs.getString(Product.DESCRIPTION));
+				p.setIdproducts(rs.getInt(Product.IDPRODUCTS));
+				p.setPrice(rs.getFloat(Product.PRICE));
+				p.setFilename(rs.getString(Product.FILENAME));
+				System.out.println("asdasdas " + p.getFilename());
+
+				productlists.add(p);
+			}		
+
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return productlists;
+	}
+
+	public void deleteProduct(int id) {
+		ArrayList<Product> product = new ArrayList<>();
+		
+		String sql = "DELETE FROM secprg." + Product.TABLE_NAME + " WHERE " + Product.IDPRODUCTS + " = " + id;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.executeUpdate();	
+
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public ArrayList getSelectedProducts(Product p) {
 		ArrayList<Product> productlists = new ArrayList<>();		
 		String sql = "SELECT * FROM secprg." + Product.TABLE_NAME + " WHERE " + 
@@ -126,6 +176,7 @@ public class ProductService {
 		
 		
 		return productlists;
+		
 	}
 	
 	public void addProducts(Product p) {

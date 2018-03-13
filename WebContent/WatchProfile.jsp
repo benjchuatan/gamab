@@ -17,7 +17,7 @@
 
 <body class="container-fluid" style="background-color:lightgray;">
 
-<div class="row"><%@ include file="navbar.jsp" %></div>
+<div class="row"><%@ include file="navbar.jsp" %></div></br>
 
 <div class="container">    
    <div class="row">
