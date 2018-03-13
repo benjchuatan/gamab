@@ -37,7 +37,7 @@
 	                    <p><strong>Manufacturer: </strong> ${product[0].manufacturer}</p>
 						<p><strong>Description: </strong> ${product[0].description} </p>
 						<p><strong>Price: </strong> ${product[0].price} </p>
-						<form>
+						<form action="ShoppingCartServlet" method="post">
 						<input type="hidden" name="idproduct" value="${product[0].idproducts}"> 
  						<button type="submit" class="btn btn-lg btn-success">Add To Cart</button>
 						</form>
