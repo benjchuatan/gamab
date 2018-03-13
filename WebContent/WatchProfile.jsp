@@ -23,23 +23,24 @@
    <div class="row">
       <div class="panel panel-default">
       	<div class="panel-heading">  
-      		<h4 >Watch Details</h4></div>
-       			<div class="panel-body">
-       				<div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-        				<img src="${product[0].filename}">
-                	</div>
-                      
-                   	<div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
-                    	<div class="container" >
-                            <h1>${product[0].name}</h1>
-                        </div><hr>
-	                        <p><strong>Manufacturer: </strong> ${product[0].manufacturer}</p>
-							<p><strong>Description: </strong> ${product[0].description} </p>
-							<p><strong>Price: </strong> ${product[0].price} </p>
-                      </div>
+      		<h4 >Watch Details</h4>
+      	</div>
+       		<div class="panel-body">
+       			<div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+        			<img src="${product[0].filename}">
                 </div>
-       </div>
-    </div>
+                      
+                <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+                    <div class="container" >
+                        <h2>${product[0].name}</h2>
+                    </div><hr>
+	                    <p><strong>Manufacturer: </strong> ${product[0].manufacturer}</p>
+						<p><strong>Description: </strong> ${product[0].description} </p>
+						<p><strong>Price: </strong> ${product[0].price} </p>
+                 </div>
+            </div>
+      </div>
+   </div>
 </div>
 
 <div class="container">    
@@ -49,8 +50,8 @@
       		<h4 >Comments/Remarks</h4></div>
        			<div class="panel-body">                     
                    	<div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
-                            <h5>This watch is so very cool.</h5>
-                      </div>
+                    	<h5>This watch is so very cool.</h5>
+                    </div>
                 </div>
        </div>
        
@@ -64,8 +65,8 @@
     
  
     <button type="button" class="btn btn-lg btn-primary">Add To Cart</button>
-</div>
+</div></br>
 
-
+<div class="row"><%@ include file="footer.jsp" %></div>
 </body>
 </html>

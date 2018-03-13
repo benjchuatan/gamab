@@ -53,9 +53,8 @@
 		</div>
 		
 		<div class = "container">
-			<a class = "btn btn-info" href="AddWatch.jsp">Add Watch</a>
-			<input type ="button" class = "btn btn-danger" value ="Delete All Selected Watches" id ="delbutton"/>		
-		</div>
+			<a class = "btn btn-info" href="AddWatch.jsp">Add Watch</a>		
+		</div></br>
 	
 </body>
 </html>

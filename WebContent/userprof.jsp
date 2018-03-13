@@ -34,6 +34,8 @@
        				<c:forEach items = "${profile}" var = "a" >
 					<p>Name: ${a.first_name}</p>
 					</c:forEach>
+					<p>Billing Address:</p>
+					<p>Shipping Address:</p>
 					<a href="EditProf.jsp">Edit Profile</a>
                 </div>
        </div>
