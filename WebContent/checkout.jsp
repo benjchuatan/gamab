@@ -14,15 +14,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background-color:lightgray;">
 
-<div class="row"><%@ include file="navbar.jsp" %></div>
+<div class="row"><%@ include file="navbar.jsp" %></div></br>
 
 
 <div class="container">
+<div class="panel panel-default">
+      	<div class="panel-heading">  
+      		<h4 >Checkout</h4>
+      	</div>
+      	<div class="panel-body"> 
   <form class="form-horizontal" role="form">
     <fieldset>
-      <legend>Payment</legend>
       <div class="form-group">
         <label class="col-sm-3 control-label" for="card-holder-name">Name on Card:</label>
         <div class="col-sm-9">
@@ -88,13 +92,15 @@
       </div>
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
-        <button type="button" class="btn btn-primary">Pay Now</button>
-        <a href = "tempProducts.jsp"><button type="button" class="btn btn-danger">Cancel</button></a>
+        <button type="button" class="btn btn-info">Pay Now</button>
        	</div>
       </div>
     </fieldset>
   </form>
 </div>
+</div>
+</div>
+
 
 
 </body>

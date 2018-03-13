@@ -42,6 +42,7 @@
 					<button type="submit" class="btn btn-lg btn-info signup-btn">Create My Account</button>
 				</div>
 			</form>
+			
 			</div>
        </div>
 	</div>
