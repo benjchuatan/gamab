@@ -37,7 +37,10 @@
 	                    <p><strong>Manufacturer: </strong> ${product[0].manufacturer}</p>
 						<p><strong>Description: </strong> ${product[0].description} </p>
 						<p><strong>Price: </strong> ${product[0].price} </p>
-						<button type="button" class="btn btn-lg btn-success">Add To Cart</button>
+						<form>
+						<input type="hidden" name="idproduct" value="${product[0].idproducts}"> 
+ 						<button type="submit" class="btn btn-lg btn-success">Add To Cart</button>
+						</form>
                  </div>
             </div>
       </div>
