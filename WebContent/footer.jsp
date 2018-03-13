@@ -1,19 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-</head>
-
-<body>
 
 <footer class="footer">
     <div class="container">
@@ -42,32 +29,23 @@
         <div class="col-sm-3">
             <h4 class="title">Category</h4>
             <div class="category">
-                <a href="#">men</a>
-                <a href="#">women</a>
-                <a href="#">boy</a>
-                <a href="#">girl</a>
-                <a href="#">Car</a>
-                <a href="#">teshart</a>
-                <a href="#">top</a>
-                <a href="#">glass</a>
-                <a href="#">baby dress</a>          
+                <a href="#">digital</a>
+                <a href="#">analog</a>
+                <a href="#">smart</a>        
             </div>
         </div>
         <div class="col-sm-3">
-            <h4 class="title">Payment</h4>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h4 class="title">Payment Methods</h4>
             <ul class="payment">
                 <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>            
                 <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>
             </ul>
             </div>
         </div>
         <hr>
-        <div class="row text-center"><a href="http://lacodeid.com/" style="color: #fff;">Copyright © Your Website lacodeid 2017</a></div>
+        <div class="row text-center"><a href="http://lacodeid.com/" style="color: #fff;">Copyright © BUKNOY 2018</a></div>
     </div>	
 </footer>
-
-</body>
-</html>
