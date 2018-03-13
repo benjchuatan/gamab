@@ -39,7 +39,9 @@ public class EditProfileServlet extends HttpServlet {
 		String b = request.getParameter("lastname");
 		String c = request.getParameter("email");
 		String d = request.getParameter("billing_address");
+		System.out.println("bil_ad: "+d);
 		String e = request.getParameter("shipping_address");
+		System.out.println("ship_ad: "+e);
 		int f = (int) request.getSession().getAttribute("iduser");
 		//request.getRequestDispatcher("DisplayProfileServlet").forward(request, response);
 		response.sendRedirect("DisplayProfileServlet");

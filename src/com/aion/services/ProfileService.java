@@ -23,7 +23,7 @@ public class ProfileService {
 		//String sql = "SELECT " + ProfileBean.FIRSTNAME + ","+ ProfileBean.LASTNAME +" FROM " + ProfileBean.TABLE_NAME + " "
 		//	+ "Inner Join "+ UserBean.TABLE_NAME2 + " on profile.iduser  = user.iduser Where "+ UserBean.USERNAME+" = " + a;
 		
-		String sql = "select profile.first_name, profile.last_name,user.username from profile inner join user on profile.iduser = user.iduser where user.username =?";  
+		String sql = "select profile.first_name, profile.last_name, profile.email,profile.billing_add,profile.shipping_add,user.username from profile inner join user on profile.iduser = user.iduser where user.username = ?";  
 				
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -35,8 +35,10 @@ public class ProfileService {
 			while(rs.next()) {
 				ProfileBean bean = new ProfileBean();
 				bean.setFirst_name(rs.getString(ProfileBean.FIRSTNAME));
-				
 				bean.setLast_name(rs.getString(ProfileBean.LASTNAME));
+				bean.setEmail(rs.getString(ProfileBean.EMAIL));
+				bean.setBilling_add(rs.getString(ProfileBean.BIL_AD));
+				bean.setShipping_add(rs.getString(ProfileBean.SHI_AD));
 				profilebeanlist.add(bean);
 				
 			}
