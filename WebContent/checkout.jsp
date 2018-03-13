@@ -25,6 +25,26 @@
       		<h4 >Checkout</h4>
       	</div>
       	<div class="panel-body"> 
+      	
+      	<div class="container">        
+						  <table class="table table-bordered">
+						    <thead>
+						      <tr>
+						        <th>#</th>
+						        <th>Item</th>
+						        <th>Date</th>
+						        <th>Price</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr>
+							
+						</tr>
+					
+						    </tbody>
+						  </table>
+					</div>
+      	
   <form class="form-horizontal" role="form">
     <fieldset>
       <div class="form-group">
