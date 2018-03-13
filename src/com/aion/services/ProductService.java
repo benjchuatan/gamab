@@ -71,6 +71,31 @@ public class ProductService {
 		}
 	}
 	
+	public void editArtworks(Product p) {
+		String sql = "UPDATE secprg." + Product.TABLE_NAME + " SET " 
+				+ Product.NAME + " = " + "? ,"
+				+ Product.MANUFACTURER + " = " + "? ,"
+				+ Product.DESCRIPTION + " = " + "? ,"
+				+ Product.PRICE + " = " + "? "
+				+ "WHERE " + Product.IDPRODUCTS + " = " + "?";
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, p.getName());
+			st.setString(2, p.getManufacturer());
+			st.setString(3, p.getDescription());
+			st.setFloat(4, p.getPrice());
+			st.setInt(5, p.getIdproducts());
+			System.out.println(st);
+			st.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+	}
+	
 	public ArrayList getSelectedProducts(Product p) {
 		ArrayList<Product> productlists = new ArrayList<>();		
 		String sql = "SELECT * FROM secprg." + Product.TABLE_NAME + " WHERE " + 
@@ -187,6 +212,8 @@ public class ProductService {
 				+ Product.PRICE + ","
 				+ Product.FILENAME + ")"
 				+ "VALUES (?,?,?,?,?)";
+		
+		System.out.println("Hey this is the statement: " + sql); 
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
