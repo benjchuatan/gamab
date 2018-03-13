@@ -67,7 +67,7 @@ public class Login extends HttpServlet {
 					session.setAttribute("username", uname);
 					session.setAttribute("iduser", dao.getiduser(uname));
 					System.out.println("futa: "+dao.getiduser(uname));
-					response.sendRedirect("home.jsp");
+					response.sendRedirect("acctingmanager.jsp");
 					
 				}else {
 					session.setAttribute("username", uname);

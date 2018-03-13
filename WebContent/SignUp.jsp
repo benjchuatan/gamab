@@ -38,7 +38,7 @@
 					<input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password" required /></br> 
 					<input type ="text" name = "billing_add" value="" class="form-control input-lg" placeholder="Billing Address" required /></br>
 					<input type ="text" name = "shipping_add" value="" class="form-control input-lg" placeholder="Shipping Address" required /> <br>
-					<span class="help-block">By clicking Create my account, you agree to our Terms and that you have read our Data Use Policy, including our Cookie Use.</span> 
+					<span class="help-block">*By clicking Create My Account, you agree to our Terms and that you have read our Data Use Policy, including our Cookie Use.</span> 
 					<button type="submit" class="btn btn-lg btn-info signup-btn">Create My Account</button>
 				</div>
 			</form>
