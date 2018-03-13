@@ -35,8 +35,11 @@
 						      </tr>
 						    </thead>
 						    <tbody>
+						  		<c:forEach items = "${productlists}" var = "p">
+						     		 <td>${p.name}</td>
+						     		 <td>${p.price}</td>
 						      <tr>
-							
+								</c:forEach>
 						</tr>
 					
 						    </tbody>
