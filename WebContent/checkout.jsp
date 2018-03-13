@@ -26,13 +26,11 @@
       	</div>
       	<div class="panel-body"> 
       	
-      	<div class="container">        
+      	<div class="container-fluid">        
 						  <table class="table table-bordered">
 						    <thead>
 						      <tr>
-						        <th>#</th>
 						        <th>Item</th>
-						        <th>Date</th>
 						        <th>Price</th>
 						      </tr>
 						    </thead>

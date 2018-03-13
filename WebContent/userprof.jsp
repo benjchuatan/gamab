@@ -48,7 +48,7 @@
       	<div class="panel-heading">  
       		<h4 >Purchase History</h4></div>
        			<div class="panel-body">                     
-                   	<div class="container">        
+                   	<div class="container-fluid">        
 						  <table class="table table-bordered">
 						    <thead>
 						      <tr>
