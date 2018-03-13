@@ -10,9 +10,8 @@
 	margin-bottom: 0px !important;
 }
 
-
 .btn-primary{
-	background-color:#D2D7D3 !important;
+	background-color:#2E86C1 !important;
 	
 }
 .prod {
@@ -43,4 +42,8 @@
 .carousel-inner>.item>img {
 	height: 380px !important;
 	min-width: 100% !important;
+}
+
+.yolo {
+    padding: 16px;
 }
