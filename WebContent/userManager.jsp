@@ -34,7 +34,7 @@
                 <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  />   
                 <input type="text" name="privilege" value="" class="form-control input-lg" placeholder="Privilege Level"  />                        
                 <br />
-                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Create Account</button>
+                <button class="btn btn-lg btn-info btn-block signup-btn" type="submit">Create Account</button>
             </form>          
           </div>
 </div>            

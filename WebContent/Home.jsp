@@ -45,7 +45,7 @@ h1:before, h1:after {
     width: 50%;
     height: 1px;
     content: '\a0';
-    background-color: red;
+    background-color: aqua;
 }
 h1:before {
     margin-left: -50%;

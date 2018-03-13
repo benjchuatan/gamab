@@ -10,7 +10,7 @@
   			<c:choose>
   				<c:when test="${sessionScope.username != null}">
   				<form action="Logout" class="navbar-form navbar-right">
-      				<input type="submit" class="btn btn-primary" value="Logout" onclick = "myFunction2()">
+      				<input type="submit" class="btn btn-info" value="Logout" onclick = "myFunction2()">
       				<script>
 						function myFunction2() {
     					alert("Successfully Logged Out.");
@@ -29,9 +29,9 @@
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                         <input id="password" type="password" class="form-control" name="password" required>                                        
                     </div>
-					<button type="submit" class="btn btn-primary" onclick ="myFunction()">Login</button>
+					<button type="submit" class="btn btn-info" onclick ="myFunction()">Login</button>
 					
-                    <a href = "SignUp.jsp"><button type="button" class="btn btn-primary">Sign Up</button></a>    
+                    <a href = "SignUp.jsp"><button type="button" class="btn btn-info">Sign Up</button></a>    
                	</form>
                 </c:otherwise>
     		</c:choose>	
@@ -47,7 +47,7 @@
 </nav>
   	
   			
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default nav2">
 	<div class="container-fluid">
 		  <ul class="nav navbar-nav">
 		      <li><a href="Home.jsp">Home</a></li>

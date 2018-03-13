@@ -31,7 +31,7 @@
                       
                    	<div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
                     	<div class="container" >
-                            <h3>${product[0].name}</h3>
+                            <h1>${product[0].name}</h1>
                         </div><hr>
 	                        <p><strong>Manufacturer: </strong> ${product[0].manufacturer}</p>
 							<p><strong>Description: </strong> ${product[0].description} </p>
