@@ -7,7 +7,8 @@
         <div class="row">
         <div class="col-sm-3">
             <h4 class="title">About us</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit, libero a molestie consectetur, sapien elit lacinia mi.</p>
+            <p>AION is the largest wristwatch retailer in the world. With over 2 million sales in 
+            over 30 countries, AION promises to deliver pristine, top of the line wriswatches to its customers.  </p>
             <ul class="social-icon">
                 <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -19,10 +20,9 @@
         </div>
         <div class="col-sm-3">
             <h4 class="title">My Account</h4>
-            <span class="acount-icon">          
-            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> List</a>
-            <a href="#"><i class="fa fa-users" aria-hidden="true"></i>Group</a>
-            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+            <span class="acount-icon">      
+            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>    
+            <a href="#"><i class="fa fa-users" aria-hidden="true"></i>Community</a>
             <a href="#"><i class="fa fa-globe" aria-hidden="true"></i> Language</a>           
             </span>
         </div>

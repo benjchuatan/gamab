@@ -22,20 +22,26 @@
   	}
 %>
 
-<div class="row"><%@ include file="navbar.jsp" %></div>
+<div class="row"><%@ include file="navbar.jsp" %></div></br>
 
 <div class="container" id="wrap">
 	  <div class="row">
+	  <div class="panel panel-default">
+      	<div class="panel-heading">  
+      		<h4 >Create User</h4>
+      	</div>
+      	<div class="panel-body"> 
         <div class="col-md-6 col-md-offset-3">
             <form action="UserAdminServlet" method="post" accept-charset="utf-8" class="form" role="form">   
-            <legend>Create User</legend>
+
  
-                <input type="text" name="username" value="" class="form-control input-lg" placeholder="Username"  />
-                <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  />   
-                <input type="text" name="privilege" value="" class="form-control input-lg" placeholder="Privilege Level"  />                        
-                <br />
+                <input type="text" name="username" value="" class="form-control input-lg" placeholder="Username"  /></br>
+                <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  /></br>   
+                <input type="text" name="privilege" value="" class="form-control input-lg" placeholder="Privilege Level"  /></br>                        
                 <button class="btn btn-lg btn-info btn-block signup-btn" type="submit">Create Account</button>
             </form>          
+          </div>
+          </div>
           </div>
 </div>            
 </div>

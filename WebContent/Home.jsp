@@ -19,13 +19,9 @@
 </head>
 
 <style>
-body, html {
-    height: 100%;
-}
-
 .bg { 
     /* The image used */
-    background-image: url("wallp.jpg");
+    background-image: url("wallp.jpg") !important;
 
     /* Full height */
     height: 100%; 
@@ -34,89 +30,6 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-h1 {
-    position: relative;
-    font-size: 30px;
-    z-index: 1;
-    overflow: hidden;
-    text-align: center;
-}
-h1:before, h1:after {
-    position: absolute;
-    top: 51%;
-    overflow: hidden;
-    width: 50%;
-    height: 1px;
-    content: '\a0';
-    background-color: aqua;
-}
-h1:before {
-    margin-left: -50%;
-    text-align: right;
-}
-.color {
-    background-color: #ccc;
-}
-
-
-.footer {
-    padding: 50px 0 20px 0;
-    background-color: #090c14;
-    color: #878c94;
-}
-.footer .title{
-	text-align: left;
-	color:#fff;
-	font-size:25px;
-}
-.footer .social-icon{
-	padding:0px;
-	margin:0px;
-}
-.footer .social-icon a{
-	display:inline-block;
-	color:#fff;
-	font-size:25px;
-	padding:5px;
-}
-.footer .acount-icon a{
-	display:block;
-	color:#fff;
-	font-size:18px;
-	padding:5px;
-	text-decoration:none;
-}
-.footer .acount-icon .fa{
-	margin-right:25px;
-}
-.footer .category a {
-    text-decoration: none;
-    color: #fff;
-    display: inline-block;
-    padding: 5px 20px;
-    margin: 1px;
-    border-radius:4px;
-    margin-top: 6px;
-    background-color: black;
-    border: solid 1px #fff;
-}
-.footer .payment{
-	margin:0px;
-	padding:0px;
-	list-style-type:none
-}
-.footer .payment li{
-	list-style-type:none
-}
-.footer .payment li a {
-    text-decoration: none;
-    display: inline-block;
-    color: #fff;
-    float: left;
-    font-size: 25px;
-    padding: 10px 10px;
 }
 
 </style>

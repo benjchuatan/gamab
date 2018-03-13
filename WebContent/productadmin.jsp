@@ -17,15 +17,15 @@
   	response.sendRedirect("Home.jsp");
   	}
 %>
-<div class="row"><%@ include file="navbar.jsp" %></div>
+<div class="row"><%@ include file="navbar.jsp" %></div>,</br>
  
   	<div class = "container">
-  	<h2> Manage Products </h2>
-				<table class="table">
-				  				<c:forEach items = "${productlists}" var = "p">
+  	<div class="panel panel-default">
+      	<div class="panel-heading"><h4 >Manage Products</h4></div>
+       			<div class="panel-body">
+				<table class="table">  				
 					  <thead>
 					    <tr>
-					      <th input type="checkbox"></th>
 					      <th scope="col">ID</th>
 					      <th scope="col">Name</th>
 					      <th scope="col">Manufacturer</th>
@@ -37,8 +37,8 @@
 					  </thead>
 					  <tbody>
 					    <tr>
-					      <td><input type="checkbox" class="checkthis" /></td>
-					      <th scope="row">${p.idproducts}</th>
+					    <c:forEach items = "${productlists}" var = "p">
+					      <td>${p.idproducts}</td>
 					      <td>${p.name}</td>
 					      <td>${p.manufacturer}</td>
 					      <td>${p.description}</td>
@@ -49,13 +49,14 @@
 					  </tbody>
      			</c:forEach>	
 			</table>
+			</div>
+			</div>
 			
 		</div>
 		
 		<div class = "container">
-			<a class = "btn btn-info" href="AddWatch.jsp">Add Watch</a>
-			<input type ="button" class = "btn btn-danger" value ="Delete All Selected Watches" id ="delbutton"/>		
-		</div>
+			<a class = "btn btn-info" href="AddWatch.jsp">Add Watch</a>		
+		</div></br>
 	
 </body>
 </html>
