@@ -47,7 +47,7 @@
 </nav>
   	
   			
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default nav2">
 	<div class="container-fluid">
 		  <ul class="nav navbar-nav">
 		      <li><a href="Home.jsp">Home</a></li>

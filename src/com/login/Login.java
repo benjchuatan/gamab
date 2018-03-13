@@ -63,6 +63,10 @@ public class Login extends HttpServlet {
 				}else {
 					session.setAttribute("username", uname);
 					response.sendRedirect("Home.jsp");
+					 out.println("<script type=\"text/javascript\">");
+					 out.println("alert('Logged In');");
+					 out.println("location='Home.jsp';");
+					 out.println("</script>");
 				}
 				
 				
