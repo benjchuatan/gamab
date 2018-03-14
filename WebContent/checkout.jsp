@@ -113,7 +113,7 @@
       </div>
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
-        <button type="button" class="btn btn-info">Pay Now</button>
+        <button type="button" class="btn btn-info">Purchase</button>
        	</div>
       </div>
     </fieldset>

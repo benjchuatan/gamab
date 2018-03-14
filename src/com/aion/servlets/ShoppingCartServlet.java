@@ -41,7 +41,8 @@ public class ShoppingCartServlet extends HttpServlet {
 		carserv.addcart(u);
 		session.setAttribute("cartnum",carserv.getNum((Integer)request.getSession().getAttribute("iduser")));
 		//request.getRequestDispatcher("Home.jsp").forward(request, response);
-		response.sendRedirect("Congrats.jsp");
+		response.sendRedirect("Home.jsp");
+		
 	}
 
 }

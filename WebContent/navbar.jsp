@@ -59,7 +59,7 @@
 		      
 		      </c:if>
 		      <c:if test="${sessionScope.cartnum != null}">
-		      <li>Cart: ${sessionScope.cartnum}</li>
+		      <li><a href="GetCartProductsServlet">Cart:( ${sessionScope.cartnum} )</a></li>
 		      </c:if>
 		 </ul>
 	</div>

@@ -39,7 +39,12 @@
 						<p><strong>Price: </strong> ${product[0].price} </p>
 						<form action="ShoppingCartServlet" method="post">
 						<input type="hidden" name="idproduct" value="${product[0].idproducts}"> 
- 						<button type="submit" class="btn btn-lg btn-success">Add To Cart</button>
+ 						<button type="submit" class="btn btn-lg btn-success" onclick="myFunction2()">Add To Cart</button>
+ 						<script>
+						function myFunction2() {
+    					alert("Added to cart.");
+						}
+					</script>
 						</form>
                  </div>
             </div>
