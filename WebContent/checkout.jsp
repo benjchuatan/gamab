@@ -25,17 +25,19 @@
       		<h4 >Checkout</h4>
       	</div>
       	<div class="panel-body"> 
-      	
+    <form class="form-horizontal" role="form" action = "AddTransactionServlet" method = "POST" enctype="multipart/form-data">  	
       	<div class="container-fluid">        
 						  <table class="table table-bordered">
 						    <thead>
 						      <tr>
+						      	<th>ID</th>
 						        <th>Item</th>
 						        <th>Price</th>
 						      </tr>
 						    </thead>
 						    <tbody>
 						  		<c:forEach items = "${productlists}" var = "p">
+                <p>ID:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "productID" value = "${p.idproducts}" readonly>
 						     		 <td>${p.name}</td>
 						     		 <td>${p.price}</td>
 						      <tr>
@@ -46,7 +48,7 @@
 						  </table>
 					</div>
       	
-  <form class="form-horizontal" role="form">
+  
     <fieldset>
       <div class="form-group">
         <label class="col-sm-3 control-label" for="card-holder-name">Name on Card:</label>
@@ -113,7 +115,7 @@
       </div>
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
-        <button type="button" class="btn btn-info">Purchase</button>
+        <input type = "submit" a href = "DisplayProductsServlet"  button type="button" class="btn btn-info"  >Purchase</button>
        	</div>
       </div>
     </fieldset>
