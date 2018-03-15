@@ -109,7 +109,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label" for="cvv">Total:</label>
+        <label class="col-sm-3 control-label" for="cvv">Total: ${total}</label>
         <div class="col-sm-3">
         </div>
       </div>

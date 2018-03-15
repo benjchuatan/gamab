@@ -59,7 +59,7 @@ public class AddTransactionServlet extends HttpServlet {
 		transactionsService.addTransactions(b);
 		CartService CS = new CartService();
 		CS.emptyCart((Integer) request.getSession().getAttribute("iduser"));
-		request.getRequestDispatcher("DisplayProductsServlet").forward(request, response);
+		request.getRequestDispatcher("Home.jsp").forward(request, response);
 	}
 
 }
