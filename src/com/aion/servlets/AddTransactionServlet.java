@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.aion.javabean.TransBeana;
+import com.aion.services.CartService;
 import com.aion.services.TransactionService;
 
 /**
@@ -56,6 +57,8 @@ public class AddTransactionServlet extends HttpServlet {
 		b.setDate(dateFormat.format(date));
 		TransactionService transactionsService = new TransactionService();
 		transactionsService.addTransactions(b);
+		CartService CS = new CartService();
+		CS.emptyCart((Integer) request.getSession().getAttribute("iduser"));
 		request.getRequestDispatcher("DisplayProductsServlet").forward(request, response);
 	}
 

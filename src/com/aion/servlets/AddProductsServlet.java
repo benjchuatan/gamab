@@ -64,10 +64,14 @@ public class AddProductsServlet extends HttpServlet {
 		
 		Product p = new Product();
 		p.setName(request.getParameter(Product.NAME));
+		
 		p.setManufacturer(request.getParameter(Product.MANUFACTURER));
 		p.setDescription(request.getParameter(Product.DESCRIPTION));
 		p.setPrice(Float.parseFloat(request.getParameter(Product.PRICE)));
+		System.out.println("This is it pancit: " + p.getPrice());
 		p.setFilename(fileName);
+		p.setType(request.getParameter(Product.TYPE));
+		System.out.println("This is it pancit: " + p.getType());
 		ProductService productsService = new ProductService();
 		productsService.addProducts(p);
 		request.getRequestDispatcher("DisplayProductsServlet").forward(request, response);

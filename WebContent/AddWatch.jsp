@@ -39,10 +39,10 @@
               </fieldset>
               <fieldset>
               <fieldset class = "form-group">
-	              <select>
-					  <option value="analog">Analog</option>
-					  <option value="digital">Digital</option>
-					  <option value="smart">Smart</option>
+	              <select name = "type">
+					  <option value="Analog" name = "type">Analog</option>
+					  <option value="Digital" name = "type">Digital</option>
+					  <option value="Smart" name = "type">Smart</option>
 				  </select>
               </fieldset>
               <fieldset class="form-group">

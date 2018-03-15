@@ -8,6 +8,7 @@ public class Product {
 	public static final String PRICE = "price";
 	public static final String FILENAME = "filename";
 	public static final String FILE_LOCATION = "file_location";
+	public static final String TYPE = "type";
 	public static final String IDPRODUCTS="ProductID";
 	
 	private String filename;
@@ -63,6 +64,14 @@ public class Product {
 	}
 	public void setPrice(float price) {
 		this.price = price;
+	}
+	
+	private String type;
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	private String name;
 	private String manufacturer;

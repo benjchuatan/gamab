@@ -210,8 +210,9 @@ public class ProductService {
 				+ Product.MANUFACTURER + ","
 				+ Product.DESCRIPTION + ","
 				+ Product.PRICE + ","
-				+ Product.FILENAME + ")"
-				+ "VALUES (?,?,?,?,?)";
+				+ Product.FILENAME + ","
+				+ Product.TYPE +")"
+				+ "VALUES (?,?,?,?,?,?)";
 		
 		System.out.println("Hey this is the statement: " + sql); 
 		
@@ -224,6 +225,7 @@ public class ProductService {
 			st.setString(3, p.getDescription());
 			st.setFloat(4, p.getPrice());
 			st.setString(5, p.getFilename());
+			st.setString(6, p.getType());
 			st.executeUpdate();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

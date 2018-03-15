@@ -49,6 +49,22 @@ public class CartService {
 		return productlists;
 	}
 	
+	public void emptyCart(int id) {
+		String sqls = "Delete from secprg.cart where iduser =" + id;
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sqls);
+			st.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
 	public void addcart(CartBean a) {
 		String sql = "Insert into cart(iduser,idproduct) values(?,?)";
 		
