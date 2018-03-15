@@ -55,9 +55,7 @@
 						  <table class="table table-bordered">
 						    <thead>
 						      <tr>
-						        <th>#</th>
 						        <th>Name</th>
-						        <th>Date</th>
 						        <th>Price</th>
 						      </tr>
 						    </thead>
@@ -65,7 +63,6 @@
 						      <tr>
 							<c:forEach items = "${transaction}" var = "b">
 							<td>${b.name}</td>
-							<td>${b.price}</td>
 							<td>${b.price}</td>
 						</tr>
 						</c:forEach>
