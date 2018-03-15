@@ -38,7 +38,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (1,31),(1,30),(1,32),(2,31),(2,32),(3,32),(4,32),(26,30),(26,30);
+INSERT INTO `cart` VALUES (1,31),(1,30),(1,32),(2,31),(2,32),(3,32),(4,32),(26,30),(26,30),(26,30),(26,30),(26,30),(26,30),(26,30),(26,30),(26,50),(26,40),(10,30),(10,50),(9,50),(26,30);
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,10 +81,11 @@ DROP TABLE IF EXISTS `productreviews`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `productreviews` (
-  `productID` int(11) NOT NULL,
+  `transID` int(11) NOT NULL,
   `productReview` varchar(145) DEFAULT NULL,
-  `userID` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`productID`)
+  `userID` int(11) DEFAULT NULL,
+  `productID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`transID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -94,6 +95,7 @@ CREATE TABLE `productreviews` (
 
 LOCK TABLES `productreviews` WRITE;
 /*!40000 ALTER TABLE `productreviews` DISABLE KEYS */;
+INSERT INTO `productreviews` VALUES (4,'SOBRANG GANDA PERO MAHAL',26,30),(5,'Sobra cute bagay sa asawa ko ',30,30),(6,'sobrang cute bagay sa asawa ko pero mahal siya mas okay gshock',23,30);
 /*!40000 ALTER TABLE `productreviews` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,8 +124,34 @@ CREATE TABLE `profile` (
 
 LOCK TABLES `profile` WRITE;
 /*!40000 ALTER TABLE `profile` DISABLE KEYS */;
-INSERT INTO `profile` VALUES (20,'fuck','yo',NULL,'yeah',NULL),(22,'fuck','yeah','yo','asd','asd'),(23,'pasdlo','asdoj','alskdaksjldj','asdsad','sdsadas'),(24,'pauloneil','asdasd','alasdsad','askldajskdl','asdsad'),(25,'benj','chua','tan','alksdjalskdj','asldkajsdlkj'),(26,'gamab123','gamab','boss','asdlkj','asdlkj');
+INSERT INTO `profile` VALUES (20,'John','Cena','jcena@wwe.com','West Newbury','Stamford'),(22,'Mark','Calaway','deadmaninc@wwe.com','Death Valley','Houston'),(23,'pasdlo','asdoj','alskdaksjldj','asdsad','sdsadas'),(24,'pauloneil','asdasd','alasdsad','askldajskdl','asdsad'),(25,'benj','chua','tan','alksdjalskdj','asldkajsdlkj'),(26,'ecurugan','asd','asd','asdasdasdasdasd123','asdasdasdasdasd12');
 /*!40000 ALTER TABLE `profile` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transactions`
+--
+
+DROP TABLE IF EXISTS `transactions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transactions` (
+  `idtrans` int(11) NOT NULL AUTO_INCREMENT,
+  `productID` int(11) DEFAULT NULL,
+  `iduser` int(11) DEFAULT NULL,
+  `Date` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idtrans`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transactions`
+--
+
+LOCK TABLES `transactions` WRITE;
+/*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (2,NULL,NULL,NULL),(3,3,NULL,NULL),(4,30,26,'2018/03/15'),(5,0,26,'2018/03/15'),(6,0,26,'2018/03/15'),(7,0,26,'2018/03/15'),(8,0,4,'2018/03/15'),(9,0,4,'2018/03/15'),(10,32,4,'2018/03/15'),(11,30,26,'2018/03/15'),(12,30,26,'2018/03/15'),(13,31,4,'2018/03/15');
+/*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -191,4 +219,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-14  2:41:32
+-- Dump completed on 2018-03-15 14:51:16

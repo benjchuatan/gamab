@@ -232,9 +232,13 @@ public class ProductService {
 		
 	}
 	
-	//public boolean checkTrans() {
-	//	
-	//}
+	public boolean checkTrans(int prodID, int transID) {
+		
+		String sql = "SELECT * FROM secprg.transactions where idtrans =4  and iduser = 26";
+		return false;
+		
+		
+	}
 	
 	public void addProducts(Product p) {
 		String sql = "INSERT INTO secprg." + Product.TABLE_NAME + "("
