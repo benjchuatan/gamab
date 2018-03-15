@@ -39,7 +39,16 @@ public class GetCartProductsServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		CartService CartsService = new CartService();
 		ArrayList<Product> CartProducts = CartsService.getAllProductCart(id);
+		Float total = (float) 0.0;
+		int trys;
+		for(int i = 0; i<CartProducts.size(); i++) {
+			trys = i;
+			System.out.println("yess po " + CartProducts.get(trys).getPrice());
+			total = total + CartProducts.get(trys).getPrice();
+		}
 		request.setAttribute("productlists", CartProducts);
+		request.setAttribute("total", total);
+
 		request.getRequestDispatcher("checkout.jsp").forward(request, response);
 	}
 
