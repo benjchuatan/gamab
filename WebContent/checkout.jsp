@@ -27,39 +27,39 @@
       	<div class="panel-body"> 
     <form class="form-horizontal" role="form" action = "AddTransactionServlet" method = "POST" enctype="multipart/form-data">  	
       	<div class="container-fluid">        
-						  <table class="table table-bordered">
-						    <thead>
-						      <tr>
-						      	<th>ID</th>
-						        <th>Item</th>
-						        <th>Price</th>
-						      </tr>
-						    </thead>
-						    <tbody>
-						  		<c:forEach items = "${productlists}" var = "p">
-                <p>ID:</p><input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "productID" value = "${p.idproducts}" readonly>
-						     		 <td>${p.name}</td>
-						     		 <td>${p.price}</td>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Item</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items = "${productlists}" var = "p">
+                	<td><input id="formGroupExampleInput2" placeholder="Price" name = "productID" value = "${p.idproducts}" readonly></td>
+					<td>${p.name}</td>
+					 <td>${p.price}</td>
 						      <tr>
 								</c:forEach>
 						</tr>
 					
 						    </tbody>
-						  </table>
-					</div>
+			</table>
+		</div>
       	
   
     <fieldset>
       <div class="form-group">
         <label class="col-sm-3 control-label" for="card-holder-name">Name on Card:</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name">
+          <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name" required>
         </div>
       </div>
       <div class="form-group">
         <label class="col-sm-3 control-label" for="card-number">Card Number:</label>
         <div class="col-sm-9">
-        <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
+        <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number" required>
         </div>
       </div>
       <div class="form-group">
@@ -67,7 +67,7 @@
         <div class="col-sm-9">
           <div class="row">
             <div class="col-xs-3">
-              <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
+              <select class="form-control col-sm-2" name="expiry-month" id="expiry-month" required>
                 <option>Month</option>
                 <option value="01">Jan (01)</option>
                 <option value="02">Feb (02)</option>
@@ -105,17 +105,17 @@
       <div class="form-group">
         <label class="col-sm-3 control-label" for="cvv">Card CVV:</label>
         <div class="col-sm-3">
-        <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
+        <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code" required>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label" for="cvv">Total: </label>
+        <label class="col-sm-3 control-label" for="cvv">Total:</label>
         <div class="col-sm-3">
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
-        <input type = "submit" a href = "DisplayProductsServlet"  button type="button" class="btn btn-info"  >Purchase</button>
+        <input type = "submit" a href = "Home.jsp"  button type="button" class="btn btn-info" value="Purchase" ></a></button>
        	</div>
       </div>
     </fieldset>
