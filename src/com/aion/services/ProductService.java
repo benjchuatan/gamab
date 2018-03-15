@@ -12,14 +12,15 @@ import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
 import com.aion.db.DBManager;
 import com.aion.javabean.Product;
+import com.aion.javabean.ReviewBean;
 
 
 
 
 public class ProductService {
-	String url ="jdbc:mysql://localhost:3306/secprg";
-	String username ="root";
-	String password = "password";
+	static String url ="jdbc:mysql://localhost:3306/secprg";
+	static String username ="root";
+	static String password = "password";
 	
 	public ArrayList getAdminProducts() {
 		ArrayList<Product> productlists = new ArrayList<>();
@@ -201,6 +202,52 @@ public class ProductService {
 		
 		
 		return productlists;
+		
+	}
+	
+	public static ArrayList displayComment(int prodID) {
+		ArrayList<ReviewBean> reviewlists = new ArrayList<>();
+		String sql = "SELECT * FROM secprg.productreviews where productID = ?";
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1,prodID);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				ReviewBean r = new ReviewBean();
+				r.setProductReview(rs.getString(r.PRODUCTREVIEW));
+				
+				System.out.println("comment: " + r.getProductReview());
+				
+				
+				reviewlists.add(r);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return reviewlists;
+		
+		
+	}
+	
+	public boolean checkTrans(int prodID, int transID) {
+		
+		String sql = "SELECT * FROM secprg.transactions where idtrans = ? and iduser = ?";
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1,transID);
+			st.setInt(1,prodID);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+		
 		
 	}
 	

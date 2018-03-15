@@ -39,7 +39,9 @@
 						<p><strong>Price: </strong> ${product[0].price} </p>
 						<form action="ShoppingCartServlet" method="post">
 						<input type="hidden" name="idproduct" value="${product[0].idproducts}"> 
+						<c:if test="${sessionScope.username != null}">
  						<button type="submit" class="btn btn-lg btn-success" onclick="myFunction2()">Add To Cart</button>
+ 						</c:if>
  						<script>
 						function myFunction2() {
     					alert("Added to cart.");
@@ -51,16 +53,18 @@
       </div>
    </div>
 </div>
-
+<
 <div class="container">    
    <div class="row">
       <div class="panel panel-default">
       	<div class="panel-heading">  
       		<h4 >Comments/Remarks</h4></div>
        			<div class="panel-body">                     
+       			<c:forEach items = "${comments}" var = "r">
                    	<div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
-                    	<h5>This watch is so very cool.</h5>
+                    	<h5>${r.productReview} Hello Motto</h5>
                     </div>
+                    </c:forEach>
                 </div>
        </div>
        
@@ -76,6 +80,7 @@
  
 
 </div></br>
+<
 
 <div class="row"><%@ include file="footer.jsp" %></div>
 </body>
