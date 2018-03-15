@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.aion.javabean.Product;
+import com.aion.javabean.ReviewBean;
 import com.aion.services.ProductService;
 
 /**
@@ -36,9 +37,17 @@ public class GetProductServlet extends HttpServlet {
 	
 		int idproduct = Integer.parseInt(request.getParameter("id"));
 		ProductService ProductsService = new ProductService();
+		
 		ArrayList<Product> products = ProductsService.getProduct(idproduct);
+		ArrayList<ReviewBean> reviews = ProductService.displayComment(idproduct);
+		
 		request.setAttribute("product", products);
 		request.setAttribute("id", idproduct);
+		request.setAttribute("comments", reviews);
+		
+		System.out.println("edward: " + idproduct);
+		System.out.println("gamab: " + reviews);
+		
 		request.getRequestDispatcher("WatchProfile.jsp").forward(request, response);
 	}
 
