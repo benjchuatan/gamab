@@ -234,7 +234,18 @@ public class ProductService {
 	
 	public boolean checkTrans(int prodID, int transID) {
 		
-		String sql = "SELECT * FROM secprg.transactions where idtrans =4  and iduser = 26";
+		String sql = "SELECT * FROM secprg.transactions where idtrans = ? and iduser = ?";
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1,transID);
+			st.setInt(1,prodID);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return false;
 		
 		
