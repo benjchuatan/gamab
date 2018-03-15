@@ -64,9 +64,8 @@
 						    <tbody>
 						      <tr>
 							<c:forEach items = "${transaction}" var = "b">
-							<td>${b.transID}</td>
 							<td>${b.name}</td>
-							<td>${b.date}</td>
+							<td>${b.price}</td>
 							<td>${b.price}</td>
 						</tr>
 						</c:forEach>
