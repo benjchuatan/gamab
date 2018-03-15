@@ -2,7 +2,6 @@ package com.aion.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,23 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.aion.services.ProfileService;
-import com.aion.services.TransactionService;
-import com.aion.javabean.Product;
 import com.aion.javabean.ProfileBean;
-import com.aion.javabean.TransBean;;
+import com.aion.javabean.TransBean;
+import com.aion.services.ProfileService;
 
 /**
- * Servlet implementation class DisplayProfileServlet
+ * Servlet implementation class DisplayTransactionServlet
  */
-@WebServlet("/DisplayProfileServlet")
-public class DisplayProfileServlet extends HttpServlet {
+@WebServlet("/DisplayTransactionServlet")
+public class DisplayTransactionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DisplayProfileServlet() {
+    public DisplayTransactionServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,21 +31,28 @@ public class DisplayProfileServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		String uname = (String) request.getSession().getAttribute("username");
 		System.out.println("benj" + uname);
 		int f = (int) request.getSession().getAttribute("iduser");
 		System.out.println("wakaka: "+ f);
 		ProfileService profserv = new ProfileService();
-		TransactionService transService = new TransactionService();
 		ArrayList<ProfileBean> profiles = profserv.getSelectedUser(uname);
-		ArrayList<Product> trans = transService.getAllTransactions((Integer)request.getSession().getAttribute("iduser"));
+		ArrayList<TransBean> trans = profserv.getUserTrans(uname);
 		
 		//System.out.println(profiles);
 		request.setAttribute("profile", profiles);
 		request.setAttribute("transaction",trans);
 		request.getRequestDispatcher("userprof.jsp").forward(request, response);
+
 	}
 
 }

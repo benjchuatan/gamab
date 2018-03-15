@@ -39,7 +39,9 @@
 						<p><strong>Price: </strong> ${product[0].price} </p>
 						<form action="ShoppingCartServlet" method="post">
 						<input type="hidden" name="idproduct" value="${product[0].idproducts}"> 
+						<c:if test="${sessionScope.username != null}">
  						<button type="submit" class="btn btn-lg btn-success" onclick="myFunction2()">Add To Cart</button>
+ 						</c:if>
  						<script>
 						function myFunction2() {
     					alert("Added to cart.");

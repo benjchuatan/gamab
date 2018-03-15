@@ -55,18 +55,14 @@
 						  <table class="table table-bordered">
 						    <thead>
 						      <tr>
-						        <th>#</th>
 						        <th>Name</th>
-						        <th>Date</th>
 						        <th>Price</th>
 						      </tr>
 						    </thead>
 						    <tbody>
 						      <tr>
 							<c:forEach items = "${transaction}" var = "b">
-							<td>${b.transID}</td>
 							<td>${b.name}</td>
-							<td>${b.date}</td>
 							<td>${b.price}</td>
 						</tr>
 						</c:forEach>
