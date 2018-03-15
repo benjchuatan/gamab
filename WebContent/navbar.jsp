@@ -8,7 +8,7 @@
 	<nav class="navbar navbar-inverse navbar-static-top nav-upper nav1">
   		<div class="container-fluid">
   			<c:choose>
-  				<c:when test="${sessionScope.username != null}">
+  				<c:when test="${sessionScope.iduser != null}">
   				<form action="Logout" class="navbar-form navbar-right">
       				<input type="submit" class="btn btn-info" value="Logout" onclick = "myFunction2()">
       				<script>

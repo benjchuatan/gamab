@@ -1,5 +1,6 @@
 package com.login.dao;
 
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -64,6 +65,7 @@ public class LoginDao {
 	}
 	
 	public  int checkadmin(String uname) {
+		
 		String sql = "select privilege from user where username =?";
 		UserBean u = new UserBean();
 		try {
@@ -82,7 +84,7 @@ public class LoginDao {
 			}
 			
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
