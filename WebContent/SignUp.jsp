@@ -22,7 +22,52 @@
       		<h4 >Sign Up</h4>
       	</div>
        		<div class="panel-body"> 
-       		<form action="addUsers" method="post" accept-charset="utf-8" class="form" role="form"> 
+       		
+       		
+       	<script type="text/javascript">
+		  function checkForm(form)
+		  {
+		    re = /^\w+$/;
+		    if(!re.test(form.username.value)) {
+		      alert("Error: Username must contain only letters, numbers and underscores!");
+		      form.username.focus();
+		      return false;
+		    }
+		    
+		    re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		    if(!re.test(form.email.value)) {
+			      alert("Error: Please enter a valid email!");
+			      form.email.focus();
+			      return false;
+			    }
+		
+		    
+		    if(form.password.value != "" && form.password.value == form.confirm_password.value) 
+		    {
+		      re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/;
+		      if(!re.test(form.password.value)) {
+			        alert("Error! Password does not meet the requirements! Try Again.");
+			        form.password.focus();
+			        return false;
+			      }
+		      if(form.password.value == form.username.value) {
+		        alert("Error! Password must be different from Username!");
+		        form.password.focus();
+		        return false;
+		      }
+		   
+		    } 
+		    else {
+		      alert("Error: Please check that you've entered and confirmed your password!");
+		      form.password.focus();
+		      return false;
+		    }
+		    return true;
+		  }	
+		</script>
+       		
+
+       		<form action="addUsers" method="post" accept-charset="utf-8" class="form" role="form" onsubmit="return checkForm(this);"> 
        			<div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
                 	<div class="row">
 						<div class="col-xs-6 col-md-6">
@@ -34,7 +79,8 @@
 					</div></br>
 					<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" required /></br>
 					<input type="text" name="username" value="" class="form-control input-lg" placeholder="Username" required /></br> 
-					<input type="password" name="password" value=""class="form-control input-lg" placeholder="Password" required /></br> 
+					<input type="password" name="password" value=""class="form-control input-lg" placeholder="Password" required />
+					*Minimum of 6 characters with at least one number, one lowercase and one uppercase letter</br></br>
 					<input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password" required /></br> 
 					<input type ="text" name = "billing_add" value="" class="form-control input-lg" placeholder="Billing Address" required /></br>
 					<input type ="text" name = "shipping_add" value="" class="form-control input-lg" placeholder="Shipping Address" required /> <br>

@@ -38,8 +38,6 @@
             <h4 class="title">Payment Methods</h4>
             <ul class="payment">
                 <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>            
-                <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>
             </ul>

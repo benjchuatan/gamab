@@ -50,12 +50,12 @@
       <div class="panel panel-default">
       	<div class="panel-heading">  
       		<h4 >Purchase History</h4></div>
-       			<div class="panel-body">                     
+       			<div class="panel-body">                
                    	<div class="container-fluid">        
 						  <table class="table table-bordered">
 						    <thead>
 						      <tr>
-						        <th>Name</th>
+						        <th>Product Name</th>
 						        <th>Price</th>
 						      </tr>
 						    </thead>

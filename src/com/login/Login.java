@@ -41,10 +41,8 @@ public class Login extends HttpServlet {
 		UserBean u = new UserBean();
 		LoginDao dao = new LoginDao();
 		CartService carserv = new CartService();
-		
-		
+	
 		PrintWriter out = response.getWriter();
-		
 		
 		try {
 			if(dao.check(uname, pass)) {
@@ -82,20 +80,20 @@ public class Login extends HttpServlet {
 				
 			}
 			else {
-				 out.println("<script type=\"text/javascript\">");
-				 out.println("alert('User or password incorrect');");
-				 out.println("location='Home.jsp';");
-				 out.println("</script>");
-				//response.sendRedirect("Home.jsp");
-				
+			out.println("<script type=\"text/javascript\">");
+			out.println("alert('User or password incorrect');");
+			out.println("location='Home.jsp';");
+			out.println("</script>");
+			//response.sendRedirect("Home.jsp");
 			}
-			
-			
+		
+		
 			
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
+		}
 	}
 
-}
+

@@ -18,7 +18,10 @@
       	</div>
       	<div class="panel-body"> 
 		<div class="col-md-6 col-md-offset-3">
-			<form action="EditProfileServlet" method="get" accept-charset="utf-8" class="form" role="form">
+		
+		
+		
+			<form action="EditProfileServlet" method="get" accept-charset="utf-8" class="form" role="form" onsubmit="return checkForm(this);">
 				<div class="row">
 					<div class="col-xs-6 col-md-6">
 						<input type="text" name="firstname" value="" class="form-control input-lg" placeholder="First Name" required />
@@ -28,8 +31,8 @@
 					</div>
 				</div></br>
 				<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" required /></br> 
-				<input type="password" name="oldpassword" value=""class="form-control input-lg" placeholder="Old Password" required /></br>  
-				<input type="password" name="new_password" value="" class="form-control input-lg" placeholder="New Password" required /></br>  
+				<input type="password" name="new_password" value="" class="form-control input-lg" placeholder="New Password" required />
+				*Minimum of 6 characters with at least one number, one lowercase and one uppercase letter</br></br>  
 				<input type="password" name="confirm_new_password" value="" class="form-control input-lg" placeholder="Confirm New Password" required /></br>  
 				<input type ="text" name = "billing_address" value="" class="form-control input-lg" placeholder="New Billing Address" required /></br> 
 				<input type ="text" name = "shipping_address" value="" class="form-control input-lg" placeholder="New Shipping Address" required /> <br>
