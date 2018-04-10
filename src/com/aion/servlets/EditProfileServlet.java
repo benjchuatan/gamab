@@ -7,8 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.aion.javabean.ProfileBean;
 import com.aion.javabean.UserBean;
 import com.aion.services.ProfileService;
+import com.aion.services.UserService;
 import com.login.dao.LoginDao;
 
 /**
@@ -31,7 +33,9 @@ public class EditProfileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserBean u = new UserBean();
+		ProfileBean P = new ProfileBean();
 		ProfileService profserv = new ProfileService();
+		UserService userserv = new UserService();
 		LoginDao loginserv = new LoginDao();
 		
 		
@@ -42,11 +46,13 @@ public class EditProfileServlet extends HttpServlet {
 		System.out.println("bil_ad: "+d);
 		String e = request.getParameter("shipping_address");
 		System.out.println("ship_ad: "+e);
+		String g = request.getParameter("new_password");
 		int f = (int) request.getSession().getAttribute("iduser");
 		//request.getRequestDispatcher("DisplayProfileServlet").forward(request, response);
 		response.sendRedirect("DisplayProfileServlet");
 		
 		profserv.editprofile(a, b, c, d, e, f);
+		userserv.edituser(f, g);
 		
 	}
 
