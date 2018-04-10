@@ -28,6 +28,14 @@
                    	<div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
                     	<h5>Total Sales:</h5>
                     </div>
+                 <c:forEach items = "${transaction}" var = "b">
+                 <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+							<td>${b.name}</td>
+							<td>${b.price}</td>
+				 </div>
+				</c:forEach>   
+                    
+                
                 </div>
        </div>
        

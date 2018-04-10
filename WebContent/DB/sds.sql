@@ -1,0 +1,1 @@
+SELECT * FROM secprg.cart inner join secprg.product on secprg.transactions.ProductID = secprg.product.ProductID where  iduser = 4
