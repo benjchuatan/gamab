@@ -30,7 +30,8 @@
 						<input type="text" name="lastname" value=""class="form-control input-lg" placeholder="Last Name" required />
 					</div>
 				</div></br>
-				<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" required /></br> 
+				<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" required /></br>
+				<input type="password" name="old_password" value="" class="form-control input-lg" placeholder="Old Password" required /></br>
 				<input type="password" name="new_password" value="" class="form-control input-lg" placeholder="New Password" required />
 				*Minimum of 6 characters with at least one number, one lowercase and one uppercase letter</br></br>  
 				<input type="password" name="confirm_new_password" value="" class="form-control input-lg" placeholder="Confirm New Password" required /></br>  
