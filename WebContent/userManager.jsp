@@ -17,10 +17,16 @@
 
 <body class="container-fluid" style="background-color:lightgray;">
 <%
-  if(session.getAttribute("isadmin")==null){
-  	response.sendRedirect("Home.jsp");
+  if(session.getAttribute("isadmin")!=null){
+  	response.sendRedirect("userManager.jsp");
   	}
+
+  else if(session.getAttribute("isproductmanager")!=null){
+	  	response.sendRedirect("SignUp.jsp");
+	  	}
 %>
+
+
 
 <div class="row"><%@ include file="navbar.jsp" %></div></br>
 
