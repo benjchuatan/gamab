@@ -1,6 +1,10 @@
 package com.aion.servlets;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -40,13 +44,25 @@ public class SearchProductServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		String action = "";
 		Product p = new Product();
 		p.setName(request.getParameter(Product.NAME));
 		ProductService productService = new ProductService();
 		ArrayList<Product> Product = productService.getSelectedProducts(p);
 
 		request.setAttribute("productlists", Product);
+		
+		action = p.getName()  + " was searched at " + LocalDateTime.now();	
+		
+		
+		try (PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\JC\\Documents\\logfiles.txt", true)))) {
+			System.out.println("File Opened");
+		    wr.println(action);
+		    wr.close();
+		} catch (IOException x) {
+		    System.err.format("IOException: %s%n", x);
+		    System.out.println("File not opened");
+		}
 		
 		request.getRequestDispatcher("Results.jsp").forward(request, response);
 

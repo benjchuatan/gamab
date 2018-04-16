@@ -57,21 +57,21 @@ public class Login extends HttpServlet {
 					session.setAttribute("iduser", dao.getiduser(uname));
 					System.out.println("futa: "+dao.getiduser(uname));
 					response.sendRedirect("userManager.jsp");
-					action = uname + " logged in at " + LocalDateTime.now();
+					action = uname + " ID: " + dao.getiduser(uname) + " logged in at " + LocalDateTime.now();
 				}else if(dao.checkadmin(uname)==2) {
 					session.setAttribute("isproductmanager", uname);
 					//session.setAttribute("username", uname);
 					session.setAttribute("iduser", dao.getiduser(uname));
 					System.out.println("futa: "+dao.getiduser(uname));
 					response.sendRedirect("AdminServlet");
-					action = uname + " logged in at " + LocalDateTime.now();
+					action = uname + " ID: " + dao.getiduser(uname) + " logged in at " + LocalDateTime.now();
 				}else if(dao.checkadmin(uname)==3) {
 					session.setAttribute("isaccountingmanager", uname);
 					//session.setAttribute("username", uname);
 					session.setAttribute("iduser", dao.getiduser(uname));
 					System.out.println("futa: "+dao.getiduser(uname));
 					response.sendRedirect("acctingmanager.jsp");
-					action = uname + " logged in at " + LocalDateTime.now();
+					action = uname + " ID: " + dao.getiduser(uname) + " logged in at " + LocalDateTime.now();
 				}else if(dao.check(uname, pass)){
 					session.setAttribute("username", uname);
 					session.setAttribute("iduser", dao.getiduser(uname));
@@ -79,7 +79,7 @@ public class Login extends HttpServlet {
 					System.out.println("futa: "+carserv.getNum(dao.getiduser(uname)));
 					System.out.println("username: "+uname);
 					response.sendRedirect("Home.jsp");
-					action = uname + " logged in at " + LocalDateTime.now();
+					action = uname + " ID: " + dao.getiduser(uname) + " logged in at " + LocalDateTime.now();
 				}//else if(loginTries > 0){
 //					loginTries--;
 //					//Insert prompt for invalid username or password

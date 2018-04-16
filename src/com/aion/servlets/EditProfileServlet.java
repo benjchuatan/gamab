@@ -1,7 +1,11 @@
 package com.aion.servlets;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -42,7 +46,7 @@ public class EditProfileServlet extends HttpServlet {
 		UserService userserv = new UserService();
 		LoginDao loginserv = new LoginDao();
 		boolean checkss;
-		
+		String action = "";
 		
 		String a = request.getParameter("firstname");
 		String b = request.getParameter("lastname");
@@ -73,9 +77,16 @@ public class EditProfileServlet extends HttpServlet {
 		out.println("</script>");
 		//response.sendRedirect("Home.jsp");
 		}
-			
+		action = "User " + request.getParameter("firstname")  + " edited at " + LocalDateTime.now();	
 
-		
+		try (PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\JC\\Documents\\logfiles.txt", true)))) {
+			System.out.println("File Opened");
+		    wr.println(action);
+		    wr.close();
+		} catch (IOException x) {
+		    System.err.format("IOException: %s%n", x);
+		    System.out.println("File not opened");
+		}
 	}
 
 	/**

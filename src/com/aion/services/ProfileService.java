@@ -1,12 +1,16 @@
 package com.aion.services;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+import java.time.LocalDateTime;
 import com.aion.javabean.ProfileBean;
 import com.aion.javabean.TransBean;
 import com.aion.javabean.UserBean;
@@ -110,6 +114,7 @@ public class ProfileService {
 	public void addUsers(ProfileBean p, UserBean u) {
 		String sql = "	insert into secprg.user(username,password,privilege) values(?,SHA2(?, 256),4)";
 		String sql1 = "insert into secprg.profile(iduser,first_name,last_name,email,shipping_add,billing_add) values(LAST_INSERT_ID(),?,?,?,?,?)";
+		String action = "";
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -125,12 +130,23 @@ public class ProfileService {
 			st1.setString(5,p.getBilling_add());
 			st.executeUpdate();
 			st1.executeUpdate();
+			action = "User " + u.getUsername() + " ID: " + u.getIduser() + " created at " + LocalDateTime.now();
+			
+			
+			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		
+		try (PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\JC\\Documents\\logfiles.txt", true)))) {
+			System.out.println("File Opened");
+		    wr.println(action);
+		    wr.close();
+		} catch (IOException x) {
+		    System.err.format("IOException: %s%n", x);
+		    System.out.println("File not opened");
+		}
 		
 	}
 	

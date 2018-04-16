@@ -1,6 +1,11 @@
 package com.aion.servlets;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,6 +40,7 @@ public class SignUpServlet extends HttpServlet {
 		UserBean u = new UserBean();
 		ProfileBean p = new ProfileBean();
 		
+		
 		u.setPassword(request.getParameter(UserBean.PASSWORD));
 		//u.setPrevilege(4);
 		u.setUsername(request.getParameter(UserBean.USERNAME));
@@ -44,6 +50,9 @@ public class SignUpServlet extends HttpServlet {
 		p.setFirst_name(request.getParameter(ProfileBean.FIRSTNAME));
 		p.setLast_name(request.getParameter(ProfileBean.LASTNAME));
 		profserv.addUsers(p, u);
+		
+		
+		
 		
 		request.getRequestDispatcher("Home.jsp").forward(request,response);
 		

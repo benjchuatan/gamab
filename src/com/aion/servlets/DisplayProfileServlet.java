@@ -1,6 +1,10 @@
 package com.aion.servlets;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -36,6 +40,7 @@ public class DisplayProfileServlet extends HttpServlet {
 	 */
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action = "";
 		String uname = (String) request.getSession().getAttribute("username");
 		System.out.println("benj" + uname);
 		int f = (int) request.getSession().getAttribute("iduser");
@@ -49,6 +54,16 @@ public class DisplayProfileServlet extends HttpServlet {
 		request.setAttribute("profile", profiles);
 		request.setAttribute("transaction",trans);
 		request.getRequestDispatcher("userprof.jsp").forward(request, response);
+		action = "User " + request.getSession().getAttribute("username") +  " viewed his/her profile " + LocalDateTime.now();
+		
+		try (PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\JC\\Documents\\logfiles.txt", true)))) {
+			System.out.println("File Opened");
+		    wr.println(action);
+		    wr.close();
+		} catch (IOException x) {
+		    System.err.format("IOException: %s%n", x);
+		    System.out.println("File not opened");
+		}
 	}
 
 }
