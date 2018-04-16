@@ -1,6 +1,7 @@
 package com.aion.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -55,7 +56,7 @@ public class EditProfileServlet extends HttpServlet {
 		String h = request.getParameter("old_password");
 		//request.getRequestDispatcher("DisplayProfileServlet").forward(request, response);
 		
-		
+		PrintWriter out = response.getWriter();
 		checkss = userserv.checksame(f, h);
 		System.out.println("Bigdog look here: " + checkss);
 		
@@ -65,8 +66,13 @@ public class EditProfileServlet extends HttpServlet {
 		userserv.edituser(f, g);
 		response.sendRedirect("DisplayProfileServlet");
 		}
-		else
-		response.sendRedirect("Wrong.jsp");
+		else {
+		out.println("<script type=\"text/javascript\">");
+		out.println("alert('User or password incorrect');");
+		out.println("location='EditProf.jsp';");
+		out.println("</script>");
+		//response.sendRedirect("Home.jsp");
+		}
 			
 
 		
