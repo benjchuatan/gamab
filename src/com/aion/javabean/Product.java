@@ -10,6 +10,7 @@ public class Product {
 	public static final String FILE_LOCATION = "file_location";
 	public static final String TYPE = "type";
 	public static final String IDPRODUCTS="ProductID";
+	public static final String QUANTITY = "quantity"; 
 	
 	private String filename;
 	
@@ -78,5 +79,11 @@ public class Product {
 	private String description;
 	private int idproducts;
 	private float price;
-	
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	private int quantity;
 }

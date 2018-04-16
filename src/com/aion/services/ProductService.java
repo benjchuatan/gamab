@@ -115,13 +115,14 @@ public class ProductService {
 			while(rs.next()) {
 				Product ap = new Product();
 				
+				
 				ap.setName(rs.getString(Product.NAME));
 				ap.setManufacturer(rs.getString(Product.MANUFACTURER));
 				ap.setDescription(rs.getString(Product.DESCRIPTION));
 				ap.setIdproducts(rs.getInt(Product.IDPRODUCTS));
 				ap.setPrice(rs.getFloat(Product.PRICE));
 				ap.setFilename(rs.getString(Product.FILENAME));
-				System.out.println("asdasdas " + ap.getFilename());
+				System.out.println("Eto quantity dapat " + rs.getInt(Product.QUANTITY));
 
 				productlists.add(ap);
 			}		
@@ -148,7 +149,7 @@ public class ProductService {
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				Product p = new Product();
-				
+				p.setQuantity(rs.getInt(Product.QUANTITY));
 				p.setName(rs.getString(Product.NAME));
 				p.setManufacturer(rs.getString(Product.MANUFACTURER));
 				p.setDescription(rs.getString(Product.DESCRIPTION));
@@ -285,8 +286,9 @@ public class ProductService {
 				+ Product.DESCRIPTION + ","
 				+ Product.PRICE + ","
 				+ Product.FILENAME + ","
-				+ Product.TYPE +")"
-				+ "VALUES (?,?,?,?,?,?)";
+				+ Product.TYPE + ","
+				+ Product.QUANTITY + ")"
+				+ "VALUES (?,?,?,?,?,?,?)";
 		
 		System.out.println("Hey this is the statement: " + sql); 
 		
@@ -300,6 +302,7 @@ public class ProductService {
 			st.setFloat(4, p.getPrice());
 			st.setString(5, p.getFilename());
 			st.setString(6, p.getType());
+			st.setInt(7, p.getQuantity());
 			st.executeUpdate();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

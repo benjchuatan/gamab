@@ -77,6 +77,7 @@ public class AddProductsServlet extends HttpServlet {
 		System.out.println("This is it pancit: " + p.getPrice());
 		p.setFilename(fileName);
 		p.setType(request.getParameter(Product.TYPE));
+		p.setQuantity(Integer.parseInt(request.getParameter(Product.QUANTITY)));
 		System.out.println("This is it pancit: " + p.getType());
 		ProductService productsService = new ProductService();
 		productsService.addProducts(p);

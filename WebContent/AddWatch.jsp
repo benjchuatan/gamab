@@ -42,12 +42,15 @@
 	              <select name = "type">
 					  <option value="Analog" name = "type">Analog</option>
 					  <option value="Digital" name = "type">Digital</option>
-					  <option value="Smart" name = "type">Smart</option>
+					  <option value="SmartWatch" name = "type">SmartWatch</option>
 				  </select>
               </fieldset>
               <fieldset class="form-group">
                 <label for="exampleInputFile">Upload Art</label>
                 <input type="file" class="form-control-file" id="exampleInputFile" name= "filename">
+              </fieldset>
+              <fieldset class="form-group">
+                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Quantity" name = "quantity">
               </fieldset>
               <input type = "submit" a href = "DisplayProductsServlet" button type="submit" class="btn btn-info btn-lg"></a>
 

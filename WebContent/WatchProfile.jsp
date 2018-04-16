@@ -36,6 +36,7 @@
                     </div><hr>
 	                    <p><strong>Manufacturer: </strong> ${product[0].manufacturer}</p>
 						<p><strong>Description: </strong> ${product[0].description} </p>
+						<p><strong>Quantity: </strong> ${product[0].quantity} </p>
 						<p><strong>Price: </strong> ${product[0].price} </p>
 						<form action="ShoppingCartServlet" method="post">
 						<input type="hidden" name="idproduct" value="${product[0].idproducts}"> 
