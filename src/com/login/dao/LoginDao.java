@@ -40,7 +40,7 @@ public class LoginDao {
 	}
 	public boolean check(String uname, String pass) throws SQLException {
 		
-		String sql = "select * from user where username=? and password=?";
+		String sql = "select * from user where username=? and password=SHA2(?, 256)";
 		
 		
 		try {

@@ -41,6 +41,7 @@ public class EditProductServlet extends HttpServlet {
 		ArrayList<Product> products = ProductsService.getProduct(idproduct);
 		request.setAttribute("product", products);
 		request.setAttribute("id", idproduct);
+		System.out.println("Uwaaaaaa " + idproduct);
 		request.getRequestDispatcher("editwatch.jsp").forward(request, response);
 
 	}

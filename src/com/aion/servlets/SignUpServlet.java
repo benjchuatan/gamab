@@ -47,6 +47,6 @@ public class SignUpServlet extends HttpServlet {
 		
 		request.getRequestDispatcher("Home.jsp").forward(request,response);
 		
-	}
+	}	
 
 }

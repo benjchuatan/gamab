@@ -108,7 +108,7 @@ public class ProfileService {
 	
 	
 	public void addUsers(ProfileBean p, UserBean u) {
-		String sql = "insert into secprg.user(username,password,privilege) values(?,?,4)";
+		String sql = "	insert into secprg.user(username,password,privilege) values(?,SHA2(?, 256),4)";
 		String sql1 = "insert into secprg.profile(iduser,first_name,last_name,email,shipping_add,billing_add) values(LAST_INSERT_ID(),?,?,?,?,?)";
 		
 		try {

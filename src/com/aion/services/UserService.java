@@ -12,7 +12,7 @@ public class UserService {
 	static String passwords = "password";
 	
 	public void edituser(int a, String password) {
-		String sql = "update user set password = ? where iduser = " + a;
+		String sql = "update user set password = SHA2(?,256) where iduser = " + a;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
