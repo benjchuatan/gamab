@@ -13,7 +13,7 @@ public class AdminService {
 	String password = "password";
 	
 	public void addUsers(UserBean u) {
-		String sql = "insert into user(username,password,privilege) values(?,?,?)";
+		String sql = "insert into user(username,password,privilege) values(?,SHA2(?,256),?)";
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
