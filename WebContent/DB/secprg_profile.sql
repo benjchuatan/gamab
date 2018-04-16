@@ -27,8 +27,6 @@ CREATE TABLE `profile` (
   `first_name` varchar(45) DEFAULT NULL,
   `last_name` varchar(45) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `username` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
   `billing_add` varchar(100) DEFAULT NULL,
   `shipping_add` varchar(100) DEFAULT NULL,
   KEY `iduser` (`iduser`),
@@ -42,6 +40,7 @@ CREATE TABLE `profile` (
 
 LOCK TABLES `profile` WRITE;
 /*!40000 ALTER TABLE `profile` DISABLE KEYS */;
+INSERT INTO `profile` VALUES (20,'fuck','yo',NULL,'yeah',NULL),(22,'fuck','yeah','yo','asd','asd'),(23,'pasdlo','asdoj','alskdaksjldj','asdsad','sdsadas'),(24,'pauloneil','asdasd','alasdsad','askldajskdl','asdsad'),(25,'benj','chua','tan','alksdjalskdj','asldkajsdlkj'),(26,'gamab123','gamab','boss','asdlkj','asdlkj'),(30,'Ton','Star','tonstar@yahoo.com','Star Tower','Star Tower'),(37,'Seth','Rollins','Kingslayer19','WWE','Raw'),(38,'Dean','Ambrose','injured@yahoo.com','Fridge','Fridge'),(39,'Xavier','Woods','xavierwoods@wwe.com','wwe','wwe'),(42,'Hey','Wassap','edward_curugan@dlsu.edu.ph','sjsja','aads');
 /*!40000 ALTER TABLE `profile` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-07  6:28:36
+-- Dump completed on 2018-04-17  1:38:28
