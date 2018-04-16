@@ -13,8 +13,8 @@
 </head>
 <body style="background-color:lightgray;">
 <%
-  if(session.getAttribute("isproductmanager")==null){
-  	response.sendRedirect("Home.jsp");
+  if(session.getAttribute("isaccountingmanager")!=null){
+  	response.sendRedirect("error.jsp");
   	}
 %>
 <div class="row"><%@ include file="navbar.jsp" %></div>,</br>
@@ -43,7 +43,7 @@
 					      <td>${p.manufacturer}</td>
 					      <td>${p.description}</td>
 					      <td>${p.price}</td>
-					      <td><p data-placement="top" data-toggle="tooltip" title="Edit">  <button class="btn btn-info btn-s" data-title="Edit" data-toggle="modal" data-target="#edit" >		<a href="EditProductServlet?id=${p.idproducts}"></a>   <span class="glyphicon glyphicon-pencil"></span></button></p></td>
+					      <td><p data-placement="top" data-toggle="tooltip" title="Edit">  <button class="btn btn-info btn-s" data-title="Edit" data-toggle="modal" data-target="#edit" >		<a href="EditProductServlet?id=${p.idproducts}"></a>  <span class="glyphicon glyphicon-pencil"></span></button></p></td>
 	    				  <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-s" data-title="Delete" data-toggle="modal" data-target="#delete" > <a href="DeleteProductServlet?id=${p.idproducts}"> <span class="glyphicon glyphicon-trash"></a></span></button></p></td>
 					    </tr>
 					  </tbody>

@@ -39,26 +39,26 @@
 				 var pass=document.getElementById("password").value;
 				 if(Login==true)
 				 {
-				  alert("SuccessFully Logged In");
-				  document.getElementById("name").value="";
-				  document.getElementById("pass").value="";
+					  alert("SuccessFully Logged In");
+					  document.getElementById("name").value="";
+					  document.getElementById("pass").value="";
 				 }
 				 else
 				 {
-				  if(login_attempts==0)
-				  {
-				   alert("No Login Attempts Available");
-				  }
-				  else
-				  {
-				   login_attempts=login_attempts-1;
-				   alert("Login Failed Now Only "+login_attempts+" Login Attempts Available");
-				   if(login_attempts==0)
-				   {
-				    document.getElementById("uname").disabled=true;
-				    document.getElementById("password").disabled=true;
-				   }
-				  }
+					 if(login_attempts==0)
+					 {
+					 	alert("No Login Attempts Available");
+					 }
+					 else
+					 {
+						login_attempts=login_attempts-1;
+						alert("Login Failed Now Only "+login_attempts+" Login Attempts Available");
+						if(login_attempts==0)
+						{
+							document.getElementById("uname").disabled=true;
+							document.getElementById("password").disabled=true;
+						}
+				 	 }
 				 }
 				 
 				 return false;

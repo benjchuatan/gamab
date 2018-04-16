@@ -17,13 +17,13 @@
 
 <body class="container-fluid" style="background-color:lightgray;">
 <%
-  if(session.getAttribute("isadmin")!=null){
-  	response.sendRedirect("userManager.jsp");
+  if(session.getAttribute("isproductmanager")!=null){
+  	response.sendRedirect("error.jsp");
   	}
 
-  else if(session.getAttribute("isproductmanager")!=null){
-	  	response.sendRedirect("SignUp.jsp");
-	  	}
+  else if(session.getAttribute("isaccountingmanager")!=null){
+  	response.sendRedirect("error.jsp");
+  	}
 %>
 
 
