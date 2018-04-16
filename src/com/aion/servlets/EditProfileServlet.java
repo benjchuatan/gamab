@@ -1,7 +1,9 @@
 package com.aion.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +19,7 @@ import com.login.dao.LoginDao;
  * Servlet implementation class EditProfileServlet
  */
 @WebServlet("/EditProfileServlet")
+@MultipartConfig
 public class EditProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,10 +36,12 @@ public class EditProfileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserBean u = new UserBean();
+		String checkers;
 		ProfileBean P = new ProfileBean();
 		ProfileService profserv = new ProfileService();
 		UserService userserv = new UserService();
 		LoginDao loginserv = new LoginDao();
+		boolean checkss;
 		
 		
 		String a = request.getParameter("firstname");
@@ -48,11 +53,28 @@ public class EditProfileServlet extends HttpServlet {
 		System.out.println("ship_ad: "+e);
 		String g = request.getParameter("new_password");
 		int f = (int) request.getSession().getAttribute("iduser");
+		String h = request.getParameter("old_password");
 		//request.getRequestDispatcher("DisplayProfileServlet").forward(request, response);
-		response.sendRedirect("DisplayProfileServlet");
 		
+		PrintWriter out = response.getWriter();
+		checkss = userserv.checksame(f, h);
+		System.out.println("Bigdog look here: " + checkss);
+		
+		if(checkss == true) {
 		profserv.editprofile(a, b, c, d, e, f);
+		
 		userserv.edituser(f, g);
+		response.sendRedirect("DisplayProfileServlet");
+		}
+		else {
+		out.println("<script type=\"text/javascript\">");
+		out.println("alert('User or password incorrect');");
+		out.println("location='EditProf.jsp';");
+		out.println("</script>");
+		//response.sendRedirect("Home.jsp");
+		}
+			
+
 		
 	}
 
