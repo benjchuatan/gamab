@@ -1,10 +1,14 @@
 package com.aion.servlets;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDateTime;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -54,6 +58,8 @@ public class AddProductsServlet extends HttpServlet {
 		System.out.println(fileName);
 		String title = request.getParameter("title");
 		System.out.println("title : " + title);
+
+		String action = "";
 		
 	    File file = new File(FOLDER, fileName);
 		
@@ -75,6 +81,16 @@ public class AddProductsServlet extends HttpServlet {
 		ProductService productsService = new ProductService();
 		productsService.addProducts(p);
 		request.getRequestDispatcher("DisplayProductsServlet").forward(request, response);
+
+		action = "User " + request.getSession().getAttribute("iduser")  + " added product at  " + LocalDateTime.now();	
+		try (PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter("/Users/admin/Documents/logfiles.txt", true)))) {
+			System.out.println("File Opened");
+		    wr.println(action);
+		    wr.close();
+		} catch (IOException x) {
+		    System.err.format("IOException: %s%n", x);
+		    System.out.println("File not opened");
+		}
 		
 	}
 

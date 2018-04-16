@@ -52,6 +52,8 @@ public class CartService {
 	public void emptyCart(int id) {
 		String sqls = "Delete from secprg.cart where iduser =" + id;
 		
+		String action = "";
+
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url,username,password);
