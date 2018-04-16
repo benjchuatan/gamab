@@ -80,7 +80,7 @@
 					<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" required /></br>
 					<input type="text" name="username" value="" class="form-control input-lg" placeholder="Username" required /></br> 
 					<input type="password" name="password" value=""class="form-control input-lg" placeholder="Password" required />
-					*Minimum of 6 characters with at least one number, one lowercase and one uppercase letter</br></br>
+					*Minimum of 6 characters with at least one number, one lowercase and one uppercase letter. (no symbols)</br></br>
 					<input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password" required /></br> 
 					<input type ="text" name = "billing_add" value="" class="form-control input-lg" placeholder="Billing Address" required /></br>
 					<input type ="text" name = "shipping_add" value="" class="form-control input-lg" placeholder="Shipping Address" required /> <br>
