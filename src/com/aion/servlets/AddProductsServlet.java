@@ -29,7 +29,7 @@ import com.aion.services.ProductService;
 public class AddProductsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	static String location  = "/Users/admin/Documents/Github/gamab/WebContent/";
+	static String location  = "/WebContent/";
 	public static File FOLDER = new File(location);
     /**
      * @see HttpServlet#HttpServlet()

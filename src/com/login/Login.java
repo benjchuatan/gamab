@@ -88,6 +88,19 @@ public class Login extends HttpServlet {
 //				}
 				
 			}else {
+				System.out.println("IP ADDRESS" + request.getRemoteAddr());
+				System.out.println("does it exists: " +dao.checkusername(uname));
+				System.out.println("attempts: " +dao.attempts(dao.getiduser(uname)));
+				if(dao.checkusername(uname)) {
+					if(dao.attempts(dao.getiduser(uname)) >= 3) {
+						dao.lockaccounnt(dao.getiduser(uname));
+						System.out.println("pumasok");
+					}else {
+						
+						dao.addattempts(dao.getiduser(uname));
+					}
+				}
+						
 				out.println("<script type=\"text/javascript\">");
 				out.println("alert('User or password incorrect');");
 				out.println("location='Home.jsp';");
