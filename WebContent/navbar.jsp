@@ -93,6 +93,7 @@
   	
   			
 <nav class="navbar navbar-default nav2">
+
 	<div class="container-fluid">
 		  <ul class="nav navbar-nav">
 		      <li><a href="Home.jsp">Home</a></li>
@@ -106,6 +107,8 @@
 		      <c:if test="${sessionScope.cartnum != null}">
 		      <li><a href="GetCartProductsServlet">Cart</a></li>
 		      </c:if>
+		      
+		      
 		 </ul>
 	</div>
 </nav>
