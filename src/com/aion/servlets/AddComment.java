@@ -1,6 +1,8 @@
 package com.aion.servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,18 +32,20 @@ public class AddComment extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		int id =(Integer)request.getSession().getAttribute("iduser");
-		int idproduct = Integer.parseInt(request.getParameter("id"));
+		int idproduct = Integer.valueOf(request.getParameter("idproduct"));
+		System.out.println("idproduct: "+idproduct);
+		String comment = request.getParameter("comment");
 		ProductService service = new ProductService();
 		TransBeana bean = new TransBeana();
 		
+		service.addComment(idproduct, id, comment);
+		request.getRequestDispatcher("Home.jsp").forward(request, response);
 		
-		if(service.checkTrans(id, idproduct)) {
-			
-		}else {
+	
 			
 		}
 	}
@@ -49,4 +53,4 @@ public class AddComment extends HttpServlet {
 
 	
 
-}
+

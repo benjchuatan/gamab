@@ -38,6 +38,7 @@
 						<p><strong>Description: </strong> ${product[0].description} </p>
 						<p><strong>Quantity: </strong> ${product[0].quantity} </p>
 						<p><strong>Price: </strong> ${product[0].price} </p>
+						
 						<form action="ShoppingCartServlet" method="post">
 						<input type="hidden" name="idproduct" value="${product[0].idproducts}"> 
 						<c:if test="${sessionScope.username != null}">
@@ -69,12 +70,13 @@
                 </div>
        </div>
        
-       <form>
+       <form action="AddComment" method="post">
 	    <div class="form-group">
 	      <label for="comment">Leave your comments below:</label>
-	      <textarea class="form-control" rows="5" id="comment"></textarea>
+	      <textarea class="form-control" rows="5" name="comment"></textarea>
+	      <input type="hidden" name="idproduct" value="${product[0].idproducts}"> 
 	    </div>
-	    <button type="button" class="btn btn-lg btn-primary">Submit Comment</button>
+	    <button type="submit" class="btn btn-lg btn-primary">Submit Comment</button>
 	  </form>
     </div></br></br>
     

@@ -233,51 +233,50 @@ public class ProductService {
 		
 	}
 	
-	public ArrayList addComment(int prodID, int transID,int userID, String review) {
-		String sql = "Update secprg.productreviews set transID=?,productReview=?,userID=?,productID=?";
+	public void addComment(int prodID,int userID, String review) {
+		String sql = "INSERT INTO secprg.productreviews set productReview=?,userID=?,productID=?";
 		
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url,username,password);
 			PreparedStatement st = con.prepareStatement(sql);
-			st.setInt(1,transID);
-			st.setString(2,review);
-			st.setInt(3,userID);
-			st.setInt(4,prodID);
-			
+			st.setString(1,review);
+			st.setInt(2,userID);
+			st.setInt(3,prodID);
 			st.executeUpdate();
+			System.out.println("gumagana naman");
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		
 		
 	}
 	
-	public boolean checkTrans(int userID, int prodID) {
-		
-		String sql = "SELECT * FROM secprg.transactions where productID = ? and iduser = ?";
-		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url,username,password);
-			PreparedStatement st = con.prepareStatement(sql);
-			st.setInt(1,prodID);
-			st.setInt(2,userID);
-			ResultSet rs = st.executeQuery();
-			while(rs.next()) {
-				return true;
-			}
-			
-		} catch (ClassNotFoundException | SQLException e) {
-			
-			e.printStackTrace();
-		}
-		
-		return false;
-		
-	}
+//	public boolean checkTrans(int userID, int prodID) {
+//		
+//		String sql = "SELECT * FROM secprg.transactions where productID = ? and iduser = ?";
+//		
+//		try {
+//			Class.forName("com.mysql.jdbc.Driver");
+//			Connection con = DriverManager.getConnection(url,username,password);
+//			PreparedStatement st = con.prepareStatement(sql);
+//			st.setInt(1,prodID);
+//			st.setInt(2,userID);
+//			ResultSet rs = st.executeQuery();
+//			while(rs.next()) {
+//				return true;
+//			}
+//			
+//		} catch (ClassNotFoundException | SQLException e) {
+//			
+//			e.printStackTrace();
+//		}
+//		
+//		return false;
+//		
+//	}
 	
 	public void addProducts(Product p) {
 		String sql = "INSERT INTO secprg." + Product.TABLE_NAME + "("
