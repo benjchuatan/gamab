@@ -29,7 +29,7 @@ import com.aion.services.ProductService;
 public class AddProductsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	static String location  = "/Users/admin/Documents/Github/gamab/WebContent/";
+	static String location  = "/Users/JC/eclipse-workspace/gamab/WebContent/";
 	public static File FOLDER = new File(location);
     /**
      * @see HttpServlet#HttpServlet()
@@ -83,8 +83,9 @@ public class AddProductsServlet extends HttpServlet {
 		productsService.addProducts(p);
 		request.getRequestDispatcher("DisplayProductsServlet").forward(request, response);
 
-		action = "User " + request.getSession().getAttribute("iduser")  + " added product at  " + LocalDateTime.now();	
-		try (PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter("/Users/admin/Documents/logfiles.txt", true)))) {
+		action = "User " + request.getSession().getAttribute("iduser")  + " added product at  " + LocalDateTime.now();
+		
+		try (PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\JC\\Documents\\logfiles.txt", true)))) {
 			System.out.println("File Opened");
 		    wr.println(action);
 		    wr.close();
