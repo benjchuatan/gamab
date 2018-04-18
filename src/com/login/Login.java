@@ -45,11 +45,12 @@ public class Login extends HttpServlet {
 		LoginDao dao = new LoginDao();
 		CartService carserv = new CartService();
 		int loginTries = 3;
-	
-		PrintWriter out = response.getWriter();
+		HttpSession session = request.getSession();
+		PrintWriter outa = response.getWriter();
+		PrintWriter outb = response.getWriter();
 		try {
 			if(dao.check(uname, pass)) {
-				HttpSession session = request.getSession();
+				
 				
 				if(dao.checkadmin(uname)==1) {
 					session.setAttribute("isadmin", uname);
@@ -88,24 +89,30 @@ public class Login extends HttpServlet {
 //				}
 				
 			}else {
-				System.out.println("IP ADDRESS" + request.getRemoteAddr());
-				System.out.println("does it exists: " +dao.checkusername(uname));
-				System.out.println("attempts: " +dao.attempts(dao.getiduser(uname)));
+				
 				if(dao.checkusername(uname)) {
 					if(dao.attempts(dao.getiduser(uname)) >= 3) {
 						dao.lockaccounnt(dao.getiduser(uname));
-						System.out.println("pumasok");
+						
+//						session.setAttribute("Locked","yes");
+						outa.println("<script type=\"text/javascript\">");
+						outa.println("alert('Account Locked');");
+						outa.println("location='Home.jsp';");
+						outa.println("</script>");
+						
 					}else {
 						
 						dao.addattempts(dao.getiduser(uname));
+					
 					}
-				}
-						
-				out.println("<script type=\"text/javascript\">");
-				out.println("alert('User or password incorrect');");
-				out.println("location='Home.jsp';");
-				out.println("</script>");
+				}else {
+					outb.println("<script type=\"text/javascript\">");
+					outb.println("alert('Username/Password is Incorrect');");
+					outb.println("location='Home.jsp';");
+					outb.println("</script>");
+				
 				//response.sendRedirect("Home.jsp");
+				}
 			}
 		
 			//File writing code start
