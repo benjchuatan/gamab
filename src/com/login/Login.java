@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.BufferedWriter; 	//For file writing
 import java.io.FileWriter;		//For file writing
 import java.io.PrintWriter;		//For file writing
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.*;				//For file writing
 import javax.servlet.ServletException;
@@ -49,14 +50,24 @@ public class Login extends HttpServlet {
 		PrintWriter outa = response.getWriter();
 		PrintWriter outb = response.getWriter();
 		PrintWriter outc = response.getWriter();
+		PrintWriter outd = response.getWriter();
 		try {
 			if(dao.check(uname, pass)) {
 				if(dao.checklock(dao.getiduser(uname)) == 1) {
 					System.out.println("nakalock");
+					if(dao.checktimer(dao.getiduser(uname)) >= 60) { 
+					dao.unlockaccounnt(dao.getiduser(uname));
+					outd.println("<script type=\"text/javascript\">");
+					outd.println("alert('Account Succesfully unlocked Login again to continue');");
+					outd.println("location='Home.jsp';");
+					outd.println("</script>");
+					}
+					else {
 					outc.println("<script type=\"text/javascript\">");
 					outc.println("alert('Account Locked for 20mins');");
 					outc.println("location='Home.jsp';");
 					outc.println("</script>");
+					}
 				}else {
 				if(dao.checkadmin(uname)==1) {
 					session.setAttribute("isadmin", uname);
@@ -94,20 +105,29 @@ public class Login extends HttpServlet {
 			}else if(dao.checkusername(uname)) {
 				if(dao.attempts(dao.getiduser(uname)) >= 3) {
 					System.out.println("pasok");
-					if(dao.checktimer(dao.getiduser(uname)) >= 1200) {
+					if(dao.checktimer(dao.getiduser(uname)) >= 60) {
 						dao.unlockaccounnt(dao.getiduser(uname));
 					}else
 						dao.lockaccounnt(dao.getiduser(uname));
 						outa.println("<script type=\"text/javascript\">");
-						outa.println("alert('Account Locked for 20mins');");
+						outa.println("alert('Account Locked for 1min');");
 						outa.println("location='Home.jsp';");
 						outa.println("</script>");
 				}else{
-					dao.addattempts(dao.getiduser(uname));
-					outb.println("<script type=\"text/javascript\">");
-					outb.println("alert('Username/Password is Incorrect');");
-					outb.println("location='Home.jsp';");
-					outb.println("</script>");
+					if(dao.checkifexists(dao.getiduser(uname))) {
+						dao.addattempts(dao.getiduser(uname));
+						outb.println("<script type=\"text/javascript\">");
+						outb.println("alert('Username/Password is Incorrect');");
+						outb.println("location='Home.jsp';");
+						outb.println("</script>");
+					}else {
+						dao.addnewentry(dao.getiduser(uname));
+						outb.println("<script type=\"text/javascript\">");
+						outb.println("alert('Username/Password is Incorrect');");
+						outb.println("location='Home.jsp';");
+						outb.println("</script>");
+					}
+					
 				}
 				
 			}else {
@@ -116,32 +136,7 @@ public class Login extends HttpServlet {
 				outb.println("location='Home.jsp';");
 				outb.println("</script>");
 			}
-//			else {
-//				
-//				if(dao.checkusername(uname)) {
-//					if(dao.attempts(dao.getiduser(uname)) >= 3) {
-//						dao.lockaccounnt(dao.getiduser(uname));
-//						outa.println("<script type=\"text/javascript\">");
-//						outa.println("alert('Account Locked');");
-//						outa.println("location='Home.jsp';");
-//						outa.println("</script>");
-//						
-//					}else {
-//						
-//						dao.addattempts(dao.getiduser(uname));
-//					
-//					}
-//				}else {
-//					outb.println("<script type=\"text/javascript\">");
-//					outb.println("alert('Username/Password is Incorrect');");
-//					outb.println("location='Home.jsp';");
-//					outb.println("</script>");
-//				
-//				//response.sendRedirect("Home.jsp");
-//				}
-//			}
-//		
-			//File writing code start
+
 			try (PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\JC\\Documents\\logfiles.txt", true)))) {
 				System.out.println("File Opened");
 			    wr.println(action);

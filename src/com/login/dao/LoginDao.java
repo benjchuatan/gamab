@@ -131,8 +131,44 @@ public class LoginDao {
 		}
 		return 0;
 	}
+	public void addnewentry(int id) {
+	  String sql = "INSERT INTO secprg.sessiontracking(attempts,logged,userid) values (1,now(),?)";
+	  
+	  try {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection(url,username,password);
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setInt(1, id);
+		st.executeUpdate();
+	} catch (ClassNotFoundException | SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	  
+	}
+	
+	public boolean checkifexists(int id) {
+		String sql = "SELECT * FROM secprg.sessiontracking where userid=?";
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, id);
+			ResultSet rs = st.executeQuery();
+			if(!rs.next()) {
+				return false;
+			}else return true;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+		
+	}
 	public void addattempts(int id) {
 		String sql = "UPDATE secprg.sessiontracking set attempts = attempts + 1, logged=NOW() where userid=?";
+		
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -145,6 +181,10 @@ public class LoginDao {
 			e.printStackTrace();
 		}
 	}
+	
+//	public void addrecord(int id) {
+//		String sql = "INSERT INTO secprg.sessiontracking(attempts,logged,userid) VALUES('?','?','?')";
+//	}
 	
 	public void lockaccounnt(int id) {
 		String sql = "UPDATE secprg.user set locked=1 where iduser=?";
