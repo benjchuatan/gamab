@@ -49,7 +49,6 @@ public class LoginDao {
 			st.setInt(1,id);
 			ResultSet rs = st.executeQuery();
 			if(rs.next()) {
-				System.out.println(rs.getInt(1));
 				return rs.getInt(1);
 			}
 			
@@ -113,7 +112,25 @@ public class LoginDao {
 		
 		return 4;
 	}
-	
+	public int checktimer(int id) {
+		String sql = "select time_to_sec(timediff(now(),logged)) from sessiontracking where userid=?";
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, id);
+			ResultSet rs = st.executeQuery();
+			if(rs.next()) {
+				System.out.println(rs.getInt(1));
+				return rs.getInt(1);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
 	public void addattempts(int id) {
 		String sql = "UPDATE secprg.sessiontracking set attempts = attempts + 1, logged=NOW() where userid=?";
 		
@@ -138,6 +155,45 @@ public class LoginDao {
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setInt(1, id);
 			st.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public int checklock(int id) {
+		String sql = "SELECT locked FROM secprg.user where iduser=?";
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, id);
+			ResultSet rs = st.executeQuery();
+			if(rs.next()) {
+				System.out.println(rs.getInt(1));
+				return rs.getInt(1);
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+		
+	}
+	public void unlockaccounnt(int id) {
+		String sql = "UPDATE secprg.user set locked=0 where iduser=?";
+		String sql1 = "Update secprg.sessiontracking set attempts=0 where userid=?";
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			PreparedStatement st1 = con.prepareStatement(sql1);
+			st.setInt(1, id);
+			st1.setInt(1, id);
+			st.executeUpdate();
+			st1.executeUpdate();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
