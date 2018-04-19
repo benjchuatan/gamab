@@ -27,6 +27,10 @@
   else if(session.getAttribute("username")==null){
 	  	response.sendRedirect("error.jsp");
 	}
+
+  else if(session.getAttribute("normuser ")!=null){
+	  	response.sendRedirect("error.jsp");
+	}
 %>
 
 <div class="row"><%@ include file="navbar.jsp" %></div></br>
