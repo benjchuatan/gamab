@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.aion.javabean.CartBean;
 import com.aion.javabean.Product;
 import com.aion.javabean.TransBean;
 import com.aion.javabean.TransBeana;
@@ -16,6 +17,61 @@ public class TransactionService {
 	String url ="jdbc:mysql://localhost:3306/secprg";
 	String username ="root";
 	String password = "password";
+	
+	public int getFirstitem (int id) {
+		int tryme = 0;
+		String sql = "SELECT idproduct FROM secprg.cart where cartid = " + id;
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				tryme = rs.getInt(CartBean.IDPRODUCT);
+			}
+		}catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tryme;
+	}
+	
+	public int getFirstitemid (int id) {
+		int tryme = 0;
+		String sql = "SELECT cartid FROM secprg.cart where iduser = ? limit 1";
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, id);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				tryme = rs.getInt(CartBean.CARTID);
+			}
+		}catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tryme;
+	}
+
+	public void updatequantity(int idp) {
+		String sql = "UPDATE secprg.product SET quantity = quantity -1 where ProductID = " + idp;
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+		
+			st.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	public ArrayList getTransactions ( ) {
 		

@@ -121,6 +121,7 @@
 							<input type="text" name="last_name" value="" class="form-control input-lg" placeholder="Last Name" required />
 						</div>
 					</div></br>
+					<input id="token" type="hidden" value="${sessionScope.csrfToken}" />
 					<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" required /></br>
 					<input type="text" name="username" value="" class="form-control input-lg" placeholder="Username" required />
 					*Must only contain letters,numbers and underscores. (no symbols)</br></br> 

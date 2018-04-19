@@ -35,7 +35,7 @@ public class DeleteProductServlet extends HttpServlet {
 		ProductService ProductsService = new ProductService();
 		ProductsService.deleteProduct(id);
 		System.out.println("yes pasok:");
-		request.getRequestDispatcher("AdminServlet").forward(request, response);
+		request.getRequestDispatcher("ProductManagement").forward(request, response);
 
 
 		

@@ -34,14 +34,23 @@ public class ShoppingCartServlet extends HttpServlet {
 		CartBean u = new CartBean();
 		CartService carserv = new CartService();
 		HttpSession session = request.getSession();
-		//session.setAttribute("iduser", dao.getiduser(uname));
-		u.setIdproducts(Integer.parseInt(request.getParameter("idproduct")));
 		
-		u.setIduser((Integer)request.getSession().getAttribute("iduser"));
-		carserv.addcart(u);
-		session.setAttribute("cartnum",carserv.getNum((Integer)request.getSession().getAttribute("iduser")));
-		//request.getRequestDispatcher("Home.jsp").forward(request, response);
-		response.sendRedirect("Home.jsp");
+      
+        	u.setIdproducts(Integer.parseInt(request.getParameter("idproduct")));
+    		
+    		u.setIduser((Integer)request.getSession().getAttribute("iduser"));
+    		carserv.addcart(u);
+    		session.setAttribute("cartnum",carserv.getNum((Integer)request.getSession().getAttribute("iduser")));
+    		//request.getRequestDispatcher("Home.jsp").forward(request, response);
+    		response.sendRedirect("Home.jsp");
+                //go ahead and process ... do business logic here
+
+
+
+                //DO NOT PROCESS ... this is to be considered a CSRF attack - handle appropriately
+        
+		//session.setAttribute("iduser", dao.getiduser(uname));
+		
 		
 	}
 

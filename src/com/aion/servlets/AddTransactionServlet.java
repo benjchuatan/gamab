@@ -53,17 +53,27 @@ public class AddTransactionServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		TransactionService transactionsService = new TransactionService();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 		Date date = new Date();
 		TransBeana b = new TransBeana();
 		String action = "";
-
-		b.setProductID(Integer.parseInt(request.getParameter(TransBeana.PRODUCTID)));
-		b.setIduser((Integer) request.getSession().getAttribute("iduser"));
-		b.setDate(dateFormat.format(date));
-		TransactionService transactionsService = new TransactionService();
-		transactionsService.addTransactions(b);
+		int id2, id3;
+		CartService CartsService = new CartService();
+		int id =(Integer)request.getSession().getAttribute("iduser");
+		int trymebiatch = CartsService.getNum(id);
+		id2 = transactionsService.getFirstitemid(id);
+		System.out.println("Me sa me yessir " + trymebiatch);
+		for(int fb = id2; fb < (id2+ trymebiatch); fb++) {
+			System.out.println("Eto naa bui bebe" + fb);
+			id3 = transactionsService.getFirstitem(fb);
+			System.out.println("Yess eto yun sa add: " + id3);
+			b.setProductID(id3);
+			b.setIduser((Integer) request.getSession().getAttribute("iduser"));
+			b.setDate(dateFormat.format(date));
+			transactionsService.updatequantity(id3);
+			transactionsService.addTransactions(b);
+		}
 		CartService CS = new CartService();
 		CS.emptyCart((Integer) request.getSession().getAttribute("iduser"));
 		
