@@ -70,7 +70,21 @@
                 </div>
        </div>
        
-       <form action="AddComment" method="post">
+       	<script type="text/javascript">
+		  function checkForm(form)
+		  {
+		    re = /^[a-zA-Z0-9,.!? ]*$/;
+		    if(!re.test(form.comment.value)) {
+		      alert("Error 1301");
+		      form.comment.focus();
+		      return false;
+		    }
+		    
+		    return true;
+		  }	
+		</script>
+       
+       <form action="AddComment" method="post" onsubmit="return checkForm(this);">
 	    <div class="form-group">
 	      <label for="comment">Leave your comments below:</label>
 	      <textarea class="form-control" rows="5" name="comment"></textarea>

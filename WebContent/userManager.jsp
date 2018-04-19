@@ -16,14 +16,22 @@
 </head>
 
 <body class="container-fluid" style="background-color:lightgray;">
-<%
-  if(session.getAttribute("isproductmanager")!=null){
-  	response.sendRedirect("error.jsp");
+<%	
+  if(session.getAttribute("isaccountingmanager")!=null){
+  	  	response.sendRedirect("error.jsp");
   	}
 
-  else if(session.getAttribute("isaccountingmanager")!=null){
-  	response.sendRedirect("error.jsp");
-  	}
+  else if(session.getAttribute("username")!=null){
+	  	response.sendRedirect("error.jsp");
+	}
+
+  else if(session.getAttribute("isproductmanager")!=null){
+	  	response.sendRedirect("error.jsp");
+	}
+
+  else if(session.getAttribute("username")==null){
+	  	response.sendRedirect("error.jsp");
+	}
 %>
 
 

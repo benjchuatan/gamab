@@ -13,9 +13,20 @@
 </head>
 <body style="background-color:lightgray;">
 <%
-  if(session.getAttribute("isaccountingmanager")!=null){
+	if(session.getAttribute("isadmin")!=null){
   	response.sendRedirect("error.jsp");
+  }
+  else if(session.getAttribute("isaccountingmanager")!=null){
+  	  	response.sendRedirect("error.jsp");
   	}
+
+  else if(session.getAttribute("username")!=null){
+	  	response.sendRedirect("error.jsp");
+	}
+
+  else if(session.getAttribute("username")==null){
+	  	response.sendRedirect("error.jsp");
+	}
 %>
 <div class="row"><%@ include file="navbar.jsp" %></div>,</br>
  

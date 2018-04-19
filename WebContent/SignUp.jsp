@@ -12,6 +12,26 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <body class = "container-fluid" style="background-color:lightgray;">
+<%
+	if(session.getAttribute("isadmin")!=null){
+  	response.sendRedirect("error.jsp");
+  }
+  else if(session.getAttribute("isaccountingmanager")!=null){
+  	  	response.sendRedirect("error.jsp");
+  	}
+
+  else if(session.getAttribute("isproductmanager")!=null){
+	  	response.sendRedirect("error.jsp");
+	}
+
+  else if(session.getAttribute("username")!=null){
+	  	response.sendRedirect("error.jsp");
+	}
+
+  else if(session.getAttribute("username")==null){
+	  	response.sendRedirect("error.jsp");
+	}
+%>
 
 <div class="row"><%@ include file="navbar.jsp" %></div></br>
 
@@ -29,15 +49,43 @@
 		  {
 		    re = /^\w+$/;
 		    if(!re.test(form.username.value)) {
-		      alert("Error: Username must contain only letters, numbers and underscores!");
+		      alert("Error 101");
 		      form.username.focus();
 		      return false;
 		    }
 		    
+		    re = /^[A-Za-z.\s-]+$/;
+		    if(!re.test(form.first_name.value)) {
+			      alert("Error 202");
+			      form.first_name.focus();
+			      return false;
+			    }
+		    
+		    re = /^[A-Za-z.\s-]+$/;
+		    if(!re.test(form.last_name.value)) {
+			      alert("Error 303");
+			      form.last_name.focus();
+			      return false;
+			    }
+		    
 		    re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		    if(!re.test(form.email.value)) {
-			      alert("Error: Please enter a valid email!");
+			      alert("Error 404");
 			      form.email.focus();
+			      return false;
+			    }
+		    
+		    re = /^[a-zA-Z0-9,.!? ]*$/;
+		    if(!re.test(form.billing_add.value)) {
+			      alert("Error 505");
+			      form.billing_add.focus();
+			      return false;
+			    }
+		    
+		    re = /^[a-zA-Z0-9,.!? ]*$/;
+		    if(!re.test(form.shipping_add.value)) {
+			      alert("Error 606");
+			      form.shipping_add.focus();
 			      return false;
 			    }
 		
@@ -78,7 +126,8 @@
 						</div>
 					</div></br>
 					<input type="text" name="email" value="" class="form-control input-lg" placeholder="Email Address" required /></br>
-					<input type="text" name="username" value="" class="form-control input-lg" placeholder="Username" required /></br> 
+					<input type="text" name="username" value="" class="form-control input-lg" placeholder="Username" required />
+					*Must only contain letters,numbers and underscores. (no symbols)</br></br> 
 					<input type="password" name="password" value=""class="form-control input-lg" placeholder="Password" required />
 					*Minimum of 6 characters with at least one number, one lowercase and one uppercase letter. (no symbols)</br></br>
 					<input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password" required /></br> 

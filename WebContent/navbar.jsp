@@ -30,41 +30,7 @@
       			</form>
                 </c:when>
                 <c:otherwise>
-                
-                <script type="text/javascript">
-                var login_attempts=3;
-				function check_form()
-				{
-				 var name=document.getElementById("uname").value;
-				 var pass=document.getElementById("password").value;
-				 if(Login==true)
-				 {
-					  alert("SuccessFully Logged In");
-					  document.getElementById("name").value="";
-					  document.getElementById("pass").value="";
-				 }
-				 else
-				 {
-					 if(login_attempts==0)
-					 {
-					 	alert("No Login Attempts Available");
-					 }
-					 else
-					 {
-						login_attempts=login_attempts-1;
-						alert("Login Failed Now Only "+login_attempts+" Login Attempts Available");
-						if(login_attempts==0)
-						{
-							document.getElementById("uname").disabled=true;
-							document.getElementById("password").disabled=true;
-						}
-				 	 }
-				 }
-				 
-				 return false;
-				}	
-			</script>
-                <form id="signin" class="navbar-form navbar-right" role="form" action="Login" method="post" onsubmit="return check_form(this);" >
+                <form id="signin" class="navbar-form navbar-right" role="form" action="Login" method="post">
                 	<div class="input-group">
                     	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input id="uname" type="text" class="form-control" name="username" placeholder="username" required>                                        
@@ -81,6 +47,7 @@
                 </c:otherwise>
     		</c:choose>	
     			
+    		
     			<form action="SearchProductServlet" class="navbar-form navbar-left" role="search">
     				<div class="form-group">
 						<div class="input-group" id = "searchid">

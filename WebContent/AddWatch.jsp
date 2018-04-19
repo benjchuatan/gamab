@@ -14,6 +14,22 @@
 </head>
 
 <body style="background-color:lightgray;">
+<%
+	if(session.getAttribute("isadmin")!=null){
+  	response.sendRedirect("error.jsp");
+  }
+  else if(session.getAttribute("isaccountingmanager")!=null){
+  	  	response.sendRedirect("error.jsp");
+  	}
+
+  else if(session.getAttribute("username")!=null){
+	  	response.sendRedirect("error.jsp");
+	}
+
+  else if(session.getAttribute("username")==null){
+	  	response.sendRedirect("error.jsp");
+	}
+%>
 
 <div class="row"><%@ include file="navbar.jsp" %></div></br>
   	
@@ -24,18 +40,60 @@
       	</div>
       	<div class="panel-body"> 
         <div class = "col-md-6 col-md-offset-3">
-        <form action = "AddProductsServlet" method = "POST" enctype="multipart/form-data">
+        
+         <script type="text/javascript">
+		  function checkForm(form)
+		  {
+		    re = /^[a-zA-Z0-9,.!? ]*$/;
+		    if(!re.test(form.name.value)) {
+			      alert("Error 808");
+			      form.name.focus();
+			      return false;
+			    }
+		    
+		    re = /^[a-zA-Z0-9,.!? ]*$/;
+		    if(!re.test(form.manufacturer.value)) {
+			      alert("Error 909");
+			      form.manufacturer.focus();
+			      return false;
+			    }
+		    
+		    re = /^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:(\.|,)\d{2})?$/;
+		    if(!re.test(form.price.value)) {
+			      alert("Error 1101");
+			      form.price.focus();
+			      return false;
+			    }
+		    
+		    
+		    re = /^[0-9]+$/;
+		    if(!re.test(form.quantity.value)) {
+			      alert("Error 1201");
+			      form.quantity.focus();
+			      return false;
+			    }
+		    
+		    re = /^[a-zA-Z0-9,.!? ]*$/;
+		    if(!re.test(form.description.value)) {
+			      alert("Error 1001");
+			      form.description.focus();
+			      return false;
+			    }
+		    return true;
+		  }	
+		</script>
+        <form action = "AddProductsServlet" method = "POST" enctype="multipart/form-data" onsubmit="return checkForm(this);">
               <fieldset class="form-group">
-                <input type="text" class="form-control input-lg" id="formGroupExampleInput" placeholder="Watch Name" name = "name">
+                <input type="text" class="form-control input-lg" id="formGroupExampleInput" placeholder="Watch Name" name = "name" required>
               </fieldset>
               <fieldset class="form-group">
-                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Manufacturer" name = "manufacturer">
+                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Manufacturer" name = "manufacturer" required>
               </fieldset>
               <fieldset class="form-group">
-                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Description" name = "description">
+                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Description" name = "description" required>
               </fieldset>
               <fieldset class="form-group">
-                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "price">
+                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Price" name = "price" required>
               </fieldset>
               <fieldset>
               <fieldset class = "form-group">
@@ -47,10 +105,10 @@
               </fieldset>
               <fieldset class="form-group">
                 <label for="exampleInputFile">Upload Art</label>
-                <input type="file" class="form-control-file" id="exampleInputFile" name= "filename">
+                <input type="file" class="form-control-file" id="exampleInputFile" name= "filename" required>
               </fieldset>
               <fieldset class="form-group">
-                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Quantity" name = "quantity">
+                <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Quantity" name = "quantity" required>
               </fieldset>
               <input type = "submit" a href = "DisplayProductsServlet" button type="submit" class="btn btn-info btn-lg"></a>
 
