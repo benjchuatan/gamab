@@ -81,7 +81,7 @@ public class Login extends HttpServlet {
 					session.setAttribute("username", uname);
 					session.setAttribute("iduser", dao.getiduser(uname));
 					System.out.println("futa: "+dao.getiduser(uname));
-					response.sendRedirect("AdminServlet");
+					response.sendRedirect("ProductManagement");
 					action = uname + " ID: " + dao.getiduser(uname) + " logged in at " + LocalDateTime.now();
 				}else if(dao.checkadmin(uname)==3) {
 					session.setAttribute("isaccountingmanager", uname);

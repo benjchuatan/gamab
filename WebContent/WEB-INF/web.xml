@@ -44,6 +44,64 @@
 	<url-pattern>/AIONProfile</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>GetCartProductsServlet</servlet-name>
+	<servlet-class>com.aion.servlets.GetCartProductsServlet</servlet-class>
+</servlet>
 
+<servlet-mapping>
+	<servlet-name>GetCartProductsServlet</servlet-name>
+	<url-pattern>/CartProducts</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>SearchProductServlet</servlet-name>
+	<servlet-class>com.aion.servlets.SearchProductServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>SearchProductServlet</servlet-name>
+	<url-pattern>/Search</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>DisplayProductServlet</servlet-name>
+	<servlet-class>com.aion.servlets.DisplayProductServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>DisplayProductServlet</servlet-name>
+	<url-pattern>/Display</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>GetProductServlet</servlet-name>
+	<servlet-class>com.aion.servlets.GetProductServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>GetProductServlet</servlet-name>
+	<url-pattern>/Product</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>AdminServlet</servlet-name>
+	<servlet-class>com.aion.servlets.AdminServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>AdminServlet</servlet-name>
+	<url-pattern>/ProductManagement</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>EditProductServlet</servlet-name>
+	<servlet-class>com.aion.servlets.EditProductServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>EditProductServlet</servlet-name>
+	<url-pattern>/EditProduct</url-pattern>
+</servlet-mapping>
 	
 </web-app>

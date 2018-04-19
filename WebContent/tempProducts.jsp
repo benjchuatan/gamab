@@ -20,7 +20,7 @@
   	
 <div class="row">
     <c:forEach items = "${productlists}" var = "p">    
-		<div class="col-md-3 col-sm-3 col-xs-12 image-main-section" style="cursor:pointer" align="center" onclick="location.href='GetProductServlet?id=${p.idproducts}';">
+		<div class="col-md-3 col-sm-3 col-xs-12 image-main-section" style="cursor:pointer" align="center" onclick="location.href='Product?id=${p.idproducts}';">
 	        <div class="row img-part">
 	          <img class="img-responsive" src="${p.filename}" alt="alternative" >
 	          <h4><a href="GetProductServlet?id=${p.idproducts}">${p.name}</a></h4>

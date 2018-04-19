@@ -46,12 +46,55 @@
       	</div>
       	<div class="panel-body"> 
         <div class="col-md-6 col-md-offset-3">
-            <form action="UserAdminServlet" method="post" accept-charset="utf-8" class="form" role="form">   
-
- 
-                <input type="text" name="username" value="" class="form-control input-lg" placeholder="Username"  /></br>
-                <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  /></br>   
-                <input type="text" name="privilege" value="" class="form-control input-lg" placeholder="Privilege Level"  /></br>                        
+        
+        <script type="text/javascript">
+		  function checkForm(form)
+		  {
+		    re = /^\w+$/;
+		    if(!re.test(form.username.value)) {
+		      alert("Error 101");
+		      form.username.focus();
+		      return false;
+		    }
+		    
+		    re = /^[1-4]$/;
+		    if(!re.test(form.privilege.value)) {
+			      alert("Error 1401");
+			      form.privilege.focus();
+			      return false;
+			    }
+		   
+		    if(form.password.value != "") 
+		    {
+		      re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/;
+		      if(!re.test(form.password.value)) {
+			        alert("Error! Password does not meet the requirements! Try Again.");
+			        form.password.focus();
+			        return false;
+			      }
+		      if(form.password.value == form.username.value) {
+		        alert("Error! Password must be different from Username!");
+		        form.password.focus();
+		        return false;
+		      }
+		   
+		    } 
+		    else {
+		      alert("Error: Please check that you've entered and confirmed your password!");
+		      form.password.focus();
+		      return false;
+		    }
+		    return true;
+		  }	
+		</script>
+		
+            <form action="UserAdminServlet" method="post" accept-charset="utf-8" class="form" role="form" onsubmit="return checkForm(this);">   
+				<input type="text" name="username" value="" class="form-control input-lg" placeholder="Username"  />
+				*Must only contain letters,numbers and underscores. (no symbols)</br></br> 
+                <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  />
+                *Minimum of 6 characters with at least one number, one lowercase and one uppercase letter. (no symbols)</br></br>  
+                <input type="text" name="privilege" value="" class="form-control input-lg" placeholder="Privilege Level"  />
+                *Choose from numbers 1 to 4 only.</br></br>                        
                 <button class="btn btn-lg btn-info btn-block signup-btn" type="submit">Create Account</button>
             </form>          
           </div>
