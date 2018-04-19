@@ -70,6 +70,7 @@ public class AddTransactionServlet extends HttpServlet {
 			b.setProductID(id3);
 			b.setIduser((Integer) request.getSession().getAttribute("iduser"));
 			b.setDate(dateFormat.format(date));
+			transactionsService.updatequantity(id3);
 			transactionsService.addTransactions(b);
 		}
 		CartService CS = new CartService();
