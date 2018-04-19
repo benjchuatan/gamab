@@ -12,19 +12,24 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color:lightgray;">
-<%
-	if(session.getAttribute("isadmin")!=null){
-  	response.sendRedirect("error.jsp");
-  }
-  else if(session.getAttribute("isaccountingmanager")!=null){
+<%	
+  if(session.getAttribute("isaccountingmanager")!=null){
   	  	response.sendRedirect("error.jsp");
   	}
 
+  else if(session.getAttribute("isadmin")!=null){
+	  	response.sendRedirect("error.jsp");
+	}
 
   else if(session.getAttribute("username")==null){
 	  	response.sendRedirect("error.jsp");
 	}
+
+  else if(session.getAttribute("normuser ")!=null){
+	  	response.sendRedirect("error.jsp");
+	}
 %>
+
 <div class="row"><%@ include file="navbar.jsp" %></div>,</br>
  
   	<div class = "container">
@@ -51,8 +56,8 @@
 					      <td>${p.manufacturer}</td>
 					      <td>${p.description}</td>
 					      <td>${p.price}</td>
-					      <td><p data-placement="top" data-toggle="tooltip" title="Edit">  <button class="btn btn-info btn-s" data-title="Edit" data-toggle="modal" data-target="#edit" >		<a href="EditProductServlet?id=${p.idproducts}"></a>  <span class="glyphicon glyphicon-pencil"></span></button></p></td>
-	    				  <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-s" data-title="Delete" data-toggle="modal" data-target="#delete" > <a href="DeleteProductServlet?id=${p.idproducts}"> <span class="glyphicon glyphicon-trash"></a></span></button></p></td>
+					      <td><a href="EditProductServlet?id=${p.idproducts}">Edit</a></td>
+	    				  <td><a href="DeleteProductServlet?id=${p.idproducts}">Delete</a></td>
 					    </tr>
 					  </tbody>
      			</c:forEach>	
