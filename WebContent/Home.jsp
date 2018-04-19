@@ -15,12 +15,7 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<%
- //String locked = (String) session.getAttribute("Locked");
-//	if(locked.equals("yes")){
-//		out.print("alert('Account locked please contact admin or wait for 20mins');");
-//	}
-%>
+
 </head>
 
 <style>
