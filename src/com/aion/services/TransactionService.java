@@ -57,6 +57,21 @@ public class TransactionService {
 		}
 		return tryme;
 	}
+
+	public void updatequantity(int idp) {
+		String sql = "UPDATE secprg.product SET quantity = quantity -1 where ProductID = " + idp;
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,username,password);
+			PreparedStatement st = con.prepareStatement(sql);
+			ResultSet rs = st.executeQuery();	
+			st.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	public ArrayList getTransactions ( ) {
 		
