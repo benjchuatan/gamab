@@ -160,7 +160,7 @@
 				      
 				    
 					<input type ="text" name = "cvv" value="" class="form-control input-lg" placeholder="Security Number" required /></br>
-					
+					<input type="checkbox" name="remember" value="remember"> Do you want to remember credit info? <BR><br>
 					<label class="col-sm-6 control-label" for="cvv">Total: ${total}</label></br></br>
 					
 					<button type="submit" a href="Home.jsp" class="btn btn-lg btn-info signup-btn">Purchase</button>
