@@ -30,8 +30,8 @@
 </error-page>
 
 <servlet>
-	<servlet-name>AIONPurchase</servlet-name>
-	<jsp-file>/checkout.jsp</jsp-file>
+	<servlet-name>AION Products</servlet-name>
+	<jsp-file>/tempProducts.jsp</jsp-file>
 </servlet>
 <servlet-mapping>
 	<servlet-name>AIONPurchase</servlet-name>
