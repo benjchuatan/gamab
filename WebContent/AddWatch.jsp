@@ -22,9 +22,6 @@
   	  	response.sendRedirect("error.jsp");
   	}
 
-  else if(session.getAttribute("username")!=null){
-	  	response.sendRedirect("error.jsp");
-	}
 
   else if(session.getAttribute("username")==null){
 	  	response.sendRedirect("error.jsp");
@@ -110,7 +107,7 @@
               <fieldset class="form-group">
                 <input type="text" class="form-control input-lg" id="formGroupExampleInput2" placeholder="Quantity" name = "quantity" required>
               </fieldset>
-              <input type = "submit" a href = "DisplayProductsServlet" button type="submit" class="btn btn-info btn-lg"></a>
+              <input type = "submit" a href = "Home.jsp" button type="submit" class="btn btn-info btn-lg"></a>
 
         </form>
         </div>

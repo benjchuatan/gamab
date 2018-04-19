@@ -58,13 +58,13 @@ public class Login extends HttpServlet {
 					if(dao.checktimer(dao.getiduser(uname)) >= 60) { 
 					dao.unlockaccounnt(dao.getiduser(uname));
 					outd.println("<script type=\"text/javascript\">");
-					outd.println("alert('Account Succesfully unlocked Login again to continue');");
+					outd.println("alert('Account succesfully unlocked. Login again to continue.');");
 					outd.println("location='Home.jsp';");
 					outd.println("</script>");
 					}
 					else {
 					outc.println("<script type=\"text/javascript\">");
-					outc.println("alert('Account Locked for 20mins');");
+					outc.println("alert('Account locked for 1 minute.');");
 					outc.println("location='Home.jsp';");
 					outc.println("</script>");
 					}
@@ -110,7 +110,7 @@ public class Login extends HttpServlet {
 					}else
 						dao.lockaccounnt(dao.getiduser(uname));
 						outa.println("<script type=\"text/javascript\">");
-						outa.println("alert('Account Locked for 1min');");
+						outa.println("alert('Account locked for 1 minute.');");
 						outa.println("location='Home.jsp';");
 						outa.println("</script>");
 				}else{

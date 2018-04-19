@@ -24,10 +24,6 @@
   	  	response.sendRedirect("error.jsp");
   	}
 
-  else if(session.getAttribute("username")!=null){
-	  	response.sendRedirect("error.jsp");
-	}
-
   else if(session.getAttribute("username")==null){
 	  	response.sendRedirect("error.jsp");
 	}

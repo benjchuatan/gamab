@@ -21,10 +21,6 @@
   	  	response.sendRedirect("error.jsp");
   	}
 
-  else if(session.getAttribute("username")!=null){
-	  	response.sendRedirect("error.jsp");
-	}
-
   else if(session.getAttribute("isproductmanager")!=null){
 	  	response.sendRedirect("error.jsp");
 	}
