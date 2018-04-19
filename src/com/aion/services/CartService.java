@@ -84,6 +84,7 @@ public class CartService {
 		
 	}
 	
+	
 	public int getNum(int a) {
 		String sql = "SELECT COUNT(*) FROM cart where iduser=?";
 		int total = 0;
