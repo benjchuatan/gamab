@@ -28,7 +28,7 @@
 	  	response.sendRedirect("error.jsp");
 	}
 
-  else if(session.getAttribute("normuser ")!=null){
+  else if(session.getAttribute("normuser")!=null){
 	  	response.sendRedirect("error.jsp");
 	}
 %>

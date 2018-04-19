@@ -56,7 +56,7 @@ function alertSessionTimeout() {
     		</c:choose>	
     			
     		
-    			<form action="SearchProductServlet" class="navbar-form navbar-left" role="search">
+    			<form action="Search" class="navbar-form navbar-left" role="search">
     				<div class="form-group">
 						<div class="input-group" id = "searchid">
 						<input type="text" class="form-control" placeholder = "Search" name = "name"/>
@@ -72,15 +72,15 @@ function alertSessionTimeout() {
 	<div class="container-fluid">
 		  <ul class="nav navbar-nav">
 		      <li><a href="Home.jsp">Home</a></li>
-		      <li><a href="DisplayProductsServlet?page=Analog">Analog Watches</a></li>
-		      <li><a href="DisplayProductsServlet?page=Digital">Digital Watches</a></li>
-		      <li><a href="DisplayProductsServlet?page=SmartWatch">Smart Watches</a></li>
+		      <li><a href="Display?page=Analog">Analog Watches</a></li>
+		      <li><a href="Display?page=Digital">Digital Watches</a></li>
+		      <li><a href="Display?page=SmartWatch">Smart Watches</a></li>
 		      <c:if test="${sessionScope.username != null}">
-		      <li><a href="DisplayProfileServlet">Profile</a></li>
+		      <li><a href="AIONProfile">Profile</a></li>
 		      
 		      </c:if>
 		      <c:if test="${sessionScope.cartnum != null}">
-		      <li><a href="GetCartProductsServlet">Cart</a></li>
+		      <li><a href="CartProducts">Cart</a></li>
 		      </c:if>
 		      
 		      

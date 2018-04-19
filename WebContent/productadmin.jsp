@@ -56,7 +56,7 @@
 					      <td>${p.manufacturer}</td>
 					      <td>${p.description}</td>
 					      <td>${p.price}</td>
-					      <td><a href="EditProductServlet?id=${p.idproducts}">Edit</a></td>
+					      <td><a href="EditProduct?id=${p.idproducts}">Edit</a></td>
 	    				  <td><a href="DeleteProductServlet?id=${p.idproducts}">Delete</a></td>
 					    </tr>
 					  </tbody>
