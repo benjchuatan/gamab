@@ -12,29 +12,10 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>AION User Management</title>
+<title>AION Edit Manager</title>
 </head>
 
 <body class="container-fluid" style="background-color:lightgray;">
-<%	
-  if(session.getAttribute("isaccountingmanager")!=null){
-  	  	response.sendRedirect("error.jsp");
-  	}
-
-  else if(session.getAttribute("isproductmanager")!=null){
-	  	response.sendRedirect("error.jsp");
-	}
-
-  else if(session.getAttribute("username")==null){
-	  	response.sendRedirect("error.jsp");
-	}
-
-  else if(session.getAttribute("normuser ")!=null){
-	  	response.sendRedirect("error.jsp");
-	}
-%>
-
-
 
 <div class="row"><%@ include file="navbar.jsp" %></div></br>
 
@@ -42,7 +23,7 @@
 	  <div class="row">
 	  <div class="panel panel-default">
       	<div class="panel-heading">  
-      		<h4 >Create Manager</h4>
+      		<h4 >Edit Manager</h4>
       	</div>
       	<div class="panel-body"> 
         <div class="col-md-6 col-md-offset-3">
@@ -56,13 +37,6 @@
 		      form.username.focus();
 		      return false;
 		    }
-		    
-		    re = /^[1-4]$/;
-		    if(!re.test(form.privilege.value)) {
-			      alert("Error 1401");
-			      form.privilege.focus();
-			      return false;
-			    }
 		   
 		    if(form.password.value != "") 
 		    {
@@ -92,9 +66,7 @@
 				<input type="text" name="username" value="" class="form-control input-lg" placeholder="Username"  />
 				*Must only contain letters,numbers and underscores. (no symbols)</br></br> 
                 <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  />
-                *Minimum of 6 characters with at least one number, one lowercase and one uppercase letter. (no symbols)</br></br>  
-                <input type="text" name="privilege" value="" class="form-control input-lg" placeholder="Privilege Level"  />
-                *Choose from numbers 1 to 4 only.</br></br>                        
+                *Minimum of 6 characters with at least one number, one lowercase and one uppercase letter. (no symbols)</br></br>                      
                 <button class="btn btn-lg btn-info btn-block signup-btn" type="submit">Create Account</button>
             </form>          
           </div>
