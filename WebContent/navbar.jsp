@@ -13,6 +13,14 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+function startCountdown() {
+    window.setTimeout(alertSessionTimeout, ${pageContext.session.maxInactiveInterval * 1000});
+}
+
+function alertSessionTimeout() {
+    alert("You're session is going to timeout in 1 minute.");
+</script>
 <div>
 
 	<nav class="navbar navbar-inverse navbar-static-top nav-upper nav1">
