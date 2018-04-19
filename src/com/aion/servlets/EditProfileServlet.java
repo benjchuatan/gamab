@@ -68,7 +68,7 @@ public class EditProfileServlet extends HttpServlet {
 		profserv.editprofile(a, b, c, d, e, f);
 		
 		userserv.edituser(f, g);
-		response.sendRedirect("DisplayProfileServlet");
+		response.sendRedirect("Display");
 		}
 		else {
 		out.println("<script type=\"text/javascript\">");

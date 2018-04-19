@@ -66,7 +66,7 @@ public class EditProductServlet extends HttpServlet {
 		p.setIdproducts(Integer.parseInt(request.getParameter(Product.IDPRODUCTS)));	
 		ProductService productsService = new ProductService();
 		productsService.editArtworks(p);
-		request.getRequestDispatcher("AdminServlet").forward(request, response);
+		request.getRequestDispatcher("ProductManagement").forward(request, response);
 		
 
 		action = "User " + request.getSession().getAttribute("iduser")  + " edited product at  " + LocalDateTime.now();	

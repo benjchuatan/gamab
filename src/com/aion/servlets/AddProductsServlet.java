@@ -83,7 +83,7 @@ public class AddProductsServlet extends HttpServlet {
 		System.out.println("This is it pancit: " + p.getType());
 		ProductService productsService = new ProductService();
 		productsService.addProducts(p);
-		request.getRequestDispatcher("DisplayProductsServlet").forward(request, response);
+		request.getRequestDispatcher("DisplayProduct").forward(request, response);
 
 		action = "User " + request.getSession().getAttribute("iduser")  + " added product at  " + LocalDateTime.now();
 		

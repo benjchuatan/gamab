@@ -35,10 +35,7 @@ public class ShoppingCartServlet extends HttpServlet {
 		CartService carserv = new CartService();
 		HttpSession session = request.getSession();
 		
-        String storedToken = (String)session.getAttribute("csrfToken");
-        String token = request.getParameter("token");
-        //do check
-        if (storedToken.equals(token)) {
+      
         	u.setIdproducts(Integer.parseInt(request.getParameter("idproduct")));
     		
     		u.setIduser((Integer)request.getSession().getAttribute("iduser"));
@@ -49,10 +46,9 @@ public class ShoppingCartServlet extends HttpServlet {
                 //go ahead and process ... do business logic here
 
 
-        } else {
-        	response.sendRedirect("error.jsp");
+
                 //DO NOT PROCESS ... this is to be considered a CSRF attack - handle appropriately
-        }
+        
 		//session.setAttribute("iduser", dao.getiduser(uname));
 		
 		
