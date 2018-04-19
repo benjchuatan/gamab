@@ -9,7 +9,33 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>Home.jsp</welcome-file>
   </welcome-file-list>
+  
   <session-config>
    <session-timeout>2</session-timeout>
 </session-config>
+
+<error-page>
+	<error-code>404</error-code>
+	<location>/error.jsp</location>
+</error-page>
+
+<error-page>
+	<error-code>403</error-code>
+	<location>/error.jsp</location>
+</error-page>
+
+<error-page>
+	<error-code>500</error-code>
+	<location>/error.jsp</location>
+</error-page>
+
+<servlet>
+	<servlet-name>AIONPurchase</servlet-name>
+	<jsp-file>/checkout.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>AIONPurchase</servlet-name>
+	<url-pattern>/AION/Purchase</url-pattern>
+</servlet-mapping>
+	
 </web-app>
