@@ -34,14 +34,27 @@ public class ShoppingCartServlet extends HttpServlet {
 		CartBean u = new CartBean();
 		CartService carserv = new CartService();
 		HttpSession session = request.getSession();
-		//session.setAttribute("iduser", dao.getiduser(uname));
-		u.setIdproducts(Integer.parseInt(request.getParameter("idproduct")));
 		
-		u.setIduser((Integer)request.getSession().getAttribute("iduser"));
-		carserv.addcart(u);
-		session.setAttribute("cartnum",carserv.getNum((Integer)request.getSession().getAttribute("iduser")));
-		//request.getRequestDispatcher("Home.jsp").forward(request, response);
-		response.sendRedirect("Home.jsp");
+        String storedToken = (String)session.getAttribute("csrfToken");
+        String token = request.getParameter("token");
+        //do check
+        if (storedToken.equals(token)) {
+        	u.setIdproducts(Integer.parseInt(request.getParameter("idproduct")));
+    		
+    		u.setIduser((Integer)request.getSession().getAttribute("iduser"));
+    		carserv.addcart(u);
+    		session.setAttribute("cartnum",carserv.getNum((Integer)request.getSession().getAttribute("iduser")));
+    		//request.getRequestDispatcher("Home.jsp").forward(request, response);
+    		response.sendRedirect("Home.jsp");
+                //go ahead and process ... do business logic here
+
+
+        } else {
+        	response.sendRedirect("error.jsp");
+                //DO NOT PROCESS ... this is to be considered a CSRF attack - handle appropriately
+        }
+		//session.setAttribute("iduser", dao.getiduser(uname));
+		
 		
 	}
 

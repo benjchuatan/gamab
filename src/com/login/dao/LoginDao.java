@@ -6,6 +6,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.security.SecureRandom;
+import java.util.Base64;
+import java.util.Base64.Encoder;
 
 import com.aion.javabean.SessionBean;
 import com.aion.javabean.UserBean;
@@ -60,6 +63,16 @@ public class LoginDao {
 		
 		return 0;
 		
+	}
+	public static String generateCSRFToken() {
+		
+		SecureRandom random = new SecureRandom();
+	    byte bytes[] = new byte[128];
+	    random.nextBytes(bytes);
+	    Encoder encoder = Base64.getUrlEncoder().withoutPadding();
+	    String token = encoder.encodeToString(bytes);
+	    System.out.println(token);
+	    return token;
 	}
 	public boolean check(String uname, String pass) throws SQLException {
 		

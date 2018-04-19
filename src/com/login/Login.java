@@ -70,6 +70,7 @@ public class Login extends HttpServlet {
 					}
 				}else {
 				if(dao.checkadmin(uname)==1) {
+					session.setAttribute("csrfToken", dao.generateCSRFToken());
 					session.setAttribute("isadmin", uname);
 					session.setAttribute("username", uname);
 					session.setAttribute("iduser", dao.getiduser(uname));
@@ -92,6 +93,7 @@ public class Login extends HttpServlet {
 					action = uname + " ID: " + dao.getiduser(uname) + " logged in at " + LocalDateTime.now();
 				}else if(dao.check(uname, pass)){
 					session.setAttribute("normuser", uname);
+					session.setAttribute("csrfToken", dao.generateCSRFToken());
 					session.setAttribute("username", uname);
 					session.setAttribute("iduser", dao.getiduser(uname));
 					session.setAttribute("cartnum", carserv.getNum(dao.getiduser(uname)));
