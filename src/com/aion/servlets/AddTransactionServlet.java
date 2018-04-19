@@ -12,6 +12,7 @@ import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -75,8 +76,17 @@ public class AddTransactionServlet extends HttpServlet {
 		}
 		CartService CS = new CartService();
 		CS.emptyCart((Integer) request.getSession().getAttribute("iduser"));
+		
+		String checked = request.getParameter("remember");
+		System.out.println("is it checked? : " + checked);
+		if(checked != null) {
+			Cookie CC_Name = new Cookie("creditholder", request.getParameter("card_holder_name"));
+			Cookie CC_Num = new Cookie("creditnum", request.getParameter("card_number"));
+			Cookie Exp_Mon = new Cookie("exprmnt", request.getParameter("expiry-month"));
+			Cookie Exp_Yer = new Cookie("expryear", request.getParameter("expiry-year"));
+		}
 		request.getRequestDispatcher("Home.jsp").forward(request, response);
-	
+	    
 
 		action = "User " + request.getSession().getAttribute("iduser")  + " finished transaction at  " + LocalDateTime.now();	
 		try (PrintWriter wr = new PrintWriter(new BufferedWriter(new FileWriter("/Users/admin/Documents/logfiles.txt", true)))) {
