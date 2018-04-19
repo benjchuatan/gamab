@@ -61,13 +61,15 @@
       <div class="panel panel-default">
       	<div class="panel-heading">  
       		<h4 >Comments/Remarks</h4></div>
-       			<div class="panel-body">                     
+       			<div class="panel-body">                
        			<c:forEach items = "${comments}" var = "r">
+       			<table class = "table table-bordered"> 
                    	<div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
-                    	<h5>${r.productReview} </h5>
-                    </div>
-                    </c:forEach>
-                </div>
+                   		<td>${r.productReview}</td>
+                     </div>
+                 </table> 
+                 </c:forEach>
+                 </div>
        </div>
        
        	<script type="text/javascript">
