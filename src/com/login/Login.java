@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.time.*;				//For file writing
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -46,7 +47,7 @@ public class Login extends HttpServlet {
 		LoginDao dao = new LoginDao();
 		CartService carserv = new CartService();
 		int loginTries = 3;
-		HttpSession session = request.getSession();
+		
 		PrintWriter outa = response.getWriter();
 		PrintWriter outb = response.getWriter();
 		PrintWriter outc = response.getWriter();
@@ -69,6 +70,17 @@ public class Login extends HttpServlet {
 					outc.println("</script>");
 					}
 				}else {
+					
+					HttpSession oldSession = request.getSession(false);
+		            if (oldSession != null) {
+		                oldSession.invalidate();
+		            }
+		            HttpSession session = request.getSession(true);
+		            Cookie message = new Cookie("message", "Welcome");
+		            message.setSecure(true);
+		            message.setHttpOnly(true);
+		          
+		            response.addCookie(message);
 				if(dao.checkadmin(uname)==1) {
 					session.setAttribute("csrfToken", dao.generateCSRFToken());
 					session.setAttribute("isadmin", uname);

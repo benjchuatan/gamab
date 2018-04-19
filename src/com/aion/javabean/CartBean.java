@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class CartBean implements Serializable {
 	
+	public static final String CARTID = "cartid";
+	public static final String IDPRODUCT = "idproduct";
 	
 	public int getIdproducts() {
 		return idproducts;

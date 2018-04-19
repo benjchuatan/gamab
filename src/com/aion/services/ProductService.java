@@ -278,6 +278,13 @@ public class ProductService {
 //		
 //	}
 	
+	public int updateqty(int news) {
+		String sql = "g";
+		int  returndd = 0;
+		
+		return returndd;
+	}
+	
 	public void addProducts(Product p) {
 		String sql = "INSERT INTO secprg." + Product.TABLE_NAME + "("
 				+ Product.NAME + ","
