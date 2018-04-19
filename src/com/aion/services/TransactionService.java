@@ -65,7 +65,7 @@ public class TransactionService {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url,username,password);
 			PreparedStatement st = con.prepareStatement(sql);
-			ResultSet rs = st.executeQuery();	
+		
 			st.executeUpdate();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
